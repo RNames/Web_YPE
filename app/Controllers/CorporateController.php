@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Models\CorporateModel;
+use App\Models\DestinationModel;
+use App\Models\SocialMediaModel;
+use App\Controllers\BaseController;
+use CodeIgniter\HTTP\ResponseInterface;
+
+class CorporateController extends BaseController
+{
+    protected $destinationModel;
+    protected $corporateModel;
+    protected $socmedModel;
+
+    protected $currentUrl;
+    protected $language;
+
+    public function __construct()
+    {
+        $this->destinationModel = new DestinationModel();
+        $this->corporateModel = new CorporateModel();
+        $this->socmedModel = new SocialMediaModel();
+
+        $this->currentUrl = current_url();
+        $this->language = session()->get('lang');
+    }
+
+    public function index(): void
+    {
+        $data = [
+            'title' => $this->corporateModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
+            'description' => $this->corporateModel->select(['seo_description_id', 'seo_description_en'])->first(),
+            'currentUrl' => $this->currentUrl,
+            'language' => $this->language,
+            'navbarDestinations' => $this->destinationModel->select(['title', 'slug'])->findAll(),
+            'corporates' => $this->corporateModel->findAll(),
+            'socmeds' => $this->socmedModel->findAll(),
+        ];
+
+        // dd($data['corporates']);
+
+        echo view('pages/corporate', $data);
+    }
+}
