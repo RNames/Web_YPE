@@ -18,19 +18,20 @@
     /* Responsiveness for mobile (375px) */
     @media (min-width: 0px) {
         #heading1-homepage {
-
             width: 100%;
             text-align: center;
             font-size: 30px;
             font-weight: 500;
             text-shadow: 1px 1px #69727d;
+            margin-bottom: 5px; /* Reduced margin */
         }
 
         #heading2-banner-homepage {
             text-align: center;
             font-size: 17px;
             font-weight: 700;
-            color: #fff
+            color: #fff;
+            margin-top: 5px; /* Reduced margin */
         }
 
         #slider-homepage {
@@ -59,19 +60,20 @@
     /* Responsiveness for tablet (768px) */
     @media (min-width: 426px) and (max-width: 768px) {
         #heading1-homepage {
-
             width: 100%;
             text-align: center;
             font-size: 37px;
             font-weight: 500;
             text-shadow: 2px 2px #69727d;
+            margin-bottom: 10px; /* Reduced margin */
         }
 
         #heading2-banner-homepage {
             text-align: center;
             font-size: 18px;
             font-weight: 700;
-            color: #fff
+            color: #fff;
+            margin-top: 10px; /* Reduced margin */
         }
 
         .title-section {
@@ -96,19 +98,20 @@
     /* Responsiveness for laptop (1024px) */
     @media (min-width: 769px) {
         #heading1-homepage {
-
             width: 100%;
             text-align: center;
             font-size: 45px;
             font-weight: 500;
             text-shadow: 2px 2px #69727d;
+            margin-bottom: 15px; /* Reduced margin */
         }
 
         #heading2-banner-homepage {
             text-align: center;
             font-size: 26px;
             font-weight: 700;
-            color: #fff
+            color: #fff;
+            margin-top: 15px; /* Reduced margin */
         }
 
         .title-section {
@@ -129,42 +132,6 @@
             font-family: 'Open Sans' !important;
         }
     }
-
-    /* Responsiveness for large laptop (1440px) */
-    /* @media (min-width: 1025px) and (max-width: 1440px) {
-        #heading1-homepage {
-
-            width: 100%;
-            text-align: center;
-            font-size: 5.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px #69727d;
-        }
-
-        #heading2-banner-homepage {
-            text-align: center;
-            font-size: 3.25rem;
-            font-weight: 500;
-            color: #fff
-        }
-    } */
-
-    /* Responsiveness for large desktop (1441px and above) */
-    /* @media (min-width: 1441px) {
-        #heading1-homepage {
-
-            font-size: 5.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px #69727d;
-        }
-
-        #heading2-banner-homepage {
-            text-align: center;
-            font-size: 3.25rem;
-            font-weight: 500;
-            color: #fff
-        }
-    } */
 </style>
 
 <!-- ========== header end============= -->
@@ -184,11 +151,12 @@
                                             <div class="container" style="display: flex;justify-content: center;align-items: center;">
                                                 <div class="row" style="margin: auto; display: flex;justify-content: center;">
                                                     <div class="col-12 col-lg-9">
-                                                        <div class="hero-content" id="slider-homepage" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;">
+                                                        <div class="hero-content" id="slider-homepage" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; letter-spacing: 0.5px;">
                                                             <!-- <span id="subtitle-banner-homepage"><?= $language == 'id' ? $homepage['sub_title_id'] : $homepage['sub_title_en'] ?></span> -->
-                                                            <h1 id="heading1-homepage" style="text-shadow: 5px 2px #69727d;font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;font-weight: 450;"><?= $language == 'id' ? strtoupper($homepage['title_id']) : strtoupper($homepage['title_en'])  ?></h1>
-                                                            <h2 id="heading2-banner-homepage" style="text-shadow: 2px 2px #69727d;font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 700; font-size: 30px; line-height: 42px;">
-
+                                                            <h1 id="heading1-homepage" style="text-shadow: 0.02em 0.11em 0.1em rgba(0,0,0,0.4);font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 450; font-size: 48px; letter-spacing: 0.5px; margin-bottom: 10px;">
+                                                                <?= $language == 'id' ? strtoupper($homepage['title_id']) : strtoupper($homepage['title_en'])  ?>
+                                                            </h1>
+                                                            <p id="heading2-banner-homepage" style="text-shadow: 0px 2px #69727d;font-family: Open Sans,Arial,sans-serif; font-weight: 700; font-size: 28px; line-height: 1.8em; letter-spacing: 0.5px; margin-top: 10px;">
                                                                 <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
                                                                     VIP Services
                                                                 </a>
@@ -200,19 +168,18 @@
                                                                 <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
                                                                     MICE
                                                                 </a>
-                                                            </h2>
-                                                            
+                                                            </p>
                                                             
                                                             <div class="btn-group" style="display: flex;justify-content: center;flex-direction: column; margin-top: 20px !important;">
                                                                 <div class="dsc-btn">
-                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>" class="eg-btn btn--primary-outline" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif !important;background-color: #e0bc6d;border-radius: 30px; font-size: 18px; line-height: 31px; display: flex;align-items:center;" onmouseout="this.style.cursor='default'" onmouseover="this.style.cursor='pointer'">
+                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>" class="eg-btn btn--primary-outline" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif !important;background-color: #e0bc6d;border-radius: 30px; font-size: 18px; line-height: 31px; display: flex;align-items:center; letter-spacing: 0.5px;" onmouseout="this.style.cursor='default'" onmouseover="this.style.cursor='pointer'">
                                                                         <i aria-hidden="true    w"></i>
                                                                         <?= strtoupper(lang("text_homepage.banner_button")) ?>
                                                                     </a>
                                                                 </div>
                                                                 <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
                                                                     <div class="trip-rating">
-                                                                        <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 500; font-size: 18px; line-height: 24px;">
+                                                                        <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 500; font-size: 18px; line-height: 24px; letter-spacing: 0.5px;">
                                                                             <img loading="lazy" src="<?= base_url('assets/images/trustpilot.svg') ?>" alt="trustpilot-rating" style="height: 30px !important;width: 130px ;">
                                                                             <p>See our <span>37</span> reviews on Trustpilot</p>
                                                                         </div>
@@ -237,6 +204,8 @@
         </div>
     </div>
 </section>
+
+
 
     <style>
 /*@media (max-width: 768px) {*/
