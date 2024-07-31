@@ -169,74 +169,75 @@
 
 <!-- ========== header end============= -->
 <div data-elementor-type="wp-page" data-elementor-id="234" class="elementor elementor-234">
-    <section class="elementor-section elementor-top-section elementor-element elementor-element-c69dd4c elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="c69dd4c" data-element_type="section">
-        <div class="elementor-container elementor-column-gap-no">
-            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f1cf64a" data-id="f1cf64a" data-element_type="column">
-                <div class="elementor-widget-wrap elementor-element-populated">
-                    <div class="elementor-element elementor-element-156ef9f elementor-widget elementor-widget-egens_slider" data-id="156ef9f" data-element_type="widget" data-widget_type="egens_slider.default">
-                        <div class="elementor-widget-container">
-                            <section class="hero-banner">
-                                <div class="swiper hero-slider">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <img loading="lazy" decoding="async" src="<?= base_url('assets/images/slide-1.jpg') ?>" alt="" />
-                                            <div class=" hero-wrapper">
-                                                <div class="container" style="display: flex;justify-content: center;align-items: center;">
-                                                    <div class="row" style="margin: auto; display: flex;justify-content: center;">
-                                                        <div class="col-12 col-lg-9">
-                                                            <div class="hero-content" id="slider-homepage">
-                                                                <!-- <span id="subtitle-banner-homepage"><?= $language == 'id' ? $homepage['sub_title_id'] : $homepage['sub_title_en'] ?></span> -->
-                                                                <h1 id="heading1-homepage" style="font-family: 'Open Sans';font-weight: 700;"><?= $language == 'id' ? strtoupper($homepage['title_id']) : strtoupper($homepage['title_en'])  ?></h1>
-                                                                <h2 id="heading2-banner-homepage" style="text-shadow: 2px 2px #69727d;font-family: 'Open Sans'; font-weight: 700; font-size: 30px; line-height: 42px;">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-c69dd4c elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="c69dd4c" data-element_type="section">
+    <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f1cf64a" data-id="f1cf64a" data-element_type="column">
+            <div class="elementor-widget-wrap elementor-element-populated">
+                <div class="elementor-element elementor-element-156ef9f elementor-widget elementor-widget-egens_slider" data-id="156ef9f" data-element_type="widget" data-widget_type="egens_slider.default">
+                    <div class="elementor-widget-container">
+                        <section class="hero-banner">
+                            <div class="swiper hero-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img loading="lazy" decoding="async" src="<?= base_url('assets/images/slide-1.jpg') ?>" alt="" />
+                                        <div class="hero-wrapper">
+                                            <div class="container" style="display: flex;justify-content: center;align-items: center;">
+                                                <div class="row" style="margin: auto; display: flex;justify-content: center;">
+                                                    <div class="col-12 col-lg-9">
+                                                        <div class="hero-content" id="slider-homepage" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;">
+                                                            <!-- <span id="subtitle-banner-homepage"><?= $language == 'id' ? $homepage['sub_title_id'] : $homepage['sub_title_en'] ?></span> -->
+                                                            <h1 id="heading1-homepage" style="text-shadow: 5px 2px #69727d;font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;font-weight: 450;"><?= $language == 'id' ? strtoupper($homepage['title_id']) : strtoupper($homepage['title_en'])  ?></h1>
+                                                            <h2 id="heading2-banner-homepage" style="text-shadow: 2px 2px #69727d;font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 700; font-size: 30px; line-height: 42px;">
 
-                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
-                                                                        VIP Services
-                                                                    </a>
-                                                                    |
-                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
-                                                                        Private Tour
-                                                                    </a>
-                                                                    |
-                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
-                                                                        MICE
-                                                                    </a>
-                                                                </h2>
-                                                                
-                                                                
-                                                                <div class="btn-group" style="display: flex;justify-content: center;flex-direction: column; margin-top: 20px !important;">
-                                                                    <div class="dsc-btn">
-                                                                        <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>" class="eg-btn btn--primary-outline" style="font-family: 'Open Sans' !important;background-color: #e0bc6d;border-radius: 30px; font-size: 18px; line-height: 31px; display: flex;align-items:center;" onmouseout="this.style.cursor='default'" onmouseover="this.style.cursor='pointer'">
-                                                                            <i aria-hidden="true    w"></i>
-                                                                            <?= strtoupper(lang("text_homepage.banner_button")) ?>
-                                                                        </a>
-                                                                    </div>
-                                                                    <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
-                                                                        <div class="trip-rating">
-                                                                            <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Open Sans'; font-weight: 500; font-size: 18px; line-height: 24px;">
-                                                                                <img loading="lazy" src="<?= base_url('assets/images/trustpilot.svg') ?>" alt="trustpilot-rating" style="height: 30px !important;width: 130px ;">
-                                                                                <p>See our <span>37</span> reviews on Trustpilot</p>
-                                                                            </div>
-                                                                        </div>
+                                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
+                                                                    VIP Services
+                                                                </a>
+                                                                |
+                                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
+                                                                    Private Tour
+                                                                </a>
+                                                                |
+                                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
+                                                                    MICE
+                                                                </a>
+                                                            </h2>
+                                                            
+                                                            
+                                                            <div class="btn-group" style="display: flex;justify-content: center;flex-direction: column; margin-top: 20px !important;">
+                                                                <div class="dsc-btn">
+                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>" class="eg-btn btn--primary-outline" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif !important;background-color: #e0bc6d;border-radius: 30px; font-size: 18px; line-height: 31px; display: flex;align-items:center;" onmouseout="this.style.cursor='default'" onmouseover="this.style.cursor='pointer'">
+                                                                        <i aria-hidden="true    w"></i>
+                                                                        <?= strtoupper(lang("text_homepage.banner_button")) ?>
                                                                     </a>
                                                                 </div>
+                                                                <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
+                                                                    <div class="trip-rating">
+                                                                        <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 500; font-size: 18px; line-height: 24px;">
+                                                                            <img loading="lazy" src="<?= base_url('assets/images/trustpilot.svg') ?>" alt="trustpilot-rating" style="height: 30px !important;width: 130px ;">
+                                                                            <p>See our <span>37</span> reviews on Trustpilot</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
-                                    <div class="hero-pagination"></div>
-                                </div>
 
-                            </section>
-                        </div>
+                                </div>
+                                <div class="hero-pagination"></div>
+                            </div>
+
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <style>
 /*@media (max-width: 768px) {*/
 /*    #heading1-homepage {*/
