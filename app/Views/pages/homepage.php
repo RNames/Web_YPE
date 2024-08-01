@@ -339,102 +339,95 @@
         </div>
     </section>
 
-    <section style="margin-top: 60px !important;" class="elementor-section elementor-top-section elementor-element
-      elementor-element-a3bd80e elementor-section-full_width
-      elementor-section-height-default elementor-section-height-default" data-id="a3bd80e" data-element_type="section" data-settings="{" background_background":"classic"}"="">
-        <div class="elementor-background-overlay" style="background-image: none !important;"></div>
-        <div class="elementor-container elementor-column-gap-no">
-            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7eb456c" data-id="7eb456c" data-element_type="column">
-                <div class="elementor-widget-wrap elementor-element-populated">
-                    <section class="elementor-section elementor-inner-section
-            elementor-element elementor-element-e142efa elementor-section-boxed
-            elementor-section-height-default elementor-section-height-default" data-id="e142efa" data-element_type="section" data-settings="{" background_background":"classic"}"="">
-                        <div class="elementor-container elementor-column-gap-default">
-                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5fffbce" data-id="5fffbce" data-element_type="column" style="width: 100% !important;">
-                                <div class="elementor-widget-wrap elementor-element-populated" style="margin-right: 500px;">
-                                    <div class="elementor-element elementor-element-6ac66df elementor-widget elementor-widget-astrip_heading" data-id="6ac66df" data-element_type="widget" data-widget_type="astrip_heading.default">
-                                        <div class="elementor-widget-container">
-                                            <div class="justify-content-center">
-                                                <div class="section-title2 d-flex flex-column justify-content-center">
-                                                    <span class="heading-section" style="color:black !important;letter-spacing: 0px !important;">
-                                                        <?= $language == 'id' ? $aboutUs['heading_id'] : $aboutUs['heading_en'] ?>
-                                                    </span>
-                                                    <h2 class="title-section" style="color: black;">
-                                                        <?= $language == 'id' ? $aboutUs['title_id'] : $aboutUs['title_en'] ?>
-                                                    </h2>
-                                                </div>
+    <section style="margin-top: 60px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-a3bd80e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="a3bd80e" data-element_type="section" data-settings='{"background_background":"classic"}'>
+    <div class="elementor-background-overlay" style="background-image: none !important;"></div>
+    <div class="elementor-container elementor-column-gap-no">
+        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7eb456c" data-id="7eb456c" data-element_type="column">
+            <div class="elementor-widget-wrap elementor-element-populated">
+                <section class="elementor-section elementor-inner-section elementor-element elementor-element-e142efa elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e142efa" data-element_type="section" data-settings='{"background_background":"classic"}'>
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5fffbce" data-id="5fffbce" data-element_type="column" style="width: 100% !important;">
+                            <div class="elementor-widget-wrap elementor-element-populated" style="margin-right: 500px;">
+                                <div class="elementor-element elementor-element-6ac66df elementor-widget elementor-widget-astrip_heading" data-id="6ac66df" data-element_type="widget" data-widget_type="astrip_heading.default">
+                                    <div class="elementor-widget-container">
+                                        <div class="justify-content-center">
+                                            <div class="section-title2 d-flex flex-column justify-content-center">
+                                                <span class="heading-section" style="color:black !important;letter-spacing: 0px !important;font-family: 'Open Sans', Arial, sans-serif !important;">
+                                                    <?= $language == 'id' ? $aboutUs['heading_id'] : $aboutUs['heading_en'] ?>
+                                                </span>
+                                                <h2 class="title-section" style="color: black;font-family: 'Open Sans', Arial, sans-serif !important;">
+                                                    <?= $language == 'id' ? $aboutUs['title_id'] : $aboutUs['title_en'] ?>
+                                                </h2>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="elementor-element elementor-element-842954f elementor-widget elementor-widget-text-editor" data-id="842954f" data-element_type="widget" data-widget_type="text-editor.default">
-                                        <div class="elementor-widget-container">
-                                            <style>
-                                                /*! elementor - v3.17.0 - 08-11-2023 */
-                                                .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
-                                                    background-color: #69727d;
-                                                    color: #fff;
-                                                }
+                                </div>
+                                <div class="elementor-element elementor-element-842954f elementor-widget elementor-widget-text-editor" data-id="842954f" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                        <style>
+                                            /*! elementor - v3.17.0 - 08-11-2023 */
+                                            .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+                                                background-color: #69727d;
+                                                color: #fff;
+                                            }
 
-                                                .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
-                                                    color: #69727d;
-                                                    border: 3px solid;
-                                                    background-color: transparent;
-                                                }
+                                            .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+                                                color: #69727d;
+                                                border: 3px solid;
+                                                background-color: transparent;
+                                            }
 
-                                                .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
-                                                    margin-top: 8px;
-                                                }
+                                            .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
+                                                margin-top: 8px;
+                                            }
 
-                                                .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
-                                                    width: 1em;
-                                                    height: 1em;
-                                                }
+                                            .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
+                                                width: 1em;
+                                                height: 1em;
+                                            }
 
-                                                .elementor-widget-text-editor .elementor-drop-cap {
-                                                    float: left;
-                                                    text-align: center;
-                                                    line-height: 1;
-                                                    font-size: 50px;
-                                                }
+                                            .elementor-widget-text-editor .elementor-drop-cap {
+                                                float: left;
+                                                text-align: center;
+                                                line-height: 1;
+                                                font-size: 50px;
+                                            }
 
-                                                .elementor-widget-text-editor .elementor-drop-cap-letter {
-                                                    display: inline-block;
-                                                }
-                                            </style>
-                                            <span class="about-us-desc" style="color: black !important; font-family: 'Open Sans'; line-height: 24px;">
-                                                <?php 
-                                                $description = $language == 'id' ? $aboutUs['description_id'] : $aboutUs['description_en'];
-                                                echo substr($description, 0, 500);
-                                                if (strlen($description) > 500) {
-                                                    echo '...';
-                                                }
-                                                ?>
-                                            </span>
-
-
-                                        </div>
+                                            .elementor-widget-text-editor .elementor-drop-cap-letter {
+                                                display: inline-block;
+                                            }
+                                        </style>
+                                        <span class="about-us-desc" style="color: black !important; font-family: 'Open Sans', Arial, sans-serif !important; line-height: 24px;">
+                                            <?php 
+                                            $description = $language == 'id' ? $aboutUs['description_id'] : $aboutUs['description_en'];
+                                            echo substr($description, 0, 500);
+                                            if (strlen($description) > 500) {
+                                                echo '...';
+                                            }
+                                            ?>
+                                        </span>
                                     </div>
-                                    <div class="elementor-element elementor-element-15c7e1e elementor-widget elementor-widget-astrip_button" data-id="15c7e1e" data-element_type="widget" data-widget_type="astrip_button.default">
-                                        <div class="elementor-widget-container">
-                                            <div class="row justify-content-center">
-                                                <div class="btn-align">
-                                                    <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d;font-family: 'Open Sans';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
-                                                        <?= strtoupper(lang("text_homepage.button_about_us")) ?>
-                                                    </a>
-                                                </div>
+                                </div>
+                                <div class="elementor-element elementor-element-15c7e1e elementor-widget elementor-widget-astrip_button" data-id="15c7e1e" data-element_type="widget" data-widget_type="astrip_button.default">
+                                    <div class="elementor-widget-container">
+                                        <div class="row justify-content-center">
+                                            <div class="btn-align">
+                                                <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d;font-family: 'Open Sans', Arial, sans-serif !important;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                                                    <?= strtoupper(lang("text_homepage.button_about_us")) ?>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section class="elementor-section elementor-top-section elementor-element elementor-element-aa8649e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aa8649e" data-element_type="section" style="margin-top: 60px !important;">
         <div class="elementor-container elementor-column-gap-default">
