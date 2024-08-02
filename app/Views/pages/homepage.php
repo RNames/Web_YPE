@@ -339,6 +339,8 @@
         </div>
     </section>
 
+    <!-- About Us Start -->
+
     <section style="margin-top: 60px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-a3bd80e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="a3bd80e" data-element_type="section" data-settings='{"background_background":"classic"}'>
     <div class="elementor-background-overlay" style="background-image: none !important;"></div>
     <div class="elementor-container elementor-column-gap-no">
@@ -352,7 +354,7 @@
                                     <div class="elementor-widget-container">
                                         <div class="justify-content-center">
                                             <div class="section-title2 d-flex flex-column justify-content-center">
-                                                <span class="heading-section" style="color:black !important;letter-spacing: 0px !important;font-family: 'Open Sans', Arial, sans-serif !important;">
+                                                <span class="heading-section" style="color:#086B7D !important;letter-spacing: 0px !important;font-family: 'Open Sans', Arial, sans-serif !important;">
                                                     <?= $language == 'id' ? $aboutUs['heading_id'] : $aboutUs['heading_en'] ?>
                                                 </span>
                                                 <h2 class="title-section" style="color: black;font-family: 'Open Sans', Arial, sans-serif !important;">
@@ -412,7 +414,7 @@
                                     <div class="elementor-widget-container">
                                         <div class="row justify-content-center">
                                             <div class="btn-align">
-                                                <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d;font-family: 'Open Sans', Arial, sans-serif !important;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                                                <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d;font-family: 'Open Sans', Arial, sans-serif !important;border-radius: 30px;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
                                                     <?= strtoupper(lang("text_homepage.button_about_us")) ?>
                                                 </a>
                                             </div>
@@ -428,6 +430,8 @@
     </div>
 </section>
 
+<!-- About Us End -->
+<!-- Our Services Start -->
 
     <section class="elementor-section elementor-top-section elementor-element elementor-element-aa8649e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aa8649e" data-element_type="section" style="margin-top: 60px !important;">
         <div class="elementor-container elementor-column-gap-default">
@@ -498,7 +502,7 @@
                                             <div class="content">
                                                 <h4 style="text-align: center; color: black;">
                                                     <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
-                                                        VIP Services
+                                                        VIP SERVICES
                                                     </a>
                                                 </h4>
                                             </div>
@@ -514,7 +518,7 @@
                                             <div class="content">
                                                 <h4 style="text-align: center; color: black;">
                                                     <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
-                                                        Private Tour
+                                                        PRIVATE TOUR
                                                     </a>
                                                 </h4>
                                             </div>
@@ -547,6 +551,8 @@
             </div>
         </div>
     </section>
+
+<!-- Our Services End -->
 
     <section aria-hidden="true" style="padding-top: 60px !important;margin-top:60px !important; background-color: #F9F9F9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default" style="max-width: 1140px;">
@@ -632,7 +638,7 @@
 
             <!-- </div> -->
     </section>
-
+<!-- Testimoni Start -->
     <div class="page-wrapper sec-mar">
     <article aria-label="article" id="post-22" class="post-22 page type-page status-publish hentry">
       <div class="inner-post">
@@ -791,7 +797,7 @@
         </div>
     </article>
   </div>
-
+<!-- Testimoni End -->
     <section style="margin-top: 60px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0442f94" data-id="0442f94" data-element_type="column">
