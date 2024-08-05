@@ -735,6 +735,7 @@
     </article>
 </div>
 
+
 <!-- External JS for slick slider -->
 <script>
 $(document).ready(function() {
@@ -748,6 +749,15 @@ $(document).ready(function() {
         infinite: true,
         responsive: [
             {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: true
+                }
+            },
+            {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
@@ -759,48 +769,91 @@ $(document).ready(function() {
         ]
     });
 });
+
 </script>
 
 
 <!-- External CSS -->
 <style>
+.deal-single1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
 
 .deal-image {
     width: 100%;
-    max-width: 300px; /* Adjust the max-width as needed */
+    max-width: 400px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Adjust the border radius as needed */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a more polished look */
-    margin: 0 auto; /* Center the image */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    background-color: #fff;
+    padding: 0;
 }
 
 .testimonial-image {
     width: 100%;
-    height: auto; /* Adjust the height to maintain the aspect ratio */
+    height: auto;
     object-fit: cover;
-    border-radius: 10px; /* Adjust the border radius as needed */
-}
-
-.slick-slide {
-    padding: 0 10px; /* Adds space between slides */
-}
-
-.slick-slide .deal-single1 {
-    margin: 0 auto; /* Centering content */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    border-radius: 15px;
 }
 
 .deal-content {
     text-align: center;
     width: 100%;
-    padding: 20px; /* Add padding if necessary */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
+.slick-slide {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Responsive settings */
+@media (max-width: 1024px) {
+    .slick-slide {
+        padding: 0 15px;
+    }
+
+    .deal-image {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slick-slide {
+        padding: 0 10px;
+    }
+
+    .deal-image {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slick-slide {
+        padding: 0 5px;
+    }
+
+    .deal-image {
+        max-width: 100%;
+    }
+}
 
 
 </style>
