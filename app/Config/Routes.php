@@ -55,10 +55,13 @@ $routes->get('/id/events', 'EventsController::index');
 $routes->get('/en/events', 'EventsController::index');
 
 //admin
-$routes->get('/login','admin\Login::index');
-$routes->post('/loginprocess','admin\Login::login_action');
+// C:\projectcomp\ype.kadinkotamalang.com\app\Config\Routes.php
 
-$routes->get('/dasboard', 'admin\Dashboardctrl::index');
+$routes->get('admin/login', 'admin\Auth::index');
+$routes->post('admin/auth/process', 'admin\Auth::process');
+$routes->get('admin/logout', 'admin\Auth::logout');
+$routes->get('/dasboard', 'admin\Dashboard::index'); // Note the correct path
+
 
 $routes->get('/commitment', 'admin\Commitment::index');
 $routes->get('/tambahCommitment', 'admin\Commitment::tambah');

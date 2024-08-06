@@ -2,9 +2,8 @@
 
 namespace App\Controllers\admin;
 
-use App\Controllers\admin\BaseController;
+use App\Controllers\BaseController;
 use App\Models\ProfilModel;
-
 
 class Loginctrl extends BaseController
 {
@@ -12,7 +11,7 @@ class Loginctrl extends BaseController
     {
         // Pengecekan jika pengguna sudah login
         if (session()->get('logged_in')) {
-            return redirect()->to(base_url('admin/dashboard')); // Ubah 'vw_home' sesuai dengan halaman yang diinginkan setelah login
+            return redirect()->to(base_url('admin/dasboard')); // Ubah 'vw_home' sesuai dengan halaman yang diinginkan setelah login
         }
 
         // Proses login jika pengguna belum login
