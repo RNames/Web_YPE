@@ -4,18 +4,15 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <?php if (session()->getFlashdata('error')): ?>
-        <div class="error"><?= session()->getFlashdata('error') ?></div>
+    <h2>Login</h2>
+    <?php if(session()->getFlashdata('error')): ?>
+        <div><?= session()->getFlashdata('error') ?></div>
     <?php endif; ?>
     <form action="<?= base_url('admin/auth/process') ?>" method="post">
-        <?= csrf_field() ?>
         <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        <br>
+        <input type="text" id="username" name="username" required><br><br>
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
+        <input type="password" id="password" name="password" required><br><br>
         <button type="submit">Login</button>
     </form>
 </body>

@@ -3,36 +3,30 @@
 namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
-use CodeIgniter\Filters\CSRF;
-use CodeIgniter\Filters\DebugToolbar;
-use CodeIgniter\Filters\Honeypot;
-use CodeIgniter\Filters\InvalidChars;
-use CodeIgniter\Filters\SecureHeaders;
-use App\Filters\AuthFilter;
 
 class Filters extends BaseConfig
 {
-    public array $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
-        'honeypot'      => Honeypot::class,
-        'invalidchars'  => InvalidChars::class,
-        'secureheaders' => SecureHeaders::class,
-        // 'auth'          => AuthFilter::class, // Comment out to disable
+    public $aliases = [
+        'csrf'     => \CodeIgniter\Filters\CSRF::class,
+        'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
+        'honeypot' => \CodeIgniter\Filters\Honeypot::class,
+        'auth'     => \App\Filters\AuthFilter::class, // Register your auth filter
     ];
 
-    public array $globals = [
+    public $globals = [
         'before' => [
-            // Comment out any global filters you don't want to use
+            // 'honeypot',
+            // 'csrf',
         ],
-        'after' => [
+        'after'  => [
             'toolbar',
+            // 'honeypot',
         ],
     ];
 
-    public array $methods = [];
+    public $methods = [];
 
-    public array $filters = [
-        // 'auth' => ['before' => ['admin/*']], // Comment out to disable
+    public $filters = [
+        'auth' => ['before' => ['admin/*', 'dasboard']], // Apply auth filter to specific routes
     ];
 }

@@ -9,40 +9,36 @@
             <div class="col-6 col-lg-3">
                 <div class="app-card app-card-stat shadow-sm h-100">
                     <div class="app-card-body p-3 p-lg-4">
-                        <h4 class="stats-type mb-1">commitment</h4>
+                        <h4 class="stats-type mb-1">Commitment</h4>
                         <div class="stats-figure"></div>
-                    </div><!--//app-card-body-->
+                    </div>
                     <a class="app-card-link-mask" href="<?= base_url('/admin/slider/index') ?>"></a>
-                </div><!--//app-card-->
-            </div><!--//col-->
+                </div>
+            </div>
 
             <div class="col-6 col-lg-3">
                 <div class="app-card app-card-stat shadow-sm h-100">
                     <div class="app-card-body p-3 p-lg-4">
-                        <h4 class="stats-type mb-1">how its work</h4>
-                        <div class="stats-figure">
-                            <div class="stats-figure"></div>
-                        </div>
-                        <div class="stats-meta text-success">
-                        </div>
-                    </div><!--//app-card-body-->
+                        <h4 class="stats-type mb-1">How it Works</h4>
+                        <div class="stats-figure"></div>
+                    </div>
                     <a class="app-card-link-mask" href="<?= base_url('/admin/produk/index') ?>"></a>
-                </div><!--//app-card-->
-            </div><!--//col-->
+                </div>
+            </div>
 
             <div class="col-6 col-lg-3">
                 <div class="app-card app-card-stat shadow-sm h-100">
                     <div class="app-card-body p-3 p-lg-4">
                         <h4 class="stats-type mb-1">Jumlah User</h4>
                         <div class="stats-figure"></div>
-                        <div class="stats-meta text-success">
-                        </div>
-                    </div><!--//app-card-body-->
+                    </div>
                     <a class="app-card-link-mask" href="<?= base_url('/admin/user/index') ?>"></a>
-                </div><!--//app-card-->
-            </div><!--//col-->
-        </div><!--//row-->
+                </div>
+            </div>
+        </div>
 
-    </div><!--//container-fluid-->
-</div><!--//app-content-->
+        <a href="<?= base_url('admin/logout') ?>">Logout</a> <!-- Add this line -->
+    </div>
+</div>
+
 <?= $this->endSection() ?>

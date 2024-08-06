@@ -9,24 +9,27 @@ class Auth extends BaseController
 {
     public function index()
     {
-        return view('admin/login/vw_login'); // Corrected path
+        if (session()->get('isLoggedIn')) {
+            return redirect()->to(base_url('dasboard'));
+        }
+        return view('admin/login/vw_login');
     }
 
     public function process()
     {
         $muser = new M_user();
-        $username = $this->request->getPost('username'); // Retrieve the username from the form
-        $password = $this->request->getPost('password'); // Retrieve the password from the form
+        $username = $this->request->getPost('username');
+        $password = $this->request->getPost('password');
 
-        $user = $muser->where('username', $username)->first(); // Fetch user from the database
+        $user = $muser->where('username', $username)->first();
 
         if ($user && password_verify($password, $user['password'])) {
-            $this->setUserSession($user); // Set user session if password matches
-            return redirect()->to(base_url('admin/dasboard')); // Redirect to dashboard
+            $this->setUserSession($user);
+            return redirect()->to(base_url('dasboard'));
         }
 
-        session()->setFlashdata('error', 'Invalid Username or Password'); // Set error message if authentication fails
-        return redirect()->back(); // Redirect back to the login page
+        session()->setFlashdata('error', 'Invalid Username or Password');
+        return redirect()->back();
     }
 
     private function setUserSession($user)
@@ -43,6 +46,6 @@ class Auth extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(base_url('login'));
+        return redirect()->to(base_url('admin/login'));
     }
 }

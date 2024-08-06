@@ -8,6 +8,11 @@ class Dashboard extends BaseController
 {
     public function index()
     {
-        return view('pages/admin/dasboard'); // Ensure this path is correct
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to(base_url('admin/login'));
+        }
+
+        return view('pages/admin/dasboard'); // Corrected path
     }
 }
+?>
