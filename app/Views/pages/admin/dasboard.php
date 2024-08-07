@@ -36,8 +36,6 @@
                 </div>
             </div>
         </div>
-
-        <a href="<?= base_url('admin/logout') ?>">Logout</a> <!-- Add this line -->
     </div>
 </div>
 

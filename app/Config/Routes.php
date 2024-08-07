@@ -15,7 +15,7 @@ $routes->get('/', function() {
 $routes->get('/id', 'HomepageController::index');
 $routes->get('/en', 'HomepageController::index');
 
-
+// Other routes...
 $routes->get('/id/destinasi', 'DestinationController::index');
 $routes->get('/id/destinasi/(:segment)', 'DestinationController::detail/$1');
 $routes->get('/en/destination', 'DestinationController::index');
@@ -57,10 +57,10 @@ $routes->get('/en/events', 'EventsController::index');
 
 //admin
 
-$routes->get('admin/login', 'admin\Auth::index');
-$routes->post('admin/auth/process', 'admin\Auth::process');
-$routes->get('admin/logout', 'admin\Auth::logout');
-$routes->get('/dasboard', 'admin\Dashboard::index', ['filter' => 'auth']); // Apply the auth filter
+    $routes->get('admin/login', 'admin\Auth::index');
+    $routes->post('admin/auth/process', 'admin\Auth::process');
+    $routes->get('admin/logout', 'admin\Auth::logoutPage'); // Ensure this route is correct
+    $routes->get('admin/dasboard', 'admin\Dashboard::index'); // Ensure the route matches the URL    
 
 $routes->get('/commitment', 'admin\Commitment::index');
 $routes->get('/tambahCommitment', 'admin\Commitment::tambah');
@@ -103,4 +103,5 @@ $routes->post('/proses_tambah_Article', 'admin\Articlectrl::proses_tambah');
 $routes->get('/editArticle/(:num)', 'admin\Articlectrl::edit/$1');
 $routes->post('/proses_edit_Article/(:num)', 'admin\Articlectrl::proses_edit/$1');
 $routes->get('/delete_Article/(:any)', 'admin\Articlectrl::delete/$1');
+
 ?>

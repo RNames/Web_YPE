@@ -10,21 +10,15 @@ class AuthFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        // If the user is not logged in
-        if (!session()->get('isLoggedIn')) {
-            if ($request->uri->getPath() !== 'admin/login') {
-                return redirect()->to(base_url('admin/login'));
-            }
-        } else {
-            // If the user is trying to access the login page while logged in, redirect to dashboard
-            if ($request->uri->getPath() === 'admin/login') {
-                return redirect()->to(base_url('dasboard'));
-            }
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to('admin/login');
         }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        // Do nothing
+        // Do something here
     }
 }
+

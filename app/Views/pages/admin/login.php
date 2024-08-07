@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!-- Add any CSS or JS files here -->
 </head>
 <body>
     <h2>Login</h2>
-    <?php if (session()->getFlashdata('error')): ?>
-        <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+
+    <!-- Display error message if set -->
+    <?php if (session()->getFlashdata('msg')): ?>
+    <div class="alert alert-danger">
+        <?= session()->getFlashdata('msg') ?>
+    </div>
     <?php endif; ?>
-    <form method="post" action="/admin/auth/loginProcess">
-        <div>
-            <label>Username</label>
-            <input type="text" name="username" required>
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="password" name="password" required>
-        </div>
+
+    <form action="<?= base_url('admin/auth/process') ?>" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
         <button type="submit">Login</button>
-    </form>
+</form>
 </body>
 </html>
