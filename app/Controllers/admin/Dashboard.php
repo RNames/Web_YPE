@@ -2,12 +2,13 @@
 
 namespace App\Controllers\admin;
 
-use App\Controllers\BaseController;
+use CodeIgniter\Controller;
 
-class Dashboard extends BaseController
+class Dashboard extends Controller
 {
     public function index()
     {
+        // Render the dashboard view
         return view('pages/admin/dasboard');
     }
 }

@@ -7,12 +7,12 @@ use CodeIgniter\Session\Handlers\FileHandler;
 
 class Session extends BaseConfig
 {
-    public string $driver = FileHandler::class;
-    public string $cookieName = 'ci_session';
-    public int $expiration = 7200;
-    public string $savePath = WRITEPATH . 'session';
-    public bool $matchIP = false;
-    public int $timeToUpdate = 300;
-    public bool $regenerateDestroy = false;
-    public ?string $DBGroup = null;
+    public $driver = 'CodeIgniter\Session\Handlers\FileHandler';
+public $cookieName = 'ci_session';
+public $expiration = 7200;
+public $savePath = WRITEPATH . 'session';
+public $matchIP = false;
+public $timeToUpdate = 300;
+public $regenerateDestroy = false;
+
 }

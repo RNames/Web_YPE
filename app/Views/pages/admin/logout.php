@@ -8,10 +8,11 @@
 </head>
 <body>
     <p>Logging you out...</p>
-    <?php
-    session()->destroy(); // Ensure session is destroyed before redirect
-    header("Refresh:2; url=" . base_url('admin/login')); // Redirect to login page after 2 seconds
-    exit();
-    ?>
+    <script>
+        // Redirect after 2 seconds
+        setTimeout(() => {
+            window.location.href = "<?= base_url('admin/login') ?>";
+        }, 2000);
+    </script>
 </body>
 </html>

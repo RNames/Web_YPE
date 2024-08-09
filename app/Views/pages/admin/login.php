@@ -26,6 +26,6 @@
         <br>
 
         <button type="submit">Login</button>
-</form>
+    </form>
 </body>
 </html>

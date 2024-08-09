@@ -57,10 +57,12 @@ $routes->get('/en/events', 'EventsController::index');
 
 //admin
 
-    $routes->get('admin/login', 'admin\Auth::index');
-    $routes->post('admin/auth/process', 'admin\Auth::process');
-    $routes->get('admin/logout', 'admin\Auth::logoutPage'); // Ensure this route is correct
-    $routes->get('admin/dasboard', 'admin\Dashboard::index'); // Ensure the route matches the URL    
+
+$routes->get('admin/login', 'admin\Auth::index');
+$routes->post('admin/auth/process', 'admin\Auth::process');
+// $routes->get('admin/logout', 'admin\Auth::logout'); // Commented out
+$routes->get('admin/dasboard', 'admin\Dashboard::index');
+
 
 $routes->get('/commitment', 'admin\Commitment::index');
 $routes->get('/tambahCommitment', 'admin\Commitment::tambah');

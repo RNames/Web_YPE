@@ -24,6 +24,6 @@ class Filters extends BaseConfig
     public array $methods = [];
 
     public array $filters = [
-        'auth' => ['before' => ['dasboard/*']],
+        'auth' => ['before' => ['admin/*']],
     ];
 }

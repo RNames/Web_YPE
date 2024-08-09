@@ -1,5 +1,7 @@
 <?php
 
+// C:\projectcomp\ype.kadinkotamalang.com\app\Filters\AuthFilter.php
+
 namespace App\Filters;
 
 use CodeIgniter\HTTP\RequestInterface;
@@ -21,4 +23,3 @@ class AuthFilter implements FilterInterface
         // Do something here
     }
 }
-
