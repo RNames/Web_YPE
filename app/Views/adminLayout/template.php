@@ -53,7 +53,6 @@
                         <div class="app-utilities col-auto">
                             <?php if (session()->get('logged_in')): ?>
                                 <p style="font-size: larger;">Selamat datang <?= session()->get('username'); ?></p>
-                                <a href="<?= base_url('admin/logout') ?>" class="btn btn-danger">Logout</a>
                             <?php else: ?>
                                 <p style="font-size: larger;">You are not logged in.</p>
                                 <a href="<?= base_url('admin/login') ?>" class="btn btn-primary">Login</a>

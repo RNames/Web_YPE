@@ -22,9 +22,9 @@ class Loginctrl extends BaseController
     {
         $users = new UserModel();
         $username = $this->request->getVar('username');
-        $password = md5($this->request->getVar('password')); // MD5 password hashing
+        $password = md5($this->request->getVar('password')); 
 
-        $dataUser = $users->getUserByUsername($username); // Use the model's method to get the user by username
+        $dataUser = $users->getUserByUsername($username); 
 
         if ($dataUser) {
             if ($password === $dataUser->password) {
@@ -32,7 +32,7 @@ class Loginctrl extends BaseController
                     'username' => $dataUser->username,
                     'logged_in' => TRUE
                 ]);
-                return redirect()->to(base_url('admin/dashboard')); // Redirect to the dashboard
+                return redirect()->to(base_url('admin/dashboard')); 
             } else {
                 session()->setFlashdata('error', 'Username & Password Salah');
                 return redirect()->back();

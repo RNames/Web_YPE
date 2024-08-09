@@ -1,54 +1,129 @@
 <?= $this->extend('admin/template/login'); ?>
-<?= $this->Section('content'); ?>
+<?= $this->section('content'); ?>
 
-<div class="row g-0 app-auth-wrapper">
-	<div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
-		<div class="d-flex flex-column align-content-end">
-			<div class="app-auth-body mx-auto">
-				<div class="app-auth-branding mb-4">
-					<a class="app-logo" href="<?= base_url(); ?>">
-						<img class="logo-icon me-2" src="<?php echo base_url('assets/images/app-logo.svg'); ?>" alt="logo">
-					</a>
-				</div>
-				<h2 class="auth-heading text-center mb-5">Log in to Your Application</h2>
-				<div class="auth-form-container text-start">
-					<?php if (!empty(session()->getFlashdata('error'))) : ?>
-						<div class="alert alert-warning alert-dismissible fade show" role="alert">
-							<?php echo session()->getFlashdata('error'); ?>
-						</div>
-					<?php endif; ?>
-					<?php if (session()->get('isLoggedIn')) : ?>
-						<div class="alert alert-info" role="alert">
-							You are already logged in. Please log out first.
-						</div>
-					<?php endif; ?>
-					<form class="auth-form login-form" method="post" action="<?php echo base_url('login/process'); ?>">
-						<?= csrf_field(); ?>
-						<div class="email mb-3">
-							<label class="sr-only" for="username">Username</label>
-							<input id="username" name="username" type="text" class="form-control username" placeholder="username" required="required">
-						</div>
-						<div class="password mb-3">
-							<label class="sr-only" for="password">Password</label>
-							<input id="password" name="password" type="password" class="form-control password" placeholder="password" required="required">
-						</div>
-						<div class="text-center">
-							<button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">Log In</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
-		<div class="auth-background-holder"></div>
-		<div class="auth-background-mask"></div>
-		<div class="auth-background-overlay p-3 p-lg-5">
-			<div class="d-flex flex-column align-content-end h-100">
-				<div class="h-100"></div>
-			</div>
-		</div>
-	</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<?= $this->endSection('content'); ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Your Private Europe</title>
+    <!-- Update the favicon link to use the correct path -->
+    <link rel="icon" type="image/png" href="<?= base_url('assets/images/YPE-LOGO-BLUE-GOLD-SMALL.png'); ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .bg-slider {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }	
+
+        .bg-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .bg-slider img.active {
+            opacity: 1;
+        }
+
+        .login-container {
+            height: 100%;
+            display: flex;
+            justify-content: center; /* Center the form horizontally */
+            align-items: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.85); /* Slight transparency for an elegant effect */
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 15px auto;
+            width: 95px; /* Adjust the width as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Image Slider -->
+    <div class="bg-slider">
+        <img src="https://img.freepik.com/free-photo/beautiful-diamond-beach-penida-island-bali-indonesia_181624-41884.jpg" alt="Image 1" class="active">
+        <img src="https://img.freepik.com/free-photo/sunrise-bali-jungle_1385-1644.jpg" alt="Image 2">
+        <img src="https://img.freepik.com/free-photo/lake-volcanic-crater_23-2151739421.jpg" alt="Image 3">
+        <img src="https://img.freepik.com/free-photo/mountainous-landscape-with-fog_1150-18328.jpg" alt="Image 4">
+        <img src="https://img.freepik.com/free-photo/mountainous-landscape-with-fog_1150-18328.jpg" alt="Image 5">
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <div class="card">
+		<img loading="lazy" class="logo" src="<?= base_url('assets/images/YPE-LOGO-BLUE-GOLD-SMALL.png'); ?>" alt="logo" style="width: 95px;">
+            <h3 class="text-center mb-5">Login to Your Private Europe</h3>
+            <form class="auth-form login-form" method="post" action="<?= base_url('login/process'); ?>">
+                <?= csrf_field(); ?>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="username" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 1;
+        const images = document.querySelectorAll('.bg-slider img');
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 5000);
+    </script>
+</body>
+
+</html>
+
+<?= $this->endSection(); ?>
