@@ -6,24 +6,31 @@ use CodeIgniter\Config\BaseConfig;
 
 class Filters extends BaseConfig
 {
-    public array $aliases = [
-        'csrf'  => \CodeIgniter\Filters\CSRF::class,
-        'toolbar' => \CodeIgniter\Filters\DebugToolbar::class,
-        'auth' => \App\Filters\AuthFilter::class,
+    public $aliases = [
+        'csrf'     => \CodeIgniter\Filters\CSRF::class,
+        'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
+        'honeypot' => \CodeIgniter\Filters\Honeypot::class,
+        'auth'     => \App\Filters\AuthFilter::class, // Register the AuthFilter here
     ];
 
-    public array $globals = [
+    public $globals = [
         'before' => [
+            // Global filters to run before every request
             // 'csrf',
         ],
         'after'  => [
             'toolbar',
+            // 'honeypot',
         ],
     ];
 
-    public array $methods = [];
+    public $methods = [];
 
-    public array $filters = [
-        'auth' => ['before' => ['admin/*']],
+    public $filters = [
+        'auth' => ['before' => [
+            'commitment/*', // Apply auth filter to all commitment routes
+            'dashboard/*',  // Apply auth filter to dashboard
+            'other/admin/sections/*' // Add other admin sections here
+        ]]
     ];
 }
