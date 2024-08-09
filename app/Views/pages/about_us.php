@@ -41,7 +41,7 @@
                                                     </div>
 
                                                     <div class="btn-align">
-                                                        <a style="font-family: 'Open Sans';font-family:'Open Sans';font-size: 18px; line-height: 31px;font-weight: 600;" class="eg-btn btn--primary3-outline sibling-2 btn--lg" href="/<?= $language ?>/<?= $language == 'id' ? 'hubungi-kami' : 'contact-us' ?>">
+                                                        <a style="font-family: 'Open Sans';font-family:'Open Sans';font-size: 18px;border-radius: 30px; line-height: 31px;font-weight: 600;" class="eg-btn btn--primary3-outline sibling-2 btn--lg" href="/<?= $language ?>/<?= $language == 'id' ? 'hubungi-kami' : 'contact-us' ?>">
                                                             <?= $language == 'id' ? 'HUBUNGI KAMI' : 'CONTACT US NOW' ?>
                                                         </a>
                                                     </div>

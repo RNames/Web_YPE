@@ -83,11 +83,11 @@
 <body>
     <!-- Background Image Slider -->
     <div class="bg-slider">
-        <img src="https://img.freepik.com/free-photo/beautiful-diamond-beach-penida-island-bali-indonesia_181624-41884.jpg" alt="Image 1" class="active">
-        <img src="https://img.freepik.com/free-photo/sunrise-bali-jungle_1385-1644.jpg" alt="Image 2">
-        <img src="https://img.freepik.com/free-photo/lake-volcanic-crater_23-2151739421.jpg" alt="Image 3">
-        <img src="https://img.freepik.com/free-photo/mountainous-landscape-with-fog_1150-18328.jpg" alt="Image 4">
-        <img src="https://img.freepik.com/free-photo/mountainous-landscape-with-fog_1150-18328.jpg" alt="Image 5">
+        <img src="https://wildnordics.com/wp-content/uploads/2019/01/Dolomites_Italy.jpg" alt="Image 1" class="active">
+        <img src="https://cdn.prod.website-files.com/5f58a077d654db1a689fd95b/62136cd01720ee70886ca662_picfair-014732403-lake-over-the-sea-fu-PREVIEW-ONLY.jpg" alt="Image 2">
+        <img src="https://i.natgeofe.com/n/fdf294e2-8cd5-4fe5-884e-836bff2092f9/europe-hikes-alpe-adria.jpg" alt="Image 3">
+        <img src="https://media.cnn.com/api/v1/images/stellar/prod/190905140911-15-europe-beautiful-places.jpg?q=w_2056,h_1157,x_0,y_0,c_fill" alt="Image 4">
+        <img src="https://www.telegraph.co.uk/content/dam/Travel/2019/November/tuscany-iStock-978368192.jpg" alt="Image 5">
     </div>
 
     <!-- Login Form -->
@@ -120,7 +120,7 @@
             images[currentIndex].classList.add('active');
         }
 
-        setInterval(showNextImage, 5000);
+        setInterval(showNextImage, 4000);
     </script>
 </body>
 

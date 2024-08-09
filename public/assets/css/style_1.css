@@ -513,7 +513,7 @@ i.bx {
   transition: 0.5s;
   z-index: -1;
   transform: scale(0.6);
-  border-radius: 0px;
+  border-radius: 30px;
   opacity: 0;
 }
 .btn--primary:hover {
@@ -527,7 +527,7 @@ i.bx {
 .btn--primary2 {
   background: var(--primary-color2);
   color: var(--text-primary);
-  border-radius: 0px;
+  border-radius: 30px;
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -548,7 +548,7 @@ i.bx {
   transition: 0.5s;
   z-index: -1;
   transform: scale(0.6);
-  border-radius: 0px;
+  border-radius: 30px;
   opacity: 0;
 }
 .btn--primary2:hover {
@@ -600,7 +600,7 @@ i.bx {
 .btn--primary3 {
   background: var(--primary-color3);
   color: var(--white);
-  border-radius: 0px;
+  border-radius: 30px;
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -621,7 +621,7 @@ i.bx {
   transition: 0.5s;
   z-index: -1;
   transform: scale(0.6);
-  border-radius: 0px;
+  border-radius: 30px;
   opacity: 0;
 }
 .btn--primary3:hover {
@@ -656,7 +656,7 @@ i.bx {
   transition: 0.5s;
   z-index: -1;
   transform: scale(0.6);
-  border-radius: 0px;
+  border-radius: 30px;
   opacity: 0;
 }
 .btn--primary-outline:hover {
@@ -692,7 +692,7 @@ i.bx {
   transition: 0.5s ease;
   z-index: -1;
   transform: scale(0.6);
-  border-radius: 0px;
+  border-radius: 30px;
   opacity: 0;
 }
 .btn--primary3-outline:hover {

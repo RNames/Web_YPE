@@ -88,7 +88,7 @@
                                         <textarea placeholder="<?= lang('text_contact_us.message') ?>" name="message" required></textarea>
                                     </div>
                                     <div>
-                                        <a href="" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d; font-family: 'Open Sans';font-weight: 600!important; width: 100%;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">kirim</a>
+                                        <a href="" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d;border-radius: 5px; font-family: 'Open Sans';font-weight: 600!important; width: 100%;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">kirim</a>
                                     </div>
 
                                 </form>

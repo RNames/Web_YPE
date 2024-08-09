@@ -128,7 +128,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d; font-family: 'Open Sans';font-weight: 600!important;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'"><?= lang('text_destination.explore_button') ?></a>
+                            <a href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d;border-radius: 30px; font-family: 'Open Sans';font-weight: 600!important;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'"><?= lang('text_destination.explore_button') ?></a>
                             
                         </div>
                     </div>

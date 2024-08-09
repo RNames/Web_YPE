@@ -5,6 +5,7 @@
     .eg-btn {
         font-family: 'Open Sans' !important;
         font-weight: 600 !important;
+        border-radius: 30px !important;
     }
 </style>
 
