@@ -170,18 +170,18 @@
                                                                 </a>
                                                             </p>
                                                             
-                                                            <div class="btn-group" style="display: flex;justify-content: center;flex-direction: column; margin-top: 20px !important;">
-                                                                <div class="dsc-btn">
-                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>" class="eg-btn btn--primary-outline" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif !important;background-color: #e0bc6d;border-radius: 30px; font-size: 18px; line-height: 31px; display: flex;align-items:center; letter-spacing: 0.5px;" onmouseout="this.style.cursor='default'" onmouseover="this.style.cursor='pointer'">
-                                                                        <i aria-hidden="true    w"></i>
-                                                                        <?= strtoupper(lang("text_homepage.banner_button")) ?>
-                                                                    </a>
-                                                                </div>
+                                                            <div class="btn-group" style="display: flex;justify-content: center;flex-direction:column ; margin-top: 20px !important;">
+                                                                    <div class="dsc-btn">
+                                                                        <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>" class="eg-btn btn--primary-outline" style="font-family: 'Open Sans' !important;background-color: #e0bc6d; font-size: 18px; line-height: 31px; display: flex;justify-content: space-around;align-items:center;" onmouseout="this.style.cursor='default'" onmouseover="this.style.cursor='pointer'">
+                                                                            <i aria-hidden="true"></i>
+                                                                            <?= strtoupper(lang("text_homepage.banner_button")) ?>
+                                                                        </a>
+                                                                    </div>
                                                                 <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
                                                                     <div class="trip-rating">
-                                                                        <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 500; font-size: 18px; line-height: 24px; letter-spacing: 0.5px;">
+                                                                        <div class="cnt" style="display: flex;flex-direction: column;align-items: center; font-size: 18px; line-height: 24px;">
                                                                             <img loading="lazy" src="<?= base_url('assets/images/trustpilot.svg') ?>" alt="trustpilot-rating" style="height: 30px !important;width: 130px ;">
-                                                                            <p>See our <span>37</span> reviews on Trustpilot</p>
+                                                                            <p>See our 37 reviews on Trustpilot</p>
                                                                         </div>
                                                                     </div>
                                                                 </a>
@@ -402,10 +402,7 @@
                                         <span class="about-us-desc" style="color: black !important; font-family: 'Open Sans', Arial, sans-serif !important; line-height: 24px;">
                                             <?php 
                                             $description = $language == 'id' ? $aboutUs['description_id'] : $aboutUs['description_en'];
-                                            echo substr($description, 0, 500);
-                                            if (strlen($description) > 500) {
-                                                echo '...';
-                                            }
+                                            echo substr($description, 0, 1000);
                                             ?>
                                         </span>
                                     </div>
@@ -673,35 +670,97 @@
                         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-811c3aa" data-id="811c3aa" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <div class="elementor-element elementor-element-8eaecf0 elementor-widget elementor-widget-astrip_tour_package" data-id="8eaecf0" data-element_type="widget" data-widget_type="astrip_tour_package.default">
+                                    
                                     <div class="deal-section">
-                                        <div class="container-fluid">
-                                            <div class="row justify-content-center g-4">
-                                                <div class="slider-container slick-slider">
-                                                    <?php foreach ($testimonials as $testimonial) : ?>
-                                                        <div class="slick-slide">
-                                                            <div class="deal-single1">
-                                                                <div class="deal-image d-flex justify-content-center">
-                                                                    <img loading="lazy" fetchpriority="high" decoding="async" width="425" height="345" src="<?= base_url('assets/images/testimonials/') . $testimonial['image'] ?>" class="img-fluid wp-post-image testimonial-image" alt="">
-                                                                </div>
-                                                                <div class="deal-content">
-                                                                    <h4>
-                                                                        <a style="font-family: 'Open Sans'; color: black;">
+                                            <div class="container-fluid">
+                                                <div class="row justify-content-center g-4">
+                                                    <div class="slider-container slick-slider">
+                                                        <?php foreach ($testimonials as $testimonial) : ?>
+                                                            <div class="slick-slide">
+                                                                <div class="deal-single1 card">
+                                                                    <div class="deal-image d-flex justify-content-center">
+                                                                        <img loading="lazy" fetchpriority="high" decoding="async" width="425" height="345" src="<?= base_url('assets/images/testimonials/') . $testimonial['image'] ?>" class="img-fluid wp-post-image testimonial-image" alt="">
+                                                                    </div>
+                                                                    <div class="deal-content p-3">
+                                                                        <h4 class="font-weight-bold" style="font-family: 'Open Sans'; color: black; font-size: 16px; font-weight:700">
                                                                             <?= htmlspecialchars($testimonial['name']) ?>
-                                                                        </a>
-                                                                    </h4>
-                                                                    <div class="price">
-                                                                        <span style="font-size: 18px; line-height: 24px;font-weight: 500; font-family: 'Open Sans';">
-                                                                            <?= $language == 'id' ? $testimonial['description_id'] : $testimonial['description_en'] ?>
-                                                                        </span>
+                                                                        </h4>
+                                                                        <div class="price mt-2">
+                                                                            <span style="font-size: 16px; line-height: 24px; font-weight: 500; font-family: 'Open Sans';">
+                                                                                <?= $language == 'id' ? $testimonial['description_id'] : $testimonial['description_en'] ?>
+                                                                            </span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    <?php endforeach; ?>
+                                                        <?php endforeach; ?>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+
+                                        <script>
+                                            $(document).ready(function() {
+                                                $('.slider-container').slick({
+                                                    slidesToShow: 3, // Jumlah slide yang ditampilkan di tampilan web
+                                                    slidesToScroll: 1, // Jumlah slide yang di-scroll sekaligus
+                                                    autoplay: true,
+                                                    autoplaySpeed: 2000,
+                                                    arrows: true,
+                                                    dots: false,
+                                                    infinite: true,
+                                                    responsive: [{
+                                                        breakpoint: 768, // Lebar layar di mana konfigurasi di bawah ini akan diaktifkan
+                                                        settings: {
+                                                            slidesToShow: 1, // Jumlah slide yang ditampilkan di tampilan mobile
+                                                            slidesToScroll: 1, // Jumlah slide yang di-scroll sekaligus di tampilan mobile
+                                                            dots: false, // Menonaktifkan dots di tampilan mobile
+                                                            arrows: false // Menonaktifkan panah navigasi di tampilan mobile
+                                                        }
+                                                    }]
+                                                });
+                                            });
+                                        </script>
+
+                                        <style>
+                                            .deal-single1 {
+                                                background-color: white;
+                                                border-radius: 15px;
+                                                overflow: hidden;
+                                                transition: all 0.3s ease;
+                                                margin: 30px;
+                                            }
+
+                                            .deal-image img {
+                                                border-top-left-radius: 15px;
+                                                border-top-right-radius: 15px;
+                                                width: 100%;
+                                                height: auto;
+                                            }
+
+                                            .card {
+                                                border: none;
+                                                border-radius: 15px;
+                                                box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+
+                                            }
+
+                                            .card:hover {
+                                                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                                            }
+
+                                            .card h4 {
+                                                margin-top: 10px;
+                                                margin-bottom: 5px;
+                                            }
+
+                                            .card .price {
+                                                font-size: 16px;
+                                                color: #555;
+                                            }
+                                        </style>
+
+
                                     <section class="elementor-section elementor-top-section elementor-element elementor-element-e8d46a5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e8d46a5" data-element_type="section" style="padding-bottom: 60px !important;">
                                         <div class="elementor-container elementor-column-gap-default">
                                             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b17e34d" data-id="b17e34d" data-element_type="column">
@@ -715,15 +774,69 @@
                                                         </div>
                                                     </a>
                                                     <div class="elementor-element elementor-element-15c7e1e elementor-widget elementor-widget-astrip_button" data-id="15c7e1e" data-element_type="widget" data-widget_type="astrip_button.default">
-                                                        <div class="elementor-widget-container" style="display: flex; justify-content: center;">
-                                                            <a aria-hidden="true" href="https://www.instagram.com/yourprivateeurope?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d;border-radius: 30px; font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
-                                                                Follow on Instagram
-                                                            </a>
-                                                        </div>
+                                                            <ul class="topbar-right-social_list1">
+                                                                <li>
+                                                                    <a target="_blank" href="https://www.instagram.com/yourprivateeurope/">
+                                                                        <i class="fab fa-instagram"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a target="_blank" href="https://www.tiktok.com/@yourprivateeurope">
+                                                                        <i class="fa-brands fa-tiktok"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a target="_blank" href="https://www.youtube.com/@yourprivateeurope">
+                                                                        <i class="fa-brands fa-youtube"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a target="_blank" href="https://www.linkedin.com/company/your-private-europe/">
+                                                                        <i class="fab fa-linkedin-in"></i>
+                                                                    </a>
+                                                                </li>
+                                                                
+                                                            </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <style>
+                                                .topbar-right-social_list1 {
+                                                    display: flex;
+                                                    list-style: none;
+                                                    padding: 0;
+                                                    gap: 10px;
+                                                    justify-content: center;
+                                                    /* Center horizontally */
+                                                }
+
+                                                .topbar-right-social_list1 li {
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    background-color: white;
+                                                    border-radius: 5px;
+                                                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                                                    width: 50px;
+                                                    height: 50px;
+                                                }
+
+                                                .topbar-right-social_list1 li a {
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    text-decoration: none;
+                                                    font-size: 24px;
+                                                    color: inherit;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                }
+
+                                                .topbar-right-social_list1 li a:hover {
+                                                    color: #0073e6;
+                                                }
+                                            </style>
                                     </section>
                                 </div>
                             </div>
@@ -772,91 +885,6 @@ $(document).ready(function() {
 
 </script>
 
-
-<!-- External CSS -->
-<style>
-.deal-single1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.deal-image {
-    width: 100%;
-    max-width: 400px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
-    background-color: #fff;
-    padding: 0;
-}
-
-.testimonial-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.deal-content {
-    text-align: center;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.slick-slide {
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.slider-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
-
-/* Responsive settings */
-@media (max-width: 1024px) {
-    .slick-slide {
-        padding: 0 15px;
-    }
-
-    .deal-image {
-        max-width: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    .slick-slide {
-        padding: 0 10px;
-    }
-
-    .deal-image {
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 576px) {
-    .slick-slide {
-        padding: 0 5px;
-    }
-
-    .deal-image {
-        max-width: 100%;
-    }
-}
-
-
-</style>
 <!-- Testimoni End -->
     <section style="margin-top: 60px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
@@ -1023,41 +1051,32 @@ $(document).ready(function() {
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-811c3aa" data-id="811c3aa" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
                     <div class="elementor-element elementor-element-8eaecf0 elementor-widget elementor-widget-astrip_tour_package" data-id="8eaecf0" data-element_type="widget" data-widget_type="astrip_tour_package.default">
-                        
+
                         <div class="deal-section">
                             <div class="container-fluid">
                                 <div class="row justify-content-center g-4">
                                     <div class="slider-container slick-slider">
-                                        <?php foreach ($destinations as $destination): ?>
+                                        <?php foreach ($destinations as $destination) : ?>
                                             <div class="slick-slide">
-                                                <div class="deal-single1">
-                                                    <div class="deal-image d-flex justify-content-center">
-                                                        <img loading="lazy" fetchpriority="high" decoding="async" width="425" height="345" src="<?= base_url('assets/images/destinations/') . $destination['image'] ?>" class="img-fluid wp-post-image" alt="<?= $destination['alt_image'] ?>" />
-                                                    </div>
-                                                    <div class="deal-content">
-                                                        <h4>
-                                                            <a style="font-family: 'Open Sans'; color: black;" href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>">
-                                                                <?= strtoupper($destination['title']) ?>
-                                                            </a>
-                                                        </h4>
-                                                        <div class="price">
-                                                            <span style="font-size: 18px; line-height: 24px;font-weight: 500; font-family: 'Open Sans';">
-                                                                <?= $language == 'id' ? $destination['duration_id'] : $destination['duration_en'] ?>
-                                                            </span>
+                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>" class="card-link">
+                                                    <div class="deal-single1 card">
+                                                        <div class="deal-image d-flex justify-content-center">
+                                                            <img loading="lazy" fetchpriority="high" decoding="async" width="425" height="345" src="<?= base_url('assets/images/destinations/') . $destination['image'] ?>" class="img-fluid wp-post-image" alt="<?= $destination['alt_image'] ?>" />
                                                         </div>
-                                                        <div class="elementor-element elementor-element-15c7e1e elementor-widget elementor-widget-astrip_button">
-                                                            <div class="elementor-widget-container">
-                                                                <div class="row justify-content-center">
-                                                                    <div class="btn-align d-flex justify-content-center">
-                                                                        <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d; font-family: 'Oswald';border-radius: 30px; padding: 10px 35px;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
-                                                                            <?= lang("text_homepage.trending_destination") ?>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
+                                                        <div class="deal-content card-body">
+                                                            <h4>
+                                                                <span class="deal-title">
+                                                                    <?= strtoupper($destination['title']) ?>
+                                                                </span>
+                                                            </h4>
+                                                            <div class="price">
+                                                                <span style="font-size: 18px; line-height: 24px;font-weight: 500; font-family: 'Open Sans';">
+                                                                    <?= $language == 'id' ? $destination['duration_id'] : $destination['duration_en'] ?>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </a>
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
@@ -1065,45 +1084,75 @@ $(document).ready(function() {
                             </div>
                         </div>
                         <script>
-                        $(document).ready(function() {
-                            $('.slider-container').slick({
-                                slidesToShow: 3, // Jumlah slide yang ditampilkan di tampilan web
-                                slidesToScroll: 1, // Jumlah slide yang di-scroll sekaligus
-                                autoplay: true,
-                                autoplaySpeed: 2000,
-                                arrows: true,
-                                dots: true,
-                                infinite: true,
-                                responsive: [
-                                    {
-                                        breakpoint: 768, // Lebar layar di mana konfigurasi di bawah ini akan diaktifkan
+                            $(document).ready(function() {
+                                $('.slider-container').slick({
+                                    slidesToShow: 3, // Number of slides to show on desktop
+                                    slidesToScroll: 1, // Number of slides to scroll at once
+                                    autoplay: true,
+                                    autoplaySpeed: 2000,
+                                    arrows: true,
+                                    dots: true,
+                                    infinite: true,
+                                    responsive: [{
+                                        breakpoint: 768, // Screen width at which settings below will be applied
                                         settings: {
-                                            slidesToShow: 1, // Jumlah slide yang ditampilkan di tampilan mobile
-                                            slidesToScroll: 1, // Jumlah slide yang di-scroll sekaligus di tampilan mobile
-                                            dots: true, // Menampilkan dots di tampilan mobile
-                                            arrows: false // Menonaktifkan panah navigasi di tampilan mobile
+                                            slidesToShow: 1, // Number of slides to show on mobile
+                                            slidesToScroll: 1, // Number of slides to scroll at once on mobile
+                                            dots: true, // Show dots on mobile
+                                            arrows: false // Disable navigation arrows on mobile
                                         }
-                                    }
-                                ]
+                                    }]
+                                });
                             });
-                        });
                         </script>
                         <style>
+                            .card-link {
+                                text-decoration: none;
+                                color: inherit;
+                            }
+
+                            .deal-single1 {
+                                transition: transform 0.3s, box-shadow 0.3s;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            }
+
+                            .deal-single1:hover {
+                                transform: translateY(-10px);
+                                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                            }
+
                             .deal-image {
-                                width: 480px;
+                                width: 100%;
                                 height: 270px;
                                 overflow: hidden;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
                             }
-                            .testimonial-image {
+
+                            .deal-image img {
                                 width: 100%;
                                 height: 100%;
                                 object-fit: cover;
                             }
 
-                            </style>
+                            .deal-content {
+                                padding: 1rem;
+                                text-align: center;
+                            }
+
+                            .deal-title {
+                                font-family: 'Open Sans';
+                                color: black;
+                                transition: color 0.3s;
+                            }
+
+                            .card-link:hover .deal-title {
+                                color: #000;
+                                /* Retain the color change on hover */
+                            }
+                        </style>
+
                         <section style="padding-bottom: 60px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-e8d46a5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e8d46a5" data-element_type="section">
                             <div class="elementor-container elementor-column-gap-default">
                                 <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b17e34d" data-id="b17e34d" data-element_type="column">
@@ -1113,7 +1162,7 @@ $(document).ready(function() {
                                             <div class="elementor-widget-container">
                                                 <div class="row justify-content-center">
                                                     <div class="btn-align d-flex justify-content-center">
-                                                        <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d;border-radius: 30px;font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                                                        <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>" class="eg-btn btn--primary-outline btn--lg" style="border-radius:30px; background-color: #e0bc6d;font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
                                                             <?= lang("text_homepage.all_destination") ?>
                                                         </a>
                                                     </div>
