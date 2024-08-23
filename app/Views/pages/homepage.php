@@ -28,7 +28,7 @@
 
         #heading2-banner-homepage {
             text-align: center;
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 700;
             color: #fff;
             margin-top: 5px; /* Reduced margin */
@@ -62,7 +62,7 @@
         #heading1-homepage {
             width: 100%;
             text-align: center;
-            font-size: 37px;
+            font-size: 30px;
             font-weight: 500;
             text-shadow: 2px 2px #69727d;
             margin-bottom: 10px; /* Reduced margin */
@@ -70,7 +70,7 @@
 
         #heading2-banner-homepage {
             text-align: center;
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 700;
             color: #fff;
             margin-top: 10px; /* Reduced margin */
@@ -153,10 +153,10 @@
                                                     <div class="col-12 col-lg-9">
                                                         <div class="hero-content" id="slider-homepage" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; letter-spacing: 0.5px;">
                                                             <!-- <span id="subtitle-banner-homepage"><?= $language == 'id' ? $homepage['sub_title_id'] : $homepage['sub_title_en'] ?></span> -->
-                                                            <h1 id="heading1-homepage" style="text-shadow: 0.02em 0.11em 0.1em rgba(0,0,0,0.4);font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 450; font-size: 48px; letter-spacing: 0.5px; margin-bottom: 10px;">
+                                                            <h1 id="heading1-homepage" style="text-shadow: 0.02em 0.11em 0.1em rgba(0,0,0,0.4);font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 450; letter-spacing: 0.5px; margin-bottom: 10px;">
                                                                 <?= $language == 'id' ? strtoupper($homepage['title_id']) : strtoupper($homepage['title_en'])  ?>
                                                             </h1>
-                                                            <p id="heading2-banner-homepage" style="text-shadow: 0px 2px #69727d;font-family: Open Sans,Arial,sans-serif; font-weight: 700; font-size: 28px; line-height: 1.8em; letter-spacing: 0.5px; margin-top: 10px;">
+                                                            <p id="heading2-banner-homepage" style="text-shadow: 0px 2px #69727d;font-family: Open Sans,Arial,sans-serif; font-weight: 700; line-height: 1.8em; letter-spacing: 0.5px; margin-top: 10px;">
                                                                 <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
                                                                     VIP Services
                                                                 </a>
@@ -1630,7 +1630,6 @@ $(document).ready(function() {
             .col-text, .col-button {
                 width: 100%; /* Membuat kolom penuh lebar layar */
                 text-align: center;
-                padding-right: 500px;/* Pusatkan teks dan tombol */
             }
 
             /* Atur posisi teks di atas tombol */

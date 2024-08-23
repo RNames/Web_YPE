@@ -120,7 +120,7 @@
   );
 }
 .swiper-css-mode > .swiper-wrapper {
-  overflow: auto;
+  overflow: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
