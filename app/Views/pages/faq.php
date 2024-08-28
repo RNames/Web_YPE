@@ -74,12 +74,14 @@
                                 <div class="elementor-element elementor-element-68b1738 elementor-widget elementor-widget-astrip_accordion" data-id="68b1738" data-element_type="widget" data-widget_type="astrip_accordion.default">
                                     <div class="elementor-widget-container">
 
-                                        <?php
-                                        foreach ($faqCategories as $faqCat) : ?>
-                                            <h3 style="margin: 30px 0px;font-weight: 700;font-size: 30px;line-height: 42px;font-family: 'Open Sans' !important;color: black;">- <?= $language == 'id_faq_category' ? $faqCat['name_id'] : $faqCat['name_en'] ?> -</h3>
+                                        <?php foreach ($faqCategories as $faqCat) : ?>
+                                            <h3 style="text-align:center; margin: 10px 0px; font-weight: 700; font-size: 30px; line-height: 42px; font-family: 'Open Sans' !important; color: black;">
+                                                <?= $language == 'id' ? $faqCat['name_id'] : $faqCat['name_en'] ?>
+                                            </h3> 
+                                            <span style="display: block; height: 3px; background-color: #086b72; width: 100px; margin: 0 auto 20px;"></span>
                                             <div style="margin-bottom: 100px;" class="faq-wrap">
                                                 <div class="accordion" id="accordionExample">
-
+                                                
                                                     <?php $id = 0;
                                                     foreach ($faqs as $faq) :  $id++ ?>
                                                         <?php if ($faq['id_faq_category'] == $faqCat['id_faq_category']) : ?>

@@ -8,10 +8,9 @@
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
                 <div class="breadcrumb-area">
-                    <h2>
-                        Our Services
-                    </h2>
-                    <span>Our Services Gallery</span>
+                    <h2 style="color:white;font-family: var(--font-merriw); font-weight: 700; font-size: 50px; line-height: 42px;text-transform:uppercase;">
+                                <?= $language == 'id' ? $service['head_title'] : $service['head_title'] ?>
+                     </h2>
                 </div>
             </div>
         </div>
@@ -32,7 +31,7 @@
                                         <div class=" justify-content-center">
                                             <div class="section-title1">
 
-                                                <h2  class="title-section" style="margin-bottom: 15px !important;color:black;font-family: 'Open Sans'; font-weight: 700; font-size: 30px; line-height: 42px;">
+                                                <h2  class="title-section" style="text-transform: uppercase ;margin-bottom: 15px !important;color:black;font-family: 'Open Sans'; font-weight: 700; font-size: 30px; line-height: 42px;">
                                                     <?= $language == 'id' ? $service['title_id'] : $service['title_en'] ?>
                                                 </h2>
                                                 <div class="heading-ribbon flex justify-center">

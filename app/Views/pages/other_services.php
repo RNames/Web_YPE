@@ -72,29 +72,174 @@
                 <div class="circle-loader"></div>
                 <div class="row g-4" id="tourFilterData">
 
-                    <?php foreach ($otherServices as $otherService) : ?>
-                        <div class="col-12">
-                            <div class="tour-package-standard" style="align-items: start;max-width:100% !important">
-                                <div class="tour-standard-image" style="max-width:768px !important;min-width: 512px !important;">
+                <?php foreach ($otherServices as $index => $otherService) : ?>
+    <div class="col-12 d-flex justify-content-center">
+        <div class="tour-package-custom">
+            <div class="overlay-custom"></div>
+            <?php if ($index % 2 == 0) : ?>
+                <!-- Gambar di sebelah kiri, teks di sebelah kanan -->
+                <div class="tour-image-custom">
+                    <img src="<?= base_url('assets/images/other_services/' . $otherService['image']) ?>" alt="<?= $otherService['title_en'] ?>" class="img-fluid">
+                </div>
+                <div class="tour-content-custom">
+                    <h4>
+                        <?= $language == 'id' ? $otherService['title_id'] : $otherService['title_en'] ?>
+                    </h4>
+                    <div class="list-area-custom">
+                        <?= $language == 'id' ? $otherService['description_id'] : $otherService['description_en'] ?>
+                    </div>
+                </div>
+            <?php else : ?>
+                <!-- Gambar di sebelah kanan, teks di sebelah kiri -->
+                <div class="tour-content-customize">
+                    <h4>
+                        <?= $language == 'id' ? $otherService['title_id'] : $otherService['title_en'] ?>
+                    </h4>
+                    <div class="list-area-customize">
+                        <?= $language == 'id' ? $otherService['description_id'] : $otherService['description_en'] ?>
+                    </div>
+                </div>
+                <div class="tour-image-customize">
+                    <img src="<?= base_url('assets/images/other_services/' . $otherService['image']) ?>" alt="<?= $otherService['title_en'] ?>" class="img-fluid">
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php endforeach; ?>
 
-                                    <img src="<?= base_url('assets/images/other_services/' . $otherService['image']) ?>" class="img-fluid wp-post-image" alt="<?= $otherService['title_en'] ?>" decoding="async" loading="lazy">
-                                </div>
-                                <div class="tour-standard-content">
-                                    <div class="review-area">
-                                    </div>
-                                    <h4>
-                                        <p style="font-family: 'Open Sans' !important;font-weight: 700;font-size: 18px;line-height: 27px;color: black">
-                                            <?= $language == 'id' ? $otherService['title_id']  : $otherService['title_en'] ?>
-                                        </p>
-                                    </h4>
 
-                                    <div class="list-area" style="font-family: 'Open Sans' !important;font-weight: 500;font-size: 18px;line-height: 24px;">
-                                        <?= $language == 'id' ? $otherService['description_id']  : $otherService['description_en'] ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+<style>
+.tour-package-custom {
+    display: flex;
+    align-items: stretch; /* Make sure the items stretch to fill the height */
+    max-width: 85%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    z-index: 0;
+}
+
+.tour-image-custom, .tour-image-customize {
+    flex: 1;
+    max-width: 768px;
+    min-width: 512px;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%; /* Match the height of the container */
+}
+
+.tour-content-custom {
+    flex: 2;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center; /* Center content vertically */
+    padding-left: 50px; /* Add padding to create space between image and content */
+    height: 100%; /* Match the height of the container */
+}
+.tour-content-customize {
+    flex: 2;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center; /* Center content vertically */
+    padding-right: 50px; /* Add padding to create space between image and content */
+    height: 100%; /* Match the height of the container */
+}
+.tour-image-custom img, .tour-image-customize img {
+    width: 100%;
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h4 {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: black;
+}
+
+.list-area-custom {
+    margin-top: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+}
+
+.list-area-customize {
+    margin-top: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 767px) {
+    .tour-package-custom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tour-image-custom,
+    .tour-content-custom,
+    .tour-image-customize,
+    .tour-content-customize {
+        max-width: 100%;
+        min-width: 100%;
+        margin: 0;
+        height: auto; /* Let the height adjust automatically */
+    }
+
+    .tour-image-custom,
+    .tour-image-customize {
+        margin-bottom: 16px;
+    }
+
+    .tour-content-custom,
+    .tour-content-customize {
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Move the image on the right to the top on mobile */
+    .tour-content-customize {
+        order: 2; /* Move the content below the image */
+    }
+
+    .tour-image-customize {
+        order: 1; /* Move the image to the top */
+        margin-bottom: 16px; /* Keep space between image and content */
+    }
+}
+
+
+</style>
 
                 </div>
 

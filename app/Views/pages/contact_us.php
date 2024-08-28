@@ -102,8 +102,8 @@
                             </h3>
                             <div class="contact-info-box">
                                 <h3 style="color:black !important;letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 700;"><i class="fas fa-phone-alt"></i> WHATSAPP / PONSEL</h3>
-                                <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><strong>EU:</strong><?= $contactUs['phone_number_eu']  ?></p>
-                                <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><strong>ID:</strong><?= $contactUs['phone_number_id']  ?></p>
+                                <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><strong>EU: </strong><?= $contactUs['phone_number_eu']  ?></p>
+                                <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><strong>ID: </strong><?= $contactUs['phone_number_id']  ?></p>
                             </div>
                         
                             <!-- Jarak antara dua kotak -->
@@ -158,10 +158,10 @@
                         
                             .contact-form input,
                             .contact-form textarea {
-                                padding: 12px; /* Tambahkan padding */
+                                padding: 16px; /* Tambahkan padding */
                                 border: 1px solid #ccc; /* Batasan warna abu-abu */
                                 border-radius: 5px; /* Sudut melengkung */
-                                font-size: 16px; /* Ukuran teks */
+                                font-size: 12px; /* Ukuran teks */
                                 width: 100%; /* Lebar penuh */
                             }
                         

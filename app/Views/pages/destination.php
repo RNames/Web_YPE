@@ -43,7 +43,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
-                <div class="breadcrumb-area">
+                <div class="breadcrumb-area" style="text-transform: uppercase;">
                     <h2>
                         <?= lang('text_destination.text_banner') ?>
                     </h2>

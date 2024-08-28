@@ -1,6 +1,6 @@
 * {
   margin: 0px;
-  padding: 0;
+  padding: 0px;
   scroll-behavior: smooth;
 }
 
@@ -482,8 +482,10 @@ i.bx {
   text-transform: capitalize;
   font-family: var(--font-exo);
   cursor: pointer;
+  :;
   overflow: hidden;
 }
+  
 .eg-btn i {
   font-weight: 200;
   vertical-align: middle;
@@ -669,16 +671,15 @@ i.bx {
 }
 
 .btn--primary3-outline {
-  background: var(--white);
-  color: var(--text-secondary);
-  border-radius: 0px;
+  background: var(--primary-color1);
+  color: var(--white);
+  border-radius: 30px;
   position: relative;
   z-index: 1;
   display: inline-flex;
   justify-content: center;
   white-space: nowrap;
-  border: 2px solid var(--text-secondary);
-  transition: 0.5s ease;
+  border: 1px solid var(--primary-color1);
 }
 .btn--primary3-outline::after {
   content: "";
@@ -687,28 +688,22 @@ i.bx {
   top: 0;
   bottom: 0;
   right: 0;
-  background: var(--primary-color3);
+  background: white;
   width: 100%;
   height: 100%;
-  transition: 0.5s ease;
+  transition: 0.5s;
   z-index: -1;
   transform: scale(0.6);
   border-radius: 30px;
   opacity: 0;
 }
 .btn--primary3-outline:hover {
-  color: var(--white);
+  color: var(--primary-color1);
   border: 2px solid transparent;
 }
 .btn--primary3-outline:hover::after {
   transform: scale(1);
   opacity: 1;
-}
-.btn--primary3-outline.sibling-2 {
-  color: var(--text-primary);
-}
-.btn--primary3-outline.sibling-2::after {
-  background: var(--primary-color2);
 }
 
 .btn-primary2-outline {
@@ -4761,7 +4756,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
 }
 .inner-banner-section .breadcrumb-area h2 ,
 .inner-banner-section .breadcrumb-area h1 {
-  font-size: 5rem;
+  font-size: 50px;
   font-weight: 800;
   color: var(--white);
   font-family: var(--font-merriw);
@@ -5409,8 +5404,8 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   font-size: 20px;
 }
 .tour-package-standard .tour-standard-content {
-  text-align: start;
-  padding: 0px 0px 0 30px;
+  text-align: justify;
+  padding: 0px 20px 0px 20px;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .tour-package-standard .tour-standard-content {
@@ -6336,7 +6331,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
 }
 .best-plan-single1 .content h4 a {
   font-size: 2.4rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
   font-family: var(--font-merriw);
   transition: all 0.5s ease;
@@ -6822,7 +6817,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
  Counter-section 
 =======================================*/
 .counter-wrapper {
-  background: #ffffff;
+  background: #f9f9f;
   box-shadow: 4px 3px 40px rgba(16, 33, 34, 0.06);
   padding: 20px;
 }

@@ -1118,7 +1118,7 @@
             <div class="container-xl container-lg-fluid container">
                 <div class="row gy-5">
 
-                    <div class="col-lg-3 col-md-6 d-flex justify-content-lg-center">
+                    <div class="col-lg-3 col-md-6 d-flex justify-content-lg-center" style="margin-right:50px;">
                         <div class="footer-item">
                             <div id="nav_menu-2" class="destination-widget-item widget_nav_menu">
                                 <div class="destination-widget-title">
@@ -1140,16 +1140,18 @@
                                                     EUROPE
                                                 </p>
                                                 <p>
-                                                    Velperplein 23-25
-                                                    6811 AH Arnhem, the Netherlands
+                                                    Velperplein 23-25 <br>
+                                                    6811 AH Arnhem, <br>
+                                                    the Netherlands <br>
                                                     +(31) 061-6564-256
                                                 </p>
                                                 <p style="color:#e0bc6d">
                                                     INDONESIA
                                                 </p>
                                                 <p>
-                                                    Dharmahusada Mas VII AB-22
-                                                    60115 Surabaya, Indonesia
+                                                    Dharmahusada Mas VII AB-22 <br>
+                                                    60115 Surabaya, <br>
+                                                    Indonesia <br>
                                                     +(62) 0895-1425-3344
                                                 </p>
                                             </div>
@@ -1168,7 +1170,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 d-flex justify-content-lg-center">
+                    <div class="col-lg-3 col-md-6 d-flex justify-content-lg-center" style="margin-right:50px;">
                         <div class="footer-item">
                             <div id="nav_menu-2" class="destination-widget-item widget_nav_menu">
                                 <div class="destination-widget-title">
@@ -1200,7 +1202,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 d-flex justify-content-lg-center">
+                    <div class="col-lg-3 col-md-6 d-flex justify-content-lg-center" style="margin-right:50px;">
                         <div class="footer-item">
                             <div id="nav_menu-3" class="destination-widget-item widget_nav_menu">
                                 <div class="destination-widget-title">
@@ -1285,24 +1287,21 @@
         </div>
 
         <div class="container">
-            <div class="footer-bottom mt-80">
-                <div class="row d-flex align-items-center g-3 justify-content-md-between">
-                    <div class="col-md-6 d-flex justify-content-lg-start justify-content-center text-lg-start text-center">
-                        <p>
-                            Copyright 2024 <a href="#">Your Private Europe</a> | Design By
-                            <a href="3">Your Private Europe</a>
-                        </p>
-                    </div>
-                    <!-- <div class="col-md-6 d-flex justify-content-lg-end justify-content-center align-items-center">
-                        <ul class="f-bottom-list d-flex jusify-content-start align-items-center">
-                            <li><a target="_blank" href="#">Privacy Policy</a></li>
-                            <li><a target="_blank" href="#">Terms of Use</a></li>
-                        </ul>
-                    </div> -->
+        <div class="footer-bottom mt-80">
+            <div class="row d-flex align-items-center g-3 justify-content-md-between">
+                <div class="col-md-6 d-flex justify-content-lg-start justify-content-center text-lg-start text-center">
+                    <p>
+                        Copyright 2024 <a href="#">Your Private Europe</a> | Design By
+                        <a href="3">Your Private Europe</a>
+                    </p>
+                </div>
+                <div class="col-md-6 d-flex justify-content-lg-end justify-content-center align-items-center">
+                    <img src="https://yourprivateeurope.eu/wp-content/uploads/2024/02/Logo-white-IATA-600-480x160.png" alt="IATA Logo" style="max-width: 160px; height: auto;">
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
     <script>
         (function() {

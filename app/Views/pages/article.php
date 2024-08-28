@@ -14,7 +14,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
                 <div class="breadcrumb-area">
-                    <h2>
+                    <h2 style="text-transform: uppercase;font-family:var(--font-merriw);">
                         Blog
                     </h2>
                 </div>

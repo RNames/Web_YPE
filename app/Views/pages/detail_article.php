@@ -61,7 +61,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
                 <div class="breadcrumb-area">
-                    <h1 id="heading1-detail-article">
+                    <h1 id="heading1-detail-article" style="text-transform: uppercase;">
                         <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
                     </h1>
                 </div>

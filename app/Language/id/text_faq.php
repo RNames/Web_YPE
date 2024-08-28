@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'heading' => 'PUSAT BANTUAN (FAQ)',
+    'heading' => 'PUSAT BANTUAN',
 ];

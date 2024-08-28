@@ -132,7 +132,65 @@
             font-family: 'Open Sans' !important;
         }
     }
+
+    .card {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card .image {
+        position: relative;
+    }
+
+    .card .image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+        display: block;
+    }
+
+    .card .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Bayangan hitam */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.5s ease, transform 0.5s ease;
+    }
+
+    .card .overlay h4 {
+        color: white;
+        font-weight: 700;
+        font-family: 'Open Sans';
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover .image img {
+        transform: scale(1.1);
+        /* Zoom in pada gambar */
+    }
+
+    .card:hover .overlay {
+        background: rgba(0, 0, 0, 0.7);
+        /* Membuat bayangan lebih gelap saat di-hover */
+        transform: scale(1.1);
+        /* Zoom in pada bayangan hitam */
+    }
+
+    .card:hover .overlay h4 {
+        transform: scale(1.1);
+        /* Zoom in pada tulisan saat di-hover */
+    }
 </style>
+
 
 <!-- ========== header end============= -->
 <div data-elementor-type="wp-page" data-elementor-id="234" class="elementor elementor-234">
@@ -153,7 +211,7 @@
                                                     <div class="col-12 col-lg-9">
                                                         <div class="hero-content" id="slider-homepage" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; letter-spacing: 0.5px;">
                                                             <!-- <span id="subtitle-banner-homepage"><?= $language == 'id' ? $homepage['sub_title_id'] : $homepage['sub_title_en'] ?></span> -->
-                                                            <h1 id="heading1-homepage" style="text-shadow: 0.02em 0.11em 0.1em rgba(0,0,0,0.4);font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 450; letter-spacing: 0.5px; margin-bottom: 10px;">
+                                                            <h1 id="heading1-homepage" style="text-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,0.4);font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 450; letter-spacing: 2px; margin-bottom: 10px;">
                                                                 <?= $language == 'id' ? strtoupper($homepage['title_id']) : strtoupper($homepage['title_en'])  ?>
                                                             </h1>
                                                             <p id="heading2-banner-homepage" style="text-shadow: 0px 2px #69727d;font-family: Open Sans,Arial,sans-serif; font-weight: 700; line-height: 1.8em; letter-spacing: 0.5px; margin-top: 10px;">
@@ -205,15 +263,6 @@
     </div>
 </section>
 
-
-
-    <style>
-/*@media (max-width: 768px) {*/
-/*    #heading1-homepage {*/
-/*        margin-top: 200px;*/
-/*    }*/
-/*}*/
-    </style>
 
     <section style="margin-top: 60px !important;background-color: #fff;" class="elementor-section elementor-top-section elementor-element elementor-element-d1338d8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d1338d8" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
@@ -305,26 +354,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-10">
-                                            <div class="counter-single text-center d-flex flex-column hover-border1">
-                                                <div class="counter-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58" fill="none">
-                                                        <path d="M27.618 4.9957C23.3586 5.55078 19.8582 8.91524 19.0313 13.2539C18.85 14.1715 18.884 16.1539 19.0879 17.1281C20.0508 21.818 24.1742 25.1484 29 25.1484C33.8258 25.1484 37.9492 21.818 38.9121 17.1281C39.116 16.1539 39.15 14.1715 38.9688 13.2539C38.5383 10.9996 37.5754 9.23242 35.8762 7.62383C34.3582 6.18516 32.3758 5.25625 30.2348 4.98438C29.1699 4.85977 28.7055 4.85977 27.618 4.9957ZM30.9484 8.72266C33.6672 9.56094 35.5816 12.1551 35.5816 14.9984C35.5703 16.8676 34.9473 18.4082 33.6332 19.7109C32.3984 20.957 30.7445 21.6367 29 21.6367C27.2555 21.6367 25.6016 20.957 24.3668 19.7109C23.0641 18.4082 22.4297 16.8676 22.4184 15.0098C22.4184 11.8266 24.7406 9.0625 27.9012 8.49609C28.7055 8.36016 30.0988 8.46211 30.9484 8.72266Z" fill="#086B7D"></path>
-                                                        <path d="M9.7875 14.4433C4.9957 15.4855 2.36758 20.7305 4.46328 25.0918C6.04922 28.4222 9.66289 30.1215 13.2086 29.2265C17.8871 28.0371 20.2773 22.8601 18.1363 18.5215C16.607 15.4289 13.1066 13.7183 9.7875 14.4433ZM12.9707 18.1703C14.8172 19.0086 15.8367 21.1949 15.2363 23.0187C14.0242 26.6664 9.24375 26.9722 7.62383 23.5058C7.35195 22.9281 7.30664 22.6789 7.30664 21.8633C7.30664 21.0023 7.35195 20.8097 7.68047 20.1414C8.0543 19.3711 8.76797 18.6234 9.45898 18.2609C10.5012 17.7172 11.9059 17.6832 12.9707 18.1703Z" fill="#086B7D"></path>
-                                                        <path d="M45.0293 14.4547C40.2262 15.5309 37.6887 20.8664 39.875 25.2844C41.1551 27.8672 43.7492 29.4531 46.6719 29.4531C50.8746 29.4531 54.2504 26.0887 54.2617 21.8859C54.273 18.6008 52.0527 15.5988 48.8809 14.6133C47.8273 14.2848 46.1055 14.2168 45.0293 14.4547ZM47.6348 17.9437C48.8582 18.2609 49.7645 19.0086 50.3195 20.1414C50.648 20.8098 50.6934 21.0023 50.6934 21.8633C50.6934 22.6789 50.648 22.9281 50.3762 23.5059C49.6852 24.9898 48.2465 25.9414 46.6719 25.9414C44.3496 25.9414 42.4805 23.959 42.6164 21.6594C42.7637 19.1219 45.2332 17.298 47.6348 17.9437Z" fill="#086B7D"></path>
-                                                        <path d="M23.166 26.0094C22.2824 26.1226 21.3988 26.3492 20.7191 26.6211C19.1559 27.2555 17.5586 28.5922 16.7316 29.9969C16.4031 30.5293 16.3352 30.5859 16.0859 30.518C15.5762 30.3707 7.70313 30.3367 6.91016 30.4726C3.97617 30.9824 1.35938 33.2707 0.362501 36.216L0.0566418 37.0996L0.0226575 42.9789C-0.0113269 48.6769 1.22678e-06 48.8695 0.226564 49.5605C0.838282 51.3957 2.44688 52.7437 4.32734 53.0156C5.27891 53.1629 52.7211 53.1629 53.6727 53.0156C55.5531 52.7437 57.1617 51.3957 57.7734 49.5605C58 48.8695 58.0113 48.6769 57.9773 42.9789L57.9434 37.0996L57.6375 36.216C56.6406 33.2707 54.0238 30.9824 51.0898 30.4726C50.2969 30.3367 42.4238 30.3707 41.9141 30.518C41.6648 30.5859 41.5969 30.5293 41.2684 29.9969C40.4527 28.6148 38.8441 27.2555 37.3375 26.6437C35.8082 26.0207 35.8309 26.0207 29.4531 25.998C26.1793 25.9754 23.3586 25.9867 23.166 26.0094ZM34.7773 29.5664C36.6125 29.8609 38.1871 31.209 38.8328 33.0555C38.9914 33.5312 39.0141 34.5168 39.048 41.5969L39.0934 49.6172H29H18.9066L18.952 41.5969C18.9859 34.5168 19.0086 33.5312 19.1672 33.0555C19.8016 31.2543 21.3875 29.8609 23.1094 29.5777C23.993 29.4418 33.8711 29.4305 34.7773 29.5664ZM15.157 33.9391L15.4063 34.007V41.8121V49.6285L10.0027 49.5945L4.58789 49.5605L4.21406 49.3C3.43242 48.7449 3.45508 48.8809 3.45508 43.2168C3.45508 38.1531 3.45508 38.1191 3.72695 37.3488C4.23672 35.8535 5.5168 34.5734 6.9668 34.109C7.57852 33.9051 7.99766 33.8824 11.2715 33.8824C13.2652 33.8711 15.0098 33.9051 15.157 33.9391ZM50.9879 34.0976C52.4719 34.5621 53.752 35.8309 54.273 37.3488C54.5449 38.1191 54.5449 38.1531 54.5449 43.2168C54.5449 48.8809 54.5676 48.7449 53.7859 49.3L53.4121 49.5605L48.0086 49.5945L42.5938 49.6285V41.8121C42.5938 34.4715 42.6051 33.9957 42.7977 33.9504C42.8996 33.9164 44.6328 33.8937 46.6266 33.8824C49.9797 33.8711 50.3309 33.8937 50.9879 34.0976Z" fill="#086B7D"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="coundown d-flex flex-column">
-                                                    <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                                                        <div class="plus-icon">
-                                                            <h3 class="odometer" data-odometer-final="500">�&nbsp;</h3><i class="bi bi-plus-lg"></i>
-                                                        </div>
-                                                    </div>
-                                                    <p>Travel Guides</p>
-                                                </div>
-                                            </div>
-                                        </div> -->
+
 
                                     </div>
                                 </div>
@@ -430,7 +460,7 @@
 <!-- About Us End -->
 <!-- Our Services Start -->
 
-    <section class="elementor-section elementor-top-section elementor-element elementor-element-aa8649e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aa8649e" data-element_type="section" style="margin-top: 60px !important;">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-aa8649e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aa8649e" data-element_type="section" style="margin-top: 60px !important;">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7c7b2d8" data-id="7c7b2d8" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -479,7 +509,7 @@
     </section>
     
 
-    <section class="elementor-section elementor-top-section elementor-element elementor-element-04a950f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="04a950f" data-element_type="section" style="margin-top: 0px !important;">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-04a950f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="04a950f" data-element_type="section" style="margin-top: 0px !important;">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-34259fb" data-id="34259fb" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -487,61 +517,52 @@
                         <div class="elementor-widget-container">
 
                             <div class="blog-section overflow-hidden">
-                                <div class="row justify-content-center">
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                                        <div class="blog-single1">
+                                <div class="row justify-content-center mb-5">
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-1">
+                                        <div class="card blog-single1 h-90">
                                             <div class="image">
                                                 <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
-                                                    <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt8.jpg') ?>" class="img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt8.jpg') ?> 870w, <?= base_url('assets/images/blog-dt8-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt8-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt8-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt8-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                    <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt8.jpg') ?>" class="card-img-top img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt8.jpg') ?> 870w, <?= base_url('assets/images/blog-dt8-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt8-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt8-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt8-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                    <div class="overlay">
+                                                        <h4 class="card-title">
+                                                            VIP Services
+                                                        </h4>
+                                                    </div>
                                                 </a>
-                                            </div>
-                                            
-                                            <div class="content">
-                                                <h4 style="text-align: center; color: black;">
-                                                    <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
-                                                        VIP SERVICES
-                                                    </a>
-                                                </h4>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                                        <div class="blog-single1">
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-1">
+                                        <div class="card blog-single1 h-90">
                                             <div class="image">
                                                 <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
-                                                    <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt9.jpg') ?>" class="img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt9.jpg') ?> 870w, <?= base_url('assets/images/blog-dt9-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt9-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt9-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt9-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                    <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt9.jpg') ?>" class="card-img-top img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt9.jpg') ?> 870w, <?= base_url('assets/images/blog-dt9-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt9-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt9-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt9-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                    <div class="overlay">
+                                                        <h4 class="card-title">
+                                                            Private Tour
+                                                        </h4>
+                                                    </div>
                                                 </a>
-                                            </div>
-                                            <div class="content">
-                                                <h4 style="text-align: center; color: black;">
-                                                    <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
-                                                        PRIVATE TOUR
-                                                    </a>
-                                                </h4>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                                        <div class="blog-single1">
+                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-4">
+                                        <div class="card blog-single1 h-90">
                                             <div class="image">
                                                 <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
-                                                    <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt10.jpg') ?>" class="img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt10.jpg') ?> 870w, <?= base_url('assets/images/blog-dt10-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt10-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt10-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt10-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                    <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt10.jpg') ?>" class="card-img-top img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt10.jpg') ?> 870w, <?= base_url('assets/images/blog-dt10-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt10-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt10-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt10-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                    <div class="overlay">
+                                                        <h4 class="card-title">
+                                                            MICE
+                                                        </h4>
+                                                    </div>
                                                 </a>
-                                            </div>
-                                            <div class="content">
-                                                <h4 style="text-align: center; color: black;">
-                                                    <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
-                                                        MICE
-                                                    </a>
-                                                </h4>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>
@@ -605,7 +626,7 @@
                                 <div class="accordion" id="accordionExample">
 
                                     <?php foreach ($usp as $dataUsp) : ?>
-                                        <div class="accordion-item">
+                                        <div class="accordion-item" style="box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3);">
                                             <h4 class="accordion-header" id="heading<?= $dataUsp['id'] ?>">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $dataUsp['id'] ?>" aria-expanded="true" aria-controls="collapse<?= $dataUsp['id'] ?>">
                                                     <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 16px; line-height: 27px;">
@@ -632,8 +653,6 @@
 
                 </div>
             </div>
-
-            <!-- </div> -->
     </section>
 <!-- Testimoni Start -->
 <div class="page-wrapper sec-mar">
@@ -655,22 +674,41 @@
                                                     <?= $language == 'id' ? $homepage['testimonial_title_id'] : $homepage['testimonial_title_en'] ?>
                                                 </h3>
                                                 <div class="heading-ribbon">
-                                                    <!-- SVG code for the ribbon -->
-                                                </div>
-                                            </div>
+                                        <svg width="370" height="18" viewBox="0 0 370 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M184.946 0.780971C183.9 1.11998 183.054 1.98633 182.734 3.03348L182.601 3.46289L182 3.48549L181.391 3.50809L181.02 3.16908C180.508 2.70201 179.944 2.33287 179.15 1.95619C176.648 0.750837 173.62 0.999442 171.305 2.59654C170.629 3.05608 169.746 3.94503 169.308 4.59291C167.074 7.86998 167.408 12.1716 170.117 14.9515C171.668 16.5485 173.613 17.3622 175.847 17.3622C178.823 17.3622 181.599 15.6219 182.905 12.94L183.209 12.3223L183.914 12.1867C184.909 11.9983 187.091 11.9983 188.086 12.1867L188.791 12.3223L189.073 12.9023C190.401 15.637 193.14 17.3622 196.153 17.3622C199.894 17.3622 203.004 14.9063 203.924 11.2299C204.584 8.57813 203.85 5.73047 201.979 3.71903C201.296 2.98828 200.643 2.50614 199.693 2.03153C198.758 1.56445 198.053 1.36105 196.97 1.24051C194.81 0.999442 192.427 1.79046 190.891 3.25195C190.631 3.50809 190.616 3.50809 190.008 3.48549L189.399 3.46289L189.266 3.03348C188.939 1.95619 188.048 1.07478 186.972 0.758371C186.43 0.600167 185.48 0.607701 184.946 0.780971ZM186.868 2.0692C187.581 2.3856 188.108 3.11635 188.197 3.9149C188.227 4.14844 188.308 4.41964 188.39 4.51758C188.516 4.68331 188.59 4.70592 189.05 4.70592C189.332 4.70592 189.563 4.72098 189.563 4.73605C189.563 4.75865 189.444 4.97712 189.295 5.23326C188.939 5.85854 188.642 6.59682 188.442 7.39537C188.308 7.92271 188.271 8.26925 188.271 9.113C188.264 9.69308 188.293 10.3485 188.323 10.5745L188.382 10.9813L188.138 10.9286C188.004 10.8984 187.47 10.8457 186.95 10.8005C186.045 10.7176 184.575 10.7854 183.855 10.9286C183.61 10.9813 183.603 10.9813 183.655 10.7628C183.759 10.2732 183.788 8.85686 183.707 8.20898C183.595 7.3577 183.195 6.12974 182.786 5.39146C182.616 5.07506 182.467 4.79632 182.452 4.76618C182.437 4.72852 182.66 4.70592 182.942 4.70592C183.41 4.70592 183.484 4.68331 183.61 4.51758C183.692 4.41964 183.773 4.14844 183.803 3.9149C183.981 2.3856 185.51 1.45898 186.868 2.0692ZM177.532 2.67188C180.76 3.60603 182.831 6.65709 182.504 9.96429C182.148 13.4674 179.268 16.1116 175.795 16.1116C173.925 16.1116 172.359 15.4336 171.008 14.055C169.746 12.7667 169.078 11.1169 169.078 9.30887C169.078 7.48577 169.709 5.89621 170.948 4.58538C171.928 3.54576 173.079 2.88281 174.407 2.58901C175.268 2.40067 176.73 2.43834 177.532 2.67188ZM197.541 2.58901C198.907 2.87528 200.042 3.51563 201.037 4.57031C204.273 7.99051 203.211 13.5276 198.944 15.524C197.675 16.1191 196.02 16.2849 194.654 15.9459C192.746 15.4637 191.166 14.2132 190.238 12.4503C188.709 9.54241 189.511 5.85854 192.108 3.8697C193.014 3.17662 194.075 2.70201 195.07 2.52874C195.76 2.41574 196.829 2.43834 197.541 2.58901Z" fill="#086B7D"></path>
+                                            <path d="M185.295 2.81501C184.523 3.28962 184.323 4.17857 184.805 4.94699C185.072 5.36886 185.458 5.57227 186 5.57227C186.542 5.57227 186.928 5.36886 187.195 4.94699C187.447 4.54018 187.521 4.1409 187.41 3.7341C187.321 3.38756 186.972 2.94308 186.661 2.77734C186.356 2.61914 185.57 2.64174 185.295 2.81501Z" fill="#086B7D"></path>
+                                            <path d="M174.637 3.60603C172.477 4.06557 170.815 5.7154 170.258 7.94531C170.028 8.85686 170.08 10.1978 170.377 11.0943C171.008 12.9927 172.566 14.4542 174.474 14.9289C175.209 15.1097 176.515 15.0871 177.264 14.8836C179.268 14.3412 180.864 12.6839 181.354 10.6348C181.517 9.97935 181.525 8.66853 181.369 7.99805C180.901 5.94894 179.439 4.36691 177.428 3.72656C176.76 3.51562 175.357 3.45536 174.637 3.60603ZM176.886 4.90178C177.665 5.09012 178.266 5.45173 178.912 6.09961C179.595 6.78516 179.921 7.34263 180.137 8.21652C180.745 10.6272 179.246 13.0907 176.797 13.716C176.144 13.8817 175.008 13.829 174.355 13.5954C173.746 13.377 172.878 12.7818 172.455 12.2921C171.72 11.4408 171.349 10.4163 171.349 9.26367C171.349 8.62333 171.379 8.41992 171.572 7.86998C171.846 7.07143 172.225 6.48382 172.804 5.95647C173.242 5.54966 173.984 5.10519 174.511 4.93945C175.194 4.71345 176.077 4.69838 176.886 4.90178Z" fill="#086B7D"></path>
+                                            <path d="M175.216 5.84347C173.902 6.04688 172.752 7.16183 172.448 8.52539C172.247 9.43694 172.425 9.90402 172.967 9.90402C173.368 9.89648 173.605 9.59514 173.605 9.09793C173.605 8.93973 173.702 8.60826 173.813 8.35965C174.147 7.65151 174.8 7.1543 175.513 7.07143C176.018 7.01116 176.248 6.90569 176.344 6.69475C176.463 6.41602 176.448 6.24275 176.263 6.03181C176.062 5.79827 175.795 5.75307 175.216 5.84347Z" fill="#086B7D"></path>
+                                            <path d="M195.188 3.57589C193.355 3.8923 191.626 5.30106 190.921 7.05636C190.505 8.09598 190.386 9.58761 190.646 10.6348C191.136 12.6839 192.732 14.3412 194.736 14.8836C195.485 15.0871 196.791 15.1097 197.526 14.9289C199.434 14.4542 201 12.9927 201.623 11.0943C201.786 10.5896 201.838 10.2882 201.861 9.56501C201.935 7.76451 201.43 6.43108 200.213 5.19559C199.345 4.31417 198.461 3.83203 197.311 3.60603C196.71 3.49302 195.76 3.47796 195.188 3.57589ZM197.311 4.90179C198.031 5.08259 198.743 5.50446 199.359 6.13728C200.243 7.03376 200.658 8.05078 200.651 9.30134C200.643 10.8457 199.931 12.1867 198.662 13.053C197.912 13.5653 197.341 13.7536 196.428 13.7988C195.879 13.829 195.559 13.8064 195.203 13.716C193.511 13.2866 192.175 11.9079 191.826 10.2355C191.373 8.05831 192.546 5.88867 194.624 5.05246C195.455 4.72098 196.361 4.66825 197.311 4.90179Z" fill="#086B7D"></path>
+                                            <path d="M195.611 5.84347C194.068 6.07701 192.754 7.62891 192.754 9.21094C192.754 9.81362 193.325 10.115 193.748 9.73075C193.897 9.60268 193.956 9.45201 194.008 9.05273C194.09 8.44252 194.327 7.99805 194.788 7.59124C195.136 7.27483 195.715 7.04129 196.138 7.04129C196.91 7.04129 197.044 5.91881 196.279 5.8058C196.153 5.79074 195.856 5.8058 195.611 5.84347Z" fill="#086B7D"></path>
+                                            <rect x="215" y="8" width="155" height="2" rx="1" fill="url(#paint0_linear_2_2)"></rect>
+                                            <rect y="8" width="157" height="2" rx="1" fill="url(#paint1_linear_2_2)"></rect>
+                                            <defs>
+                                                <linearGradient id="paint0_linear_2_2" x1="215" y1="8.99999" x2="370" y2="8.99998" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#086B7D"></stop>
+                                                    <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear_2_2" x1="-2.0562e-07" y1="8.99999" x2="157" y2="8.99998" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white"></stop>
+                                                    <stop offset="1" stop-color="#086B7D"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
-                <section class="elementor-section elementor-top-section elementor-element elementor-element-535e7b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="535e7b3" data-element_type="section" style="background-color: #F9F9F9; margin-top: 0px !important;padding-top: 50px !important;">
+                
+                <section class="elementor-section elementor-top-section elementor-element elementor-element-535e7b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="535e7b3" data-element_type="section" style="margin-top: 0px !important;padding-top: 50px !important;">
                     <div class="elementor-container elementor-column-gap-default">
                         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-811c3aa" data-id="811c3aa" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <div class="elementor-element elementor-element-8eaecf0 elementor-widget elementor-widget-astrip_tour_package" data-id="8eaecf0" data-element_type="widget" data-widget_type="astrip_tour_package.default">
-                                    
                                     <div class="deal-section">
                                             <div class="container-fluid">
                                                 <div class="row justify-content-center g-4">
@@ -761,83 +799,258 @@
                                         </style>
 
 
-                                    <section class="elementor-section elementor-top-section elementor-element elementor-element-e8d46a5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e8d46a5" data-element_type="section" style="padding-bottom: 60px !important;">
-                                        <div class="elementor-container elementor-column-gap-default">
-                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b17e34d" data-id="b17e34d" data-element_type="column">
-                                                <div class="elementor-widget-wrap elementor-element-populated" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                                    <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
-                                                        <div class="trip-rating">
-                                                            <div class="cnt" style="display: flex; flex-direction: column; align-items: center;">
-                                                                <img loading="lazy" src="<?= base_url('assets/images/trustpilot.png') ?>" alt="trustpilot-rating" style="height: 30px !important;width: 130px;">
-                                                                <p>See our <span>37</span> reviews on Trustpilot</p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <div class="elementor-element elementor-element-15c7e1e elementor-widget elementor-widget-astrip_button" data-id="15c7e1e" data-element_type="widget" data-widget_type="astrip_button.default">
-                                                            <ul class="topbar-right-social_list1">
-                                                                <li>
-                                                                    <a target="_blank" href="https://www.instagram.com/yourprivateeurope/">
-                                                                        <i class="fab fa-instagram"></i>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a target="_blank" href="https://www.tiktok.com/@yourprivateeurope">
-                                                                        <i class="fa-brands fa-tiktok"></i>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a target="_blank" href="https://www.youtube.com/@yourprivateeurope">
-                                                                        <i class="fa-brands fa-youtube"></i>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a target="_blank" href="https://www.linkedin.com/company/your-private-europe/">
-                                                                        <i class="fab fa-linkedin-in"></i>
-                                                                    </a>
-                                                                </li>
-                                                                
-                                                            </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <style>
-                                                .topbar-right-social_list1 {
-                                                    display: flex;
-                                                    list-style: none;
-                                                    padding: 0;
-                                                    gap: 10px;
-                                                    justify-content: center;
-                                                    /* Center horizontally */
-                                                }
+                                   <!-- start section -->
+                                   <div class="destination-custom1">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-12">
+            <div class="card1 flex-md-row">
+                <!-- Carousel -->
+                <div id="carouselExample" class="carousel slide carousel-container" data-bs-ride="carousel">
+                    <?php
+                    // Folder yang berisi gambar testimoni
+                    $folder = 'assets/images/testimoni/';
+                    // Membaca semua file gambar dari folder
+                    $images = glob($folder . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
-                                                .topbar-right-social_list1 li {
-                                                    display: flex;
-                                                    justify-content: center;
-                                                    align-items: center;
-                                                    background-color: white;
-                                                    border-radius: 5px;
-                                                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-                                                    width: 50px;
-                                                    height: 50px;
-                                                }
+                    // Mengecek apakah ada gambar yang ditemukan
+                    if ($images && count($images) > 0):
+                    ?>
+                        <!-- Tambahkan indikator di sini -->
+                        <div class="carousel-indicators">
+                            <?php
+                            // Menghitung jumlah gambar
+                            for ($i = 0; $i < count($images); $i++) {
+                                $activeClass = $i === 0 ? 'active' : '';
+                                echo '<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="' . $i . '" class="' . $activeClass . '" aria-current="true" aria-label="Slide ' . ($i + 1) . '"></button>';
+                            }
+                            ?>
+                        </div>
+                        <div class="carousel-inner">
+                            <?php
+                            $isFirst = true;
+                            foreach ($images as $image) {
+                                // Menentukan kelas 'active' untuk item pertama
+                                $activeClass = $isFirst ? 'active' : '';
+                                echo '<div class="carousel-item ' . $activeClass . '">';
+                                echo '<img src="' . base_url($image) . '" class="d-block w-100 img-fluid carousel-image" alt="Image">';
+                                echo '</div>';
+                                $isFirst = false;
+                            }
+                            ?>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <i class='fas fa-chevron-circle-left' style='font-size:37px'></i>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <i class='fas fa-chevron-circle-right' style='font-size:37px'></i>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    <?php else: ?>
+                        <p>No images found in the specified folder.</p>
+                    <?php endif; ?>
+                </div>
 
-                                                .topbar-right-social_list1 li a {
-                                                    display: flex;
-                                                    justify-content: center;
-                                                    align-items: center;
-                                                    text-decoration: none;
-                                                    font-size: 24px;
-                                                    color: inherit;
-                                                    width: 100%;
-                                                    height: 100%;
-                                                }
+               <!-- Konten Sosmed -->
+<div class="card-body d-flex flex-column align-items-center justify-content-center">
+    <div class="info-box1">
+        <ul class="topbar-right-social_list1">
+        <li class="trustpilot">
+                <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount">
+                    <img src="<?= base_url('assets/images/trustpilot.png') ?>" alt="trustpilot-rating">
+                    <span>See our 37 reviews on Trustpilot</span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.instagram.com/yourprivateeurope/">
+                    <i class="fab fa-instagram"></i>
+                    <span class="follow-us ">Follow us on <span class="platform-name">Instagram</span></span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.tiktok.com/@yourprivateeurope">
+                    <i class="fa-brands fa-tiktok"></i>
+                    <span class="follow-us" >Follow us on <span class="platform-name">TikTok</span></span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.youtube.com/@yourprivateeurope">
+                    <i class="fa-brands fa-youtube"></i>
+                    <span class="follow-us">Follow us on <span class="platform-name">Youtube</span></span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.linkedin.com/company/your-private-europe/">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span class="follow-us">Follow us on <span class="platform-name">LinkedIN</span></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-                                                .topbar-right-social_list1 li a:hover {
-                                                    color: #0073e6;
-                                                }
-                                            </style>
-                                    </section>
+<style>
+    .carousel-inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel-item img.carousel-image {
+        width: 100%;
+        height: 779px; /* Set height to ensure consistent image size */
+        object-fit: cover; /* Ensure images cover the container */
+        object-position: center;
+    }
+
+    .carousel-container {
+        width: 50%;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .topbar-right-social_list1 {
+        display: flex;
+        list-style: none;
+        margin-right: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topbar-right-social_list1 li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 10px; /* Slightly rounded corners */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        width: 500px; /* Adjust width as needed */
+        height: 100px; /* Adjust height as needed */
+        margin: 10px; /* Space between the cards */
+        padding: 10px; /* Adjust padding for more spacing inside the cards */
+    }
+
+    .topbar-right-social_list1 li a {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        text-decoration: none;
+        font-size: 30px; /* Increase the size of the icons */
+        color: inherit;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .topbar-right-social_list1 li a:hover {
+        color: #0073e6;
+    }
+
+    .topbar-right-social_list1 .trustpilot {
+        font-size: 18px; /* Adjust for text content */
+        color: #0073e6;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        flex-direction: column; /* Stack logo and text vertically */
+    }
+
+    .topbar-right-social_list1 .trustpilot img {
+        height: 25px;
+        width: 110px;
+        margin-bottom: 5px; /* Space between logo and text */
+    }
+
+    .topbar-right-social_list1 .trustpilot span {
+        font-size: 16px;
+        color: #333;
+        text-align: center; /* Center the text */
+    }
+
+    .follow-us {
+        font-family: var(--font-work-sans);
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+
+    .destination-custom1 {
+        padding: 20px 0;
+        margin-top: 100px;
+    }
+
+    .destination-custom1 .card1 {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .destination-custom1 .card-body {
+        padding: 15px;
+        background-color: #fff;
+        width: 50%;
+    }
+
+    .destination-custom1 .card-title {
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .destination-custom1 .info-box1 .cnt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .destination-custom1 .info-box1 img {
+        height: 25px;
+        width: 110px;
+    }
+
+    .destination-custom1 .info-box1 p {
+        text-align: center;
+    }
+
+    @media (min-width: 992px) {
+        .destination-custom1 .card1 {
+            flex-direction: row;
+        }
+
+        .destination-custom1 .carousel-container {
+            width: 40%;
+            margin-bottom: 0;
+        }
+
+        .destination-custom1 .card-body {
+            width: 30%;
+        }
+    }
+
+    /* Tambahan CSS untuk responsive mobile */
+    @media (max-width: 768px) {
+        .destination-custom1 .card1 {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .destination-custom1 .carousel-container {
+            width: 100%;
+        }
+
+        .destination-custom1 .card-body {
+            width: 100%;
+            padding-top: 20px;
+        }
+    }
+</style>
+
+
                                 </div>
                             </div>
                         </div>
@@ -886,7 +1099,7 @@ $(document).ready(function() {
 </script>
 
 <!-- Testimoni End -->
-    <section style="margin-top: 60px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
+    <section style="padding-top: 60px !important; background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0442f94" data-id="0442f94" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -931,78 +1144,90 @@ $(document).ready(function() {
         </div>
     </section>
 
-    <section class="elementor-section elementor-top-section elementor-element elementor-element-926134b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="926134b" data-element_type="section">
-    <div class="elementor-container elementor-column-gap-default">
-        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4cda8d9" data-id="4cda8d9" data-element_type="column">
-            <div class="elementor-widget-wrap elementor-element-populated">
-                <div class="elementor-element elementor-element-0c74e90 elementor-widget elementor-widget-astrip_info_box" data-id="0c74e90" data-element_type="widget" data-widget_type="astrip_info_box.default">
-                    <div class="elementor-widget-container" style="overflow: hidden;">
-                        <div class="category-section">
-                            <div class="row justify-content-center g-xxl-5 g-4">
-                                <?php foreach ($commitments as $commitment): ?>
-                                    <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4"> <!-- col-sm-4 untuk 3 kolom pada layar kecil -->
-                                        <div class="category-single1 d-flex flex-column h-100" style="box-shadow: none !important;">
-                                            <div class="icon" style="transition: none !important; border: 0px !important;">
-                                                <img loading="lazy" style="max-width: 44px;" src="<?= base_url('assets/images/commitments/') . $commitment['image'] ?>" alt="<?= $commitment['alt_image'] ?>" srcset="">
-                                            </div>
-                                            <div class="content">
-                                                <p style="font-size: 16px; font-weight: 600; color: black; font-family: 'Open Sans' !important;">
-                                                    <?= $language == 'id' ? $commitment['title_id'] : $commitment['title_en'] ?>
-                                                </p>
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-926134b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="926134b" data-element_type="section" style="padding-bottom:60px;background-color: #f9f9f9;">
+        <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4cda8d9" data-id="4cda8d9" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-element-0c74e90 elementor-widget elementor-widget-astrip_info_box" data-id="0c74e90" data-element_type="widget" data-widget_type="astrip_info_box.default">
+                        <div class="elementor-widget-container" style="overflow: hidden;">
+                            <div class="category-section">
+                                <div class="row justify-content-center g-xxl-5 g-4">
+                                    <?php foreach ($commitments as $commitment) : ?>
+                                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4"> <!-- col-sm-4 untuk 3 kolom pada layar kecil -->
+                                            <div class="category-single1 d-flex flex-column h-100" style="box-shadow: none !important; background-color:#f9f9f9;">
+                                                <div class="icon" style="display: flex; justify-content: center; align-items: center; width: 95px; height: 95px; background-color: #D4B264; border-radius: 50%; transition: none !important; border: 0px !important;">
+                                                    <img loading="lazy" style="max-width: 48px; filter: brightness(0) invert(1);" src="<?= base_url('assets/images/commitments/') . $commitment['image'] ?>" alt="<?= $commitment['alt_image'] ?>" srcset="">
+                                                </div>
+
+                                                <!-- ubah -->
+                                                <div class="content">
+                                                    <p style="font-size: 16px; font-weight: 600; color: black; font-family: 'Open Sans' !important; line-height: 1.2em;">
+                                                        <?= $language == 'id' ? $commitment['title_id'] : $commitment['title_en'] ?>
+                                                    </p>
+
+                                                </div>
 
                                             </div>
-
                                         </div>
-                                    </div>
-                                <?php endforeach; ?>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Aturan CSS -->
-    <style>
-    .category-section,
-    .category-section .row {
-        overflow: hidden;
-    }
-    
-    /* Aturan CSS dalam media query */
-    @media (max-width: 576px) {
-        /* Pengaturan tata letak 3 kolom tanpa jarak antar konten */
-        .category-section .row {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Pengaturan 3 kolom dengan lebar sama */
-            gap: 0; /* Menghilangkan jarak antara item */
-            align-items: stretch; /* Membuat tinggi konten sejajar */
-            overflow: hidden; /* Memastikan konten tidak melampaui kontainer */
-            padding-left: 5px; /* Mengurangi padding kiri */
-            padding-right: 5px; /* Mengurangi padding kanan */
-        }
-    
-        /* Sesuaikan tinggi gambar dan pengaturan lainnya sesuai kebutuhan */
-        .category-single1 .icon img {
-            width: 100%; /* Sesuaikan lebar gambar */
-            height: auto; /* Sesuaikan tinggi gambar */
-            max-height: 100px; /* Tinggi maksimum gambar */
-            object-fit: contain; /* Gambar tetap proporsional */
-            display: block;
-            margin: auto;
-        }
-    
-        /* Mengatur teks agar berada di tengah */
-        .category-single1 .content {
-            text-align: center;
-        }
-    }
+        <!-- Aturan CSS -->
+        <style>
+            .category-section,
+            .category-section .row {
+                overflow: hidden;
+            }
 
-    </style>
-</section>
+            /* Aturan CSS dalam media query */
+            @media (max-width: 576px) {
 
-    <section aria-hidden="true" class="elementor-section elementor-top-section elementor-element elementor-element-16674b5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="16674b5" data-element_type="section" style="padding-top: 60px !important;background-color: #F9F9F9;">
+                /* Pengaturan tata letak 3 kolom tanpa jarak antar konten */
+                .category-section .row {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    /* Pengaturan 3 kolom dengan lebar sama */
+                    gap: 0;
+                    /* Menghilangkan jarak antara item */
+                    align-items: stretch;
+                    /* Membuat tinggi konten sejajar */
+                    overflow: hidden;
+                    /* Memastikan konten tidak melampaui kontainer */
+                    padding-left: 5px;
+                    /* Mengurangi padding kiri */
+                    padding-right: 5px;
+                    /* Mengurangi padding kanan */
+                }
+
+                /* Sesuaikan tinggi gambar dan pengaturan lainnya sesuai kebutuhan */
+                .category-single1 .icon img {
+                    width: 100%;
+                    /* Sesuaikan lebar gambar */
+                    height: auto;
+                    /* Sesuaikan tinggi gambar */
+                    max-height: 100px;
+                    /* Tinggi maksimum gambar */
+                    object-fit: contain;
+                    /* Gambar tetap proporsional */
+                    display: block;
+                    margin: auto;
+                }
+
+                /* Mengatur teks agar berada di tengah */
+                .category-single1 .content {
+                    text-align: center;
+                }
+            }
+        </style>
+    </section>
+
+    <section aria-hidden="true" class="elementor-section elementor-top-section elementor-element elementor-element-16674b5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="16674b5" data-element_type="section" style="padding-top: 0px !important;">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2bd2882" data-id="2bd2882" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1046,50 +1271,53 @@ $(document).ready(function() {
             </div>
         </div>
     </section>
-    <section style="background-color: #F9F9F9; margin-top: 0px !important;padding-top: 50px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-535e7b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="535e7b3" data-element_type="section">
+    <section style="margin-top: 0px !important;padding-top: 50px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-535e7b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="535e7b3" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-811c3aa" data-id="811c3aa" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
                     <div class="elementor-element elementor-element-8eaecf0 elementor-widget elementor-widget-astrip_tour_package" data-id="8eaecf0" data-element_type="widget" data-widget_type="astrip_tour_package.default">
 
-                        <div class="deal-section">
-                            <div class="container-fluid">
-                                <div class="row justify-content-center g-4">
-                                    <div class="slider-container slick-slider">
-                                        <?php foreach ($destinations as $destination) : ?>
-                                            <div class="slick-slide">
-                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>" class="card-link">
-                                                    <div class="deal-single1 card">
-                                                        <div class="deal-image d-flex justify-content-center">
-                                                            <img loading="lazy" fetchpriority="high" decoding="async" width="425" height="345" src="<?= base_url('assets/images/destinations/') . $destination['image'] ?>" class="img-fluid wp-post-image" alt="<?= $destination['alt_image'] ?>" />
-                                                        </div>
-                                                        <div class="deal-content card-body">
-                                                            <h4>
-                                                                <span class="deal-title">
-                                                                    <?= strtoupper($destination['title']) ?>
-                                                                </span>
-                                                            </h4>
-                                                            <div class="price">
-                                                                <span style="font-size: 18px; line-height: 24px;font-weight: 500; font-family: 'Open Sans';">
-                                                                    <?= $language == 'id' ? $destination['duration_id'] : $destination['duration_en'] ?>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        <?php endforeach; ?>
+                    <div class="deal-section">
+    <div class="container-fluid">
+        <div class="row justify-content-center g-4">
+            <div class="slider-container slick-slider">
+                <?php foreach ($destinations as $destination) : ?>
+                    <div class="slick-slide">
+                        <a href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>" class="card-link">
+                            <div class="deal-image1 d-flex justify-content-center">
+                                <img loading="lazy" fetchpriority="high" decoding="async" width="425" height="345" src="<?= base_url('assets/images/destinations/') . $destination['image'] ?>" class="img-fluid wp-post-image" alt="<?= $destination['alt_image'] ?>" />
+                                <div class="deal-content-overlay">
+                                    <div class="circle-background mb-4">
+                                        <h4 class="deal-title mb-0"><b><?= strtoupper($destination['title']) ?></b></h4>
+                                        <div class="price">
+                                            <span style="font-size: 13px; line-height: 24px; font-weight: 600; font-family: 'Open Sans';">
+                                                <?= $language == 'id' ? $destination['duration_id'] : $destination['duration_en'] ?>
+                                            </span>
+                                        </div>
+                                        <p class="deal-description" style="font-size: 16px; line-height: 24px; font-weight: 500; font-family: 'Open Sans';">
+                                            Explore this beautiful destination and enjoy a memorable experience.
+                                        </p>
                                     </div>
                                 </div>
+                                <div class="deal-square-overlay"></div>
                             </div>
-                        </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
                         <script>
                             $(document).ready(function() {
                                 $('.slider-container').slick({
                                     slidesToShow: 3, // Number of slides to show on desktop
                                     slidesToScroll: 1, // Number of slides to scroll at once
                                     autoplay: true,
-                                    autoplaySpeed: 2000,
+                                    autoplaySpeed: 1000,
                                     arrows: true,
                                     dots: true,
                                     infinite: true,
@@ -1109,48 +1337,96 @@ $(document).ready(function() {
                             .card-link {
                                 text-decoration: none;
                                 color: inherit;
+                                position: relative;
+                                display: block;
                             }
 
-                            .deal-single1 {
-                                transition: transform 0.3s, box-shadow 0.3s;
-                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                            }
+                            .deal-image1 {
+                                width: 90%;
+                                height: 90%;
 
-                            .deal-single1:hover {
-                                transform: translateY(-10px);
-                                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-                            }
-
-                            .deal-image {
-                                width: 100%;
-                                height: 270px;
+                                /* Maintain a square aspect ratio */
                                 overflow: hidden;
+                                position: relative;
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
+                                margin: 0 auto;
+                                /* Center the image container */
                             }
 
-                            .deal-image img {
-                                width: 100%;
-                                height: 100%;
+                            .deal-image1 img {
+                                width: 400px;
+                                height: 400px;
                                 object-fit: cover;
+                                /* Ensures the image covers the container without distortion */
                             }
 
-                            .deal-content {
-                                padding: 1rem;
-                                text-align: center;
-                            }
 
-                            .deal-title {
-                                font-family: 'Open Sans';
-                                color: black;
-                                transition: color 0.3s;
-                            }
+                            .deal-content-overlay {
+    position: absolute;
+    top: 105%; /* Start at the bottom */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(224, 188, 109, 0.7);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the content vertically */
+    transition: top 0.3s ease-in-out;
+    opacity: 1; /* Keep the circle visible */
+}
 
-                            .card-link:hover .deal-title {
-                                color: #000;
-                                /* Retain the color change on hover */
-                            }
+.card-link:hover .deal-content-overlay {
+    top: 50%; /* Move up to the center */
+    opacity: 1; /* Ensure it stays visible */
+    transition: top 0.3s ease-in-out;
+}
+
+.deal-title {
+    font-family: 'Open Sans';
+    font-size: 19px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Open Sans';
+    color: white;
+    margin-top: 10px; /* Add margin to create space between title and price */
+}
+
+.deal-description {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .deal-content-overlay {
+        top: 105%; /* Keep the circle in the center */
+        transition: none; /* Remove transition effects */
+        transform: translate(-50%, -50%);
+    }
+
+    .card-link:hover .deal-content-overlay {
+        top: 105%; /* No change on hover */
+        transition: none; /* Disable hover transition */
+    }
+}
+
                         </style>
 
                         <section style="padding-bottom: 60px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-e8d46a5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e8d46a5" data-element_type="section">
@@ -1182,7 +1458,7 @@ $(document).ready(function() {
     </section>
 
 
-    <section style="margin-top: 60px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-8104c8f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8104c8f" data-element_type="section">
+    <section style="padding-top: 60px;margin-top:0px !important;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-8104c8f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8104c8f" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-128b5f8" data-id="128b5f8" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1227,144 +1503,233 @@ $(document).ready(function() {
         </div>
     </section>
 
-    <div class="blog-grid-section pt-50     ">
-        <div class="container">
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single2">
-                        <div class="image">
-                            <img loading="lazy" width="870" height="500" src="<?= base_url('assets/images/blog-dt8.jpg') ?>" class="img-fluid wp-post-image" alt="" decoding="async" srcset="
-                    <?= base_url('assets/images/blog-dt8.jpg') ?>         870w,
-                    <?= base_url('assets/images/blog-dt8-600x345.jpg') ?> 600w,
-                    <?= base_url('assets/images/blog-dt8-300x172.jpg') ?> 300w,
-                    <?= base_url('assets/images/blog-dt8-768x441.jpg') ?> 768w,
-                    <?= base_url('assets/images/blog-dt8-370x213.jpg') ?> 370w
-                  " sizes="(max-width: 870px) 100vw, 870px" />
+    <style>
+    .destination-custom {
+        padding: 30px 0;
+        background-color: #F9f9f9;
+    }
 
-                        </div>
-                        <div class="content">
-                            <h5>
-                                <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="#">Li river, China’s orignial postcard landcaspe</a>
-                            </h5>
-                            <div class="blog-date">
-                                <i class="bi bi-calendar-check"></i><span><a style="font-weight: 500; font-family: 'Open Sans'; font-size: 18px; line-height: 24px;" href="#">February 18, 2023</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single2">
-                        <div class="image">
-                            <img loading="lazy" width="870" height="500" src="<?= base_url('assets/images/blog-dt9.jpg') ?>" class="img-fluid wp-post-image" alt="" decoding="async" srcset="
-                    <?= base_url('assets/images/blog-dt9.jpg') ?>         870w,
-                    <?= base_url('assets/images/blog-dt9-600x345.jpg') ?> 600w,
-                    <?= base_url('assets/images/blog-dt9-300x172.jpg') ?> 300w,
-                    <?= base_url('assets/images/blog-dt9-768x441.jpg') ?> 768w,
-                    <?= base_url('assets/images/blog-dt9-370x213.jpg') ?> 370w
-                  " sizes="(max-width: 870px) 100vw, 870px" />
+    .destination-custom .card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 4px 8px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: row;
+    }
 
-                        </div>
-                        <div class="content">
-                            <h5>
-                                <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="#">The social art of zaha Hadid, architecture’s presence</a>
-                            </h5>
-                            <div class="blog-date">
-                                <i class="bi bi-calendar-check"></i><span><a style="font-weight: 500; font-family: 'Open Sans'; font-size: 18px; line-height: 24px;" href="#">February 18, 2023</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single2">
-                        <div class="image">
-                            <img loading="lazy" width="870" height="500" src="<?= base_url('assets/images/blog-dt10.jpg') ?>" class="img-fluid wp-post-image" alt="" decoding="async" srcset="
-                    <?= base_url('assets/images/blog-dt10.jpg') ?>         870w,
-                    <?= base_url('assets/images/blog-dt10-600x345.jpg') ?> 600w,
-                    <?= base_url('assets/images/blog-dt10-300x172.jpg') ?> 300w,
-                    <?= base_url('assets/images/blog-dt10-768x441.jpg') ?> 768w,
-                    <?= base_url('assets/images/blog-dt10-370x213.jpg') ?> 370w
-                  " sizes="(max-width: 870px) 100vw, 870px" />
+    .destination-custom .card-img-left {
+        width: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
 
-                        </div>
-                        <div class="content">
-                            <h5>
-                                <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="#">Jungles in Paris vermont’s rugged, retro Ski mountain</a>
-                            </h5>
-                            <div class="blog-date">
-                                <i class="bi bi-calendar-check"></i><span><a style="font-weight: 500; font-family: 'Open Sans'; font-size: 18px; line-height: 24px;" href="#">February 18, 2023</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single2">
-                        <div class="image">
-                            <img loading="lazy" width="870" height="500" src="<?= base_url('assets/images/blog-dt7.jpg') ?>" class="img-fluid wp-post-image" alt="" decoding="async" srcset="
-                    <?= base_url('assets/images/blog-dt7.jpg') ?>         870w,
-                    <?= base_url('assets/images/blog-dt7-600x345.jpg') ?> 600w,
-                    <?= base_url('assets/images/blog-dt7-300x172.jpg') ?> 300w,
-                    <?= base_url('assets/images/blog-dt7-768x441.jpg') ?> 768w,
-                    <?= base_url('assets/images/blog-dt7-370x213.jpg') ?> 370w
-                  " sizes="(max-width: 870px) 100vw, 870px" />
+    .destination-custom .card-img-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-                        </div>
-                        <div class="content">
-                            <h5>
-                                <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="#">Day out on the Ile de Re. Getting hotter and hotter.</a>
-                            </h5>
-                            <div class="blog-date">
-                                <i class="bi bi-calendar-check"></i><span><a style="font-weight: 500; font-family: 'Open Sans'; font-size: 18px; line-height: 24px;" href="#">January 10, 2023</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single2">
-                        <div class="image">
-                            <img loading="lazy" width="870" height="500" src="<?= base_url('assets/images/blog-dt1.jpg') ?>" class="img-fluid wp-post-image" alt="" decoding="async" srcset="
-                    <?= base_url('assets/images/blog-dt1.jpg') ?>         870w,
-                    <?= base_url('assets/images/blog-dt1-600x345.jpg') ?> 600w,
-                    <?= base_url('assets/images/blog-dt1-300x172.jpg') ?> 300w,
-                    <?= base_url('assets/images/blog-dt1-768x441.jpg') ?> 768w,
-                    <?= base_url('assets/images/blog-dt1-370x213.jpg') ?> 370w
-                  " sizes="(max-width: 870px) 100vw, 870px" />
+    .destination-custom .card-body {
+        padding: 20px;
+        width: 50%;
+        background-color: #f9f9f9;
+    }
 
-                        </div>
-                        <div class="content">
-                            <h5>
-                                <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="#">Benefit from a 15% discount to make your reservations.</a>
-                            </h5>
-                            <div class="blog-date">
-                                <i class="bi bi-calendar-check"></i><span><a style="font-weight: 500; font-family: 'Open Sans'; font-size: 18px; line-height: 24px;" href="#2022/10/12">October 12, 2022</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single2">
-                        <div class="image">
-                            <img loading="lazy" width="870" height="500" src="<?= base_url('assets/images/blog-dt2.jpg') ?>" class="img-fluid wp-post-image" alt="" decoding="async" srcset="
-                    <?= base_url('assets/images/blog-dt2.jpg') ?>         870w,
-                    <?= base_url('assets/images/blog-dt2-600x345.jpg') ?> 600w,
-                    <?= base_url('assets/images/blog-dt2-300x172.jpg') ?> 300w,
-                    <?= base_url('assets/images/blog-dt2-768x441.jpg') ?> 768w,
-                    <?= base_url('assets/images/blog-dt2-370x213.jpg') ?> 370w
-                  " sizes="(max-width: 870px) 100vw, 870px" />
+    .destination-custom .card-title {
+        margin-bottom: 15px;
+        color: #333;
+    }
 
-                        </div>
-                        <div class="content">
-                            <h5>
-                                <a style="font-weight: 700; font-family: 'Open Sans'; font-size: 20px; line-height: 42px;" href="#">How to select the perfect quality camping tent.</a>
-                            </h5>
-                            <div class="blog-date">
-                                <i class="bi bi-calendar-check"></i><span><a style="font-weight: 500; font-family: 'Open Sans'; font-size: 18px; line-height: 24px;" href="#2022/10/11">October 11, 2022</a></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    .destination-custom .destinations-cards .card {
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .destination-custom .list-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin-right: 15px;
+        border-radius: 5px;
+    }
+
+    .destination-custom .small.text-muted {
+        margin-top: -10px;
+    }
+
+    .custom-card {
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .custom-card .card-body {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .date-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        /* Warna latar belakang kotak */
+        border-top: 7px solid rgb(224, 188, 109);
+        /* Garis batas hanya di bagian atas */
+        padding: 10px;
+        text-align: center;
+        margin-right: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .date-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    .date-month {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .destination-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .date-text {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .date-text i {
+        margin-right: 5px;
+    }
+</style>
+
+    <!-- start section -->
+    <div class="destination-custom">
+            <div class="row justify-content-center">
+                                                <div class="col-lg-8 col-md-10">
+                                                    <div class="card flex-md-row">
+                                                        <!-- Gambar di sebelah kiri dengan judul -->
+                                                        <div class="position-relative card-img-left">
+                                                            <img src="<?= base_url('assets/images/services/taylor.jpeg') ?>" class="img-fluid" alt="Cover Image">
+                                                        </div>
+
+                                                        <!-- Daftar Destinasi di sebelah kanan -->
+                                                        <div class="card-body">
+                                                            <div class="destinations-cards">
+                                                                <div class="card mb-3 custom-card">
+                                                                    <div class="card-body d-flex align-items-center">
+                                                                        <!-- Bagian kotak tanggal dan bulan -->
+                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
+                                                                            <span class="date-number">7</span>
+                                                                            <span class="date-month">September</span>
+                                                                        </div>
+
+                                                                        <!-- Bagian informasi -->
+                                                                        <div class="info-box">
+                                                                            <p class="destination-name">Italian GP</p>
+                                                                            <p class="date-text">
+                                                                                 Paris
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card mb-3 custom-card">
+                                                                    <div class="card-body d-flex align-items-center">
+                                                                        <!-- Bagian kotak tanggal dan bulan -->
+                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
+                                                                            <span class="date-number">13-17</span>
+                                                                            <span class="date-month">September</span>
+                                                                        </div>
+
+                                                                        <!-- Bagian informasi -->
+                                                                        <div class="info-box">
+                                                                            <p class="destination-name">London Fashion Week</p>
+                                                                            <p class="date-text">
+                                                                                 London
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card mb-3 custom-card">
+                                                                    <div class="card-body d-flex align-items-center">
+                                                                        <!-- Bagian kotak tanggal dan bulan -->
+                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
+                                                                            <span class="date-number">17-19</span>
+                                                                            <span class="date-month">September</span>
+                                                                        </div>
+
+                                                                        <!-- Bagian informasi -->
+                                                                        <div class="info-box">
+                                                                            <p class="destination-name">IFTM Top Resa 2024</p>
+                                                                            <p class="date-text">
+                                                                                 Paris
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card mb-3 custom-card">
+                                                                    <div class="card-body d-flex align-items-center">
+                                                                        <!-- Bagian kotak tanggal dan bulan -->
+                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
+                                                                            <span class="date-number">17-23</span>
+                                                                            <span class="date-month">September</span>
+                                                                        </div>
+
+                                                                        <!-- Bagian informasi -->
+                                                                        <div class="info-box">
+                                                                            <p class="destination-name">Milan Fashion Week</p>
+                                                                            <p class="date-text">
+                                                                                 Milan
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card mb-3 custom-card">
+                                                                    <div class="card-body d-flex align-items-center">
+                                                                        <!-- Bagian kotak tanggal dan bulan -->
+                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
+                                                                            <span class="date-number">23 - 1</span>
+                                                                            <span class="date-month">October</span>
+                                                                        </div>
+
+                                                                        <!-- Bagian informasi -->
+                                                                        <div class="info-box">
+                                                                            <p class="destination-name">Paris Fashion Week</p>
+                                                                            <p class="date-text">
+                                                                                 Paris
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end section -->
 
     <section aria-hidden="true" class="elementor-section elementor-top-section elementor-element elementor-element-8104c8f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8104c8f" data-element_type="section" style="padding-top: 60px !important;background-color: #F9F9F9;">
         <div class="elementor-container elementor-column-gap-default">
@@ -1461,11 +1826,7 @@ $(document).ready(function() {
                                                             <div class="best-plan-single1" style="border: none;">
                                                                 <div class="image" style="display: flex;justify-content: center;">
 
-                                                                    <!--<div style="width:225px;height: 145px; display: flex;justify-content: center; align-items: center;" class="img-fluid wp-post-image">-->
-                                                                        <!-- <i class="fa-solid fa-envelope fa-2xl" style="color: #086B7D; "></i> -->
-                                                                    <!--    <img loading="lazy" style="max-width: 80px;" src="<?= base_url('assets/images/how_it_works/') . $howItWork['image'] ?>" alt="<?= $howItWork['alt_image'] ?>" srcset="">-->
-                                                                    <!--</div>-->
-                                                                    <div style="width: 100px; height: 100px; display: flex; justify-content: center; align-items: center;" class="img-fluid wp-post-image">
+                                                                    <div style="width: 60px; height: 100px; display: flex; justify-content: center; align-items: center;" class="img-fluid wp-post-image">
                                                                         <img loading="lazy" style="width: 100%; height: 100%;" src="<?= base_url('assets/images/how_it_works/') . $howItWork['image'] ?>" alt="<?= $howItWork['alt_image'] ?>">
                                                                     </div>
 
@@ -1499,11 +1860,7 @@ $(document).ready(function() {
                                                             <div class="best-plan-single1" style="border: none;">
                                                                 <div class="image" style="display: flex;justify-content: center;">
 
-                                                                    <!--<div style="width:225px;height: 145px; display: flex;justify-content: center; align-items: center;" class="img-fluid wp-post-image">-->
-                                                                    <!--     <i class="fa-solid fa-envelope fa-2xl" style="color: #086B7D; "></i> -->
-                                                                    <!--    <img loading="lazy" style="max-width: 80px;" src="<?= base_url('assets/images/how_it_works/') . $howItWork['image'] ?>" alt="<?= $howItWork['alt_image'] ?>" srcset="">-->
-                                                                    <!--</div>-->
-                                                                    <div style="width: 100px; height: 100px; display: flex; justify-content: center; align-items: center;" class="img-fluid wp-post-image">
+                                                                    <div style="width: 60px; height: 100px; display: flex; justify-content: center; align-items: center;" class="img-fluid wp-post-image">
                                                                         <img loading="lazy" style="width: 100%; height: 100%;" src="<?= base_url('assets/images/how_it_works/') . $howItWork['image'] ?>" alt="<?= $howItWork['alt_image'] ?>">
                                                                     </div>
 
@@ -1602,7 +1959,7 @@ $(document).ready(function() {
                             <div class="accordion" id="accordionExample">
 
                                 <?php foreach ($faqs as $faq) : ?>
-                                    <div class="accordion-item">
+                                    <div class="accordion-item" style="box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3);">
                                         <h2 class="accordion-header" id="heading<?= $faq['id'] ?>">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $faq['id'] ?>" aria-expanded="true" aria-controls="collapse<?= $faq['id'] ?>">
                                                 <p style="font-weight: 700;font-family: 'Open Sans';font-size: 16px;line-height: 27px;margin:0px !important">
@@ -1642,56 +1999,65 @@ $(document).ready(function() {
             </div>
         </div>
 </section>
-<section style="margin-top: 60px;" class="elementor-section elementor-top-section elementor-element elementor-element-a3bd80e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="a3bd80e" data-element_type="section" data-settings='{"background_background":"classic"}'>
-    <div class="elementor-background-overlay" style="background-image: none;"></div>
+<section style="margin-top: 60px;" class="elementor-section elementor-top-section elementor-element elementor-element-a3bd80e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="a3bd80e" data-element_type="section">
+        <div class="elementor-background-overlay" style="background-image: url('https://yourprivateeurope.eu/wp-content/uploads/2020/08/zaanse-5018794_1280-min-1024x682.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 1; position: absolute; width: 100%; height: 100%;"></div>
 
-    <div class="container">
-        <div class="row justify-content-center align-items-center">
-            <!-- Kolom untuk teks -->
-            <div class="col-md-6 col-text" style="margin-top: 50px; margin-bottom: 50px;">
-                <h2><?= lang("text_homepage.title_contact_us") ?></h2>
-            </div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="row justify-content-center align-items-center">
+                <!-- Kolom untuk teks -->
+                <div class="col-md-6 col-text" style="margin-top: 50px; margin-bottom: 50px;">
+                        <h2 style="color: white;"><?= lang("text_homepage.title_contact_us") ?></h2>
+                </div>
 
-            <!-- Kolom untuk tombol -->
-            <div class="col-md-6 col-button" style="color: white; margin-top: 50px; margin-bottom: 50px;">
-                <a aria-hidden="true" href="/<?= $language ?>/hubungi-kami" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d;border-radius: 30px; font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
-                    <?= lang("text_homepage.button_contact_us") ?>
-                </a>
+                <!-- Kolom untuk tombol -->
+                <div class="col-md-4 col-button" style="color: white; margin-top: 50px; margin-bottom: 50px; ">
+                    <a aria-hidden="true" href="/<?= $language ?>/hubungi-kami" class="eg-btn btn--primary btn--lg" style="border-radius:30px;background-color: #e0bc6d; font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                        <?= lang("text_homepage.button_contact_us") ?>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <style>
-        /* Media query untuk tampilan web */
-        @media (min-width: 769px) {
-            /* Tambahkan padding kiri sebesar 50px untuk teks dan tombol pada tampilan web */
-            .col-text {
-                padding-left: 50px;
-            }
-            .col-button {
-                padding-left: 50px;
-            }
-        }
+        <style>
+            /* Media query untuk tampilan web */
+            @media (min-width: 769px) {
 
-        /* Media query untuk tampilan mobile */
-        @media (max-width: 768px) {
-            /* Mengatur kedua kolom untuk tampil secara vertikal di tampilan mobile dan di tengah */
-            .col-text, .col-button {
-                width: 100%; /* Membuat kolom penuh lebar layar */
-                text-align: center;
+                /* Tambahkan padding kiri sebesar 50px untuk teks dan tombol pada tampilan web */
+                .col-text {
+                    padding-left: 50px;
+                }
+
+                .col-button {
+                    padding-left: 50px;
+                }
             }
 
-            /* Atur posisi teks di atas tombol */
-            .col-text {
-                order: 1; /* Teks berada di urutan pertama */
-            }
+            /* Media query untuk tampilan mobile */
+            @media (max-width: 768px) {
 
-            .col-button {
-                order: 2; /* Tombol berada di urutan kedua */
+                /* Mengatur kedua kolom untuk tampil secara vertikal di tampilan mobile dan di tengah */
+                .col-text,
+                .col-button {
+                    width: 100%;
+                    /* Membuat kolom penuh lebar layar */
+                    text-align: center;
+                    padding-right: 0;
+                    /* Pusatkan teks dan tombol */
+                }
+
+                /* Atur posisi teks di atas tombol */
+                .col-text {
+                    order: 1;
+                    /* Teks berada di urutan pertama */
+                }
+
+                .col-button {
+                    order: 2;
+                    /* Tombol berada di urutan kedua */
+                }
             }
-        }
-    </style>
-</section>
+        </style>
+    </section>
 
 
 <?= $this->endSection() ?>
