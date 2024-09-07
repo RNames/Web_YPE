@@ -53,4 +53,26 @@ class ServiceController extends BaseController
 
         echo view('pages/detail_services', $data);
     }
+
+    public function mice()
+    {
+        $data = [
+            'title' => $this->serviceModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
+            'description' => $this->serviceModel->select(['seo_description_id', 'seo_description_en'])->first(),
+            'currentUrl' => $this->currentUrl,
+            'language' => $this->language,
+            'socmeds' => $this->socmedModel->findAll(),
+            'service' => [
+                'head_title' => 'MICE',
+                'title_id' => 'Rencanakan acara bisnis Anda dengan sempurna',
+                'title_en' => 'Plan your business events perfectly ',
+                'desc_id' => 'Melalui layanan MICE kami. Dari konferensi besar hingga acara perusahaan kecil, kami menyediakan fasilitas dan layanan yang dibutuhkan untuk kesuksesan acara Anda',
+                'desc_en' => 'Through our MICE services. From large conferences to small corporate events, we provide the facilities and services needed for the success of your event'
+            ],
+        ];
+    
+        echo view('pages/mice', $data);
+    }
+    
+
 }

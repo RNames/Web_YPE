@@ -45,6 +45,7 @@ $routes->get('/en/other-services', 'OtherServicesController::index');
 
 $routes->get('/id/layanan-kami/(:any)', 'ServiceController::detail/$1');
 $routes->get('/en/our-services/(:any)', 'ServiceController::detail/$1');
+$routes->get('/service/mice', 'ServiceController::mice');
 
 $routes->get('/id/footer/(:any)', 'OtherFooterController::index/$1');
 $routes->get('/en/footer/(:any)', 'OtherFooterController::index/$1');

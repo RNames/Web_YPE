@@ -74,43 +74,48 @@
                                 <div class="elementor-element elementor-element-68b1738 elementor-widget elementor-widget-astrip_accordion" data-id="68b1738" data-element_type="widget" data-widget_type="astrip_accordion.default">
                                     <div class="elementor-widget-container">
 
-                                        <?php foreach ($faqCategories as $faqCat) : ?>
-                                            <h3 style="text-align:center; margin: 10px 0px; font-weight: 700; font-size: 30px; line-height: 42px; font-family: 'Open Sans' !important; color: black;">
-                                                <?= $language == 'id' ? $faqCat['name_id'] : $faqCat['name_en'] ?>
-                                            </h3> 
-                                            <span style="display: block; height: 3px; background-color: #086b72; width: 100px; margin: 0 auto 20px;"></span>
+                                        <?php
+                                        foreach ($faqCategories as $faqCat) : ?>
+                                            <div style="text-align: center;">
+                                                <h3 style="margin: 30px 0px; font-weight: 700; font-size: 30px; line-height: 42px; font-family: 'Open Sans' !important; color: black; position: relative; padding-bottom: 10px; display: inline-block; 
+                transition: color 0.3s ease;">
+                                                     <?= $language == 'id_faq_category' ? $faqCat['name_id'] : $faqCat['name_en'] ?>
+                                                    <span style="content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background-color: #086b72;"></span>
+                                                </h3>
+                                            </div>
+
                                             <div style="margin-bottom: 100px;" class="faq-wrap">
                                                 <div class="accordion" id="accordionExample">
-                                                
                                                     <?php $id = 0;
                                                     foreach ($faqs as $faq) :  $id++ ?>
                                                         <?php if ($faq['id_faq_category'] == $faqCat['id_faq_category']) : ?>
                                                             <div class="accordion-item">
                                                                 <h2 class="accordion-header" id="heading<?= $id ?>">
                                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $id ?>" aria-expanded="true" aria-controls="collapse<?= $id ?>">
-                                                                        <p style="font-weight: 700;font-size: 16px;line-height: 27px;font-family: 'Open Sans' !important;">
+                                                                        <p style="font-weight: 700; font-size: 16px; line-height: 27px; font-family: 'Open Sans' !important;margin-bottom:0px">
                                                                             <?= $language == 'id' ? $faq['title_id'] : $faq['title_en'] ?>
                                                                         </p>
                                                                     </button>
                                                                 </h2>
                                                                 <div id="collapse<?= $id ?>" class="accordion-collapse collapse" aria-labelledby="heading<?= $id ?>" data-bs-parent="#accordionExample">
-                                                                    <div class="accordion-body" style="font-weight: 500;font-size: 16px;line-height: 27px;font-family: 'Open Sans' !important;">
+                                                                    <div class="accordion-body" style="font-weight: 500; font-size: 16px; line-height: 27px; font-family: 'Open Sans' !important;">
                                                                         <?= $language == 'id' ? $faq['description_id'] : $faq['description_en'] ?>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         <?php endif; ?>
                                                     <?php endforeach; ?>
-
                                                 </div>
                                             </div>
+
+
                                         <?php endforeach; ?>
 
 
                                     </div>
                                 </div>
-            </div>
-        </div>
+                            </div>
+                        </div>
     </article>
 </div>
 <?= $this->endSection() ?>

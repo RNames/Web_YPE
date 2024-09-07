@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'heading' => 'HELP CENTER',  
+    'heading' => 'HELP CENTER (FAQ)',  
 ];

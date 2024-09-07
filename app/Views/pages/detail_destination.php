@@ -31,8 +31,9 @@
 </div>
 
 <div class="destination-details-section pt-120 pb-120">
-  <div class="container">
-    <div class="col justify-content-center" style="border:1px solid #F0F0F0;">
+    <div class="container">
+    <div class="col justify-content-center" style="border:2px solid #F0F0F0; ">
+    
       <div class="col-lg-12 destination-tab">
         <div class="nav flex-row justify-content-center nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           <button style="font-weight: 600;font-family:'Oswald'" class="nav-link active nav-btn-style mb-20" id="v-pills-information-tab" data-bs-toggle="pill" data-bs-target="#v-pills-information" type="button" role="tab" aria-controls="v-pills-information" aria-selected="true">
@@ -100,6 +101,8 @@
             <?= $language == 'id' ? 'PERIODE TOUR' : 'TOUR PERIOD' ?>
           </button>
         </div>
+
+
         <div class="tab-content" id="v-pills-tabContent" style="padding:20px">
           <div class="tab-pane fade show active" id="v-pills-information" role="tabpanel" aria-labelledby="v-pills-information-tab">
             <div class="tour-information">

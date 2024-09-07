@@ -1,6 +1,6 @@
 * {
   margin: 0px;
-  padding: 0px;
+  padding: 0;
   scroll-behavior: smooth;
 }
 
@@ -79,6 +79,10 @@ h5,
 h6 {
   color: var(--text-primary);
   font-family: var(--font-merriw);
+}
+
+h2,tect{
+  color:white;
 }
 
 html,body {
@@ -482,10 +486,8 @@ i.bx {
   text-transform: capitalize;
   font-family: var(--font-exo);
   cursor: pointer;
-  :;
   overflow: hidden;
 }
-  
 .eg-btn i {
   font-weight: 200;
   vertical-align: middle;
@@ -495,13 +497,14 @@ i.bx {
 .btn--primary {
   background: var(--primary-color1);
   color: var(--white);
-  border-radius: 0px;
+  border-radius: 30px;
   position: relative;
   z-index: 1;
   display: inline-flex;
   justify-content: center;
   white-space: nowrap;
   border: 1px solid var(--primary-color1);
+  
 }
 .btn--primary::after {
   content: "";
@@ -680,6 +683,7 @@ i.bx {
   justify-content: center;
   white-space: nowrap;
   border: 1px solid var(--primary-color1);
+  
 }
 .btn--primary3-outline::after {
   content: "";
@@ -688,7 +692,7 @@ i.bx {
   top: 0;
   bottom: 0;
   right: 0;
-  background: white;
+  background: var(--white);
   width: 100%;
   height: 100%;
   transition: 0.5s;
@@ -699,12 +703,17 @@ i.bx {
 }
 .btn--primary3-outline:hover {
   color: var(--primary-color1);
-  border: 2px solid transparent;
 }
 .btn--primary3-outline:hover::after {
   transform: scale(1);
   opacity: 1;
 }
+/*.btn--primary3-outline.sibling-2 {*/
+/*  color: var(--text-primary);*/
+/*}*/
+/*.btn--primary3-outline.sibling-2::after {*/
+/*  background: var(--primary-color2);*/
+/*}*/
 
 .btn-primary2-outline {
   background: transparent;
@@ -3322,49 +3331,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
     margin-top: 40px;
   }
 }
-.hero-wrapper .hero-content .btn-group .dsc-btn a {
-  position: relative;
-  color: #fff;
-  text-align: center;
-  font-family: var(--font-merriw);
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: capitalize;
-  background-color: #90b956;
-  min-width: 195px;
-  display: block;
-  padding: 7px 20px;
-  z-index: 1;
-  border-radius: 30px;
-  transition: 0.5s;
-}
-.hero-wrapper .hero-content .btn-group .dsc-btn a:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: var(--white);
-  width: 100%;
-  height: 100%;
-  transition: 0.5s;
-  z-index: -1;
-  transform: scale(0.6);
-  border-radius: 30px;
-  opacity: 0;
-}
-.hero-wrapper .hero-content .btn-group .dsc-btn a svg,
-.hero-wrapper .hero-content .btn-group .dsc-btn a i {
-  margin-right: -40px;
-}
-.hero-wrapper .hero-content .btn-group .dsc-btn a:hover {
-  color: var(--primary-color1);
-}
-.hero-wrapper .hero-content .btn-group .dsc-btn a:hover:after {
-  transform: scale(1);
-  opacity: 1;
-}
+
 .hero-wrapper .hero-content .btn-group .trip-rating {
   display: flex;
   flex-wrap: wrap;
@@ -3498,7 +3465,8 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   /* animation: fadeInUp 1.7s; */
 }
 
-.swiper-slide-active .dsc-btn {
+.swiper-slide-active .
+-btn {
   /* animation: fadeInUp 1.7s; */
 }
 
@@ -5099,7 +5067,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
    11. category-section
 =======================================*/
 .category-single1 {
-  background: var(--white);
+  background: #f9f9f9;
   box-shadow: 4px 3px 40px rgba(16, 33, 34, 0.06);
   text-align: center;
   padding: 30px 25px;
@@ -5404,8 +5372,8 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   font-size: 20px;
 }
 .tour-package-standard .tour-standard-content {
-  text-align: justify;
-  padding: 0px 20px 0px 20px;
+  text-align: start;
+  padding: 0px 0px 0 30px;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .tour-package-standard .tour-standard-content {
@@ -6299,10 +6267,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   font-size: 14px;
   color: var(--text-light);
 }
-.best-plan-single1:hover {
-  border: 1px solid transparent;
-  box-shadow: 4px 3px 10px rgba(16, 33, 34, 0.06);
-}
+
 .best-plan-single1 .image {
   position: relative;
 }
@@ -6327,7 +6292,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   }
 }
 .best-plan-single1 .content h4 {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 .best-plan-single1 .content h4 a {
   font-size: 2.4rem;
@@ -6337,9 +6302,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   transition: all 0.5s ease;
   line-height: 1.4;
 }
-.best-plan-single1 .content h4:hover a {
-  color: var(--primary-color1);
-}
+
 .best-plan-single1 .content p,
 .best-plan-single1 .content .info-single .info-text a,
 .info-single .info-text .best-plan-single1 .content a {
@@ -6386,24 +6349,24 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   margin-bottom: 15px;
 }
 .list-area ul.plan-list1 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  
+  margin: 2px;
+  padding: ;
 }
 .list-area ul.plan-list1 li {
   position: relative;
   padding-left: 25px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 5px;
 }
 .list-area ul.plan-list1 li::before {
-  content: "";
+  
   position: absolute;
   top: 10px;
   left: 0;
-  width: 12px;
+  width: 10px;
   height: 2px;
   background: var(--text-secondary);
   border-radius: 30px;
@@ -6817,7 +6780,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
  Counter-section 
 =======================================*/
 .counter-wrapper {
-  background: #f9f9f;
+
   box-shadow: 4px 3px 40px rgba(16, 33, 34, 0.06);
   padding: 20px;
 }
@@ -11390,10 +11353,12 @@ h4.package-widget-title {
 .faq-wrap .accordion-item {
   margin-bottom: 24px;
   border: none;
-  box-shadow: 5px 2px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 2px 18px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 .faq-wrap .accordion-item:last-child {
   margin-bottom: 0;
+  border-radius: 5px;
 }
 .faq-wrap .accordion-button {
   font-weight: 500;
@@ -13300,7 +13265,6 @@ h4.package-widget-title {
   text-align: center;
   padding: 35px 30px;
   background: #ffffff;
-  box-shadow: 4px 3px 40px rgba(16, 33, 34, 0.06);
   width: 100%;
   margin: 0 auto 60px auto;
   border-radius: 5px;

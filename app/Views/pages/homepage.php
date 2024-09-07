@@ -98,12 +98,14 @@
     /* Responsiveness for laptop (1024px) */
     @media (min-width: 769px) {
         #heading1-homepage {
-            width: 100%;
-            text-align: center;
+
+            font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+            text-transform: uppercase;
             font-size: 45px;
-            font-weight: 500;
-            text-shadow: 2px 2px #69727d;
-            margin-bottom: 15px; /* Reduced margin */
+            letter-spacing: 2px;
+            line-height: 1.3em;
+            text-align: center;
+            text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.4)
         }
 
         #heading2-banner-homepage {
@@ -132,137 +134,207 @@
             font-family: 'Open Sans' !important;
         }
     }
-
-    .card {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .card .image {
-        position: relative;
-    }
-
-    .card .image img {
-        width: 100%;
-        height: auto;
-        transition: transform 0.5s ease;
-        display: block;
-    }
-
-    .card .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        /* Bayangan hitam */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.5s ease, transform 0.5s ease;
-    }
-
-    .card .overlay h4 {
-        color: white;
-        font-weight: 700;
-        font-family: 'Open Sans';
-        font-size: 20px;
-        line-height: 30px;
-        margin: 0;
-        transition: transform 0.3s ease;
-    }
-
-    .card:hover .image img {
-        transform: scale(1.1);
-        /* Zoom in pada gambar */
-    }
-
-    .card:hover .overlay {
-        background: rgba(0, 0, 0, 0.7);
-        /* Membuat bayangan lebih gelap saat di-hover */
-        transform: scale(1.1);
-        /* Zoom in pada bayangan hitam */
-    }
-
-    .card:hover .overlay h4 {
-        transform: scale(1.1);
-        /* Zoom in pada tulisan saat di-hover */
-    }
+    
+    .hero-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.hero-wrapper .hero-content > span {
+  color: #fff;
+  font-family: var(--font-satisfy);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.hero-wrapper .hero-content h1 {
+  color: #fff;
+  font-family: var(--font-merriw);
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .hero-wrapper .hero-content h1 {
+    font-size: 65px;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hero-wrapper .hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .hero-wrapper .hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .hero-wrapper .hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+.hero-wrapper .hero-content p,
+.hero-wrapper .hero-content .info-single .info-text a,
+.info-single .info-text .hero-wrapper .hero-content a {
+  color: #fff;
+  font-family: var(--font-work-sans);
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+.hero-wrapper .hero-content .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  margin-top: 60px;
+}
+@media (max-width: 991px) {
+  .hero-wrapper .hero-content .btn-group {
+    margin-top: 40px;
+  }
+}
+.hero-wrapper .hero-content .btn-group .dsc-btn a {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-merriw);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+  background-color: #90b956;
+  min-width: 195px;
+  display: block;
+  padding: 7px 20px;
+  z-index: 1;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+.hero-wrapper .hero-content .btn-group .dsc-btn a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--white);
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  z-index: -1;
+  transform: scale(0.6);
+  border-radius: 30px;
+  opacity: 0;
+}
+.hero-wrapper .hero-content .btn-group .dsc-btn a svg,
+.hero-wrapper .hero-content .btn-group .dsc-btn a i {
+  margin-right: -40px;
+  border-radius:30px;
+}
+.hero-wrapper .hero-content .btn-group .dsc-btn a:hover {
+  color: var(--primary-color1);
+  border-radius:30px;
+}
+.hero-wrapper .hero-content .btn-group .dsc-btn a:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
 </style>
-
 
 <!-- ========== header end============= -->
 <div data-elementor-type="wp-page" data-elementor-id="234" class="elementor elementor-234">
 <section class="elementor-section elementor-top-section elementor-element elementor-element-c69dd4c elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="c69dd4c" data-element_type="section">
-    <div class="elementor-container elementor-column-gap-no">
-        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f1cf64a" data-id="f1cf64a" data-element_type="column">
-            <div class="elementor-widget-wrap elementor-element-populated">
-                <div class="elementor-element elementor-element-156ef9f elementor-widget elementor-widget-egens_slider" data-id="156ef9f" data-element_type="widget" data-widget_type="egens_slider.default">
-                    <div class="elementor-widget-container">
-                        <section class="hero-banner">
-                            <div class="swiper hero-slider">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img loading="lazy" decoding="async" src="<?= base_url('assets/images/slide-1.jpg') ?>" alt="" />
-                                        <div class="hero-wrapper">
-                                            <div class="container" style="display: flex;justify-content: center;align-items: center;">
-                                                <div class="row" style="margin: auto; display: flex;justify-content: center;">
-                                                    <div class="col-12 col-lg-9">
-                                                        <div class="hero-content" id="slider-homepage" style="font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; letter-spacing: 0.5px;">
-                                                            <!-- <span id="subtitle-banner-homepage"><?= $language == 'id' ? $homepage['sub_title_id'] : $homepage['sub_title_en'] ?></span> -->
-                                                            <h1 id="heading1-homepage" style="text-shadow: 0.1em 0.1em 0.1em rgba(0,0,0,0.4);font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif; font-weight: 450; letter-spacing: 2px; margin-bottom: 10px;">
-                                                                <?= $language == 'id' ? strtoupper($homepage['title_id']) : strtoupper($homepage['title_en'])  ?>
-                                                            </h1>
-                                                            <p id="heading2-banner-homepage" style="text-shadow: 0px 2px #69727d;font-family: Open Sans,Arial,sans-serif; font-weight: 700; line-height: 1.8em; letter-spacing: 0.5px; margin-top: 10px;">
-                                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
-                                                                    VIP Services
-                                                                </a>
-                                                                |
-                                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
-                                                                    Private Tour
-                                                                </a>
-                                                                |
-                                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
-                                                                    MICE
-                                                                </a>
-                                                            </p>
-                                                            
-                                                            <div class="btn-group" style="display: flex;justify-content: center;flex-direction:column ; margin-top: 20px !important;">
+        <div class="elementor-container elementor-column-gap-no">
+            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f1cf64a" data-id="f1cf64a" data-element_type="column">
+                <div class="elementor-widget-wrap elementor-element-populated">
+                    <div class="elementor-element elementor-element-156ef9f elementor-widget elementor-widget-egens_slider" data-id="156ef9f" data-element_type="widget" data-widget_type="egens_slider.default">
+                        <div class="elementor-widget-container">
+                            <section class="hero-banner">
+                                <div class="swiper hero-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img loading="lazy" decoding="async" src="<?= base_url('assets/images/slide-1.jpg') ?>" alt="" />
+                                            <div class=" hero-wrapper">
+                                                <div class="container" style="display: flex;justify-content: center;align-items: center;">
+                                                    <div class="row" style="margin: auto; display: flex;justify-content: center;">
+                                                        <div class="col-12 col-lg-9">
+                                                            <div class="hero-content" id="slider-homepage">
+                                                                <!-- <span id="subtitle-banner-homepage"><?= $language == 'id' ? $homepage['sub_title_id'] : $homepage['sub_title_en'] ?></span> -->
+                                                                <h1 id="heading1-homepage" style="font-family: ''Oswald',Helvetica,Arial,Lucida,sans-serif  '; margin-bottom: 10px; "><?= $language == 'id' ? strtoupper($homepage['title_id']) : strtoupper($homepage['title_en'])  ?></h1>
+                                                                <h2 id="heading2-banner-homepage" style="text-shadow: 2px 2px #69727d;font-family: 'Open Sans'; font-weight: 700; font-size: 25px; line-height: 42px;">
+
+                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
+                                                                        VIP Services
+                                                                    </a>
+                                                                    |
+                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
+                                                                        Private Tour
+                                                                    </a>
+                                                                    |
+                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
+                                                                        MICE
+                                                                    </a>
+                                                                </h2>
+
+
+                                                                <div class="btn-group" style="display: flex;justify-content: center;flex-direction: column; margin-top: 20px !important;">
                                                                     <div class="dsc-btn">
                                                                         <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>" class="eg-btn btn--primary-outline" style="font-family: 'Open Sans' !important;background-color: #e0bc6d; font-size: 18px; line-height: 31px; display: flex;justify-content: space-around;align-items:center;" onmouseout="this.style.cursor='default'" onmouseover="this.style.cursor='pointer'">
-                                                                            <i aria-hidden="true"></i>
+
                                                                             <?= strtoupper(lang("text_homepage.banner_button")) ?>
                                                                         </a>
                                                                     </div>
-                                                                <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
-                                                                    <div class="trip-rating">
-                                                                        <div class="cnt" style="display: flex;flex-direction: column;align-items: center; font-size: 18px; line-height: 24px;">
-                                                                            <img loading="lazy" src="<?= base_url('assets/images/trustpilot.svg') ?>" alt="trustpilot-rating" style="height: 30px !important;width: 130px ;">
-                                                                            <p>See our 37 reviews on Trustpilot</p>
+                                                                    <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
+                                                                        <div class="trip-rating">
+                                                                            <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Open Sans'; font-weight: 500; font-size: 18px; line-height: 24px;">
+                                                                                <img loading="lazy" src="<?= base_url('assets/images/trustpilot.svg') ?>" alt="trustpilot-rating" style="height: 30px !important;width: 130px ;">
+                                                                                <p>See our 37 reviews on Trustpilot</p>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                </a>
+                                                                    </a>
+
+                                                                    <!-- ubah -->
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
-
+                                    <div class="hero-pagination"></div>
                                 </div>
-                                <div class="hero-pagination"></div>
-                            </div>
 
-                        </section>
+                            </section>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+
+
+    <style>
+/*@media (max-width: 768px) {*/
+/*    #heading1-homepage {*/
+/*        margin-top: 200px;*/
+/*    }*/
+/*}*/
+    </style>
 
     <section style="margin-top: 60px !important;background-color: #fff;" class="elementor-section elementor-top-section elementor-element elementor-element-d1338d8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d1338d8" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
@@ -354,7 +426,26 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <!-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-10">
+                                            <div class="counter-single text-center d-flex flex-column hover-border1">
+                                                <div class="counter-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58" fill="none">
+                                                        <path d="M27.618 4.9957C23.3586 5.55078 19.8582 8.91524 19.0313 13.2539C18.85 14.1715 18.884 16.1539 19.0879 17.1281C20.0508 21.818 24.1742 25.1484 29 25.1484C33.8258 25.1484 37.9492 21.818 38.9121 17.1281C39.116 16.1539 39.15 14.1715 38.9688 13.2539C38.5383 10.9996 37.5754 9.23242 35.8762 7.62383C34.3582 6.18516 32.3758 5.25625 30.2348 4.98438C29.1699 4.85977 28.7055 4.85977 27.618 4.9957ZM30.9484 8.72266C33.6672 9.56094 35.5816 12.1551 35.5816 14.9984C35.5703 16.8676 34.9473 18.4082 33.6332 19.7109C32.3984 20.957 30.7445 21.6367 29 21.6367C27.2555 21.6367 25.6016 20.957 24.3668 19.7109C23.0641 18.4082 22.4297 16.8676 22.4184 15.0098C22.4184 11.8266 24.7406 9.0625 27.9012 8.49609C28.7055 8.36016 30.0988 8.46211 30.9484 8.72266Z" fill="#086B7D"></path>
+                                                        <path d="M9.7875 14.4433C4.9957 15.4855 2.36758 20.7305 4.46328 25.0918C6.04922 28.4222 9.66289 30.1215 13.2086 29.2265C17.8871 28.0371 20.2773 22.8601 18.1363 18.5215C16.607 15.4289 13.1066 13.7183 9.7875 14.4433ZM12.9707 18.1703C14.8172 19.0086 15.8367 21.1949 15.2363 23.0187C14.0242 26.6664 9.24375 26.9722 7.62383 23.5058C7.35195 22.9281 7.30664 22.6789 7.30664 21.8633C7.30664 21.0023 7.35195 20.8097 7.68047 20.1414C8.0543 19.3711 8.76797 18.6234 9.45898 18.2609C10.5012 17.7172 11.9059 17.6832 12.9707 18.1703Z" fill="#086B7D"></path>
+                                                        <path d="M45.0293 14.4547C40.2262 15.5309 37.6887 20.8664 39.875 25.2844C41.1551 27.8672 43.7492 29.4531 46.6719 29.4531C50.8746 29.4531 54.2504 26.0887 54.2617 21.8859C54.273 18.6008 52.0527 15.5988 48.8809 14.6133C47.8273 14.2848 46.1055 14.2168 45.0293 14.4547ZM47.6348 17.9437C48.8582 18.2609 49.7645 19.0086 50.3195 20.1414C50.648 20.8098 50.6934 21.0023 50.6934 21.8633C50.6934 22.6789 50.648 22.9281 50.3762 23.5059C49.6852 24.9898 48.2465 25.9414 46.6719 25.9414C44.3496 25.9414 42.4805 23.959 42.6164 21.6594C42.7637 19.1219 45.2332 17.298 47.6348 17.9437Z" fill="#086B7D"></path>
+                                                        <path d="M23.166 26.0094C22.2824 26.1226 21.3988 26.3492 20.7191 26.6211C19.1559 27.2555 17.5586 28.5922 16.7316 29.9969C16.4031 30.5293 16.3352 30.5859 16.0859 30.518C15.5762 30.3707 7.70313 30.3367 6.91016 30.4726C3.97617 30.9824 1.35938 33.2707 0.362501 36.216L0.0566418 37.0996L0.0226575 42.9789C-0.0113269 48.6769 1.22678e-06 48.8695 0.226564 49.5605C0.838282 51.3957 2.44688 52.7437 4.32734 53.0156C5.27891 53.1629 52.7211 53.1629 53.6727 53.0156C55.5531 52.7437 57.1617 51.3957 57.7734 49.5605C58 48.8695 58.0113 48.6769 57.9773 42.9789L57.9434 37.0996L57.6375 36.216C56.6406 33.2707 54.0238 30.9824 51.0898 30.4726C50.2969 30.3367 42.4238 30.3707 41.9141 30.518C41.6648 30.5859 41.5969 30.5293 41.2684 29.9969C40.4527 28.6148 38.8441 27.2555 37.3375 26.6437C35.8082 26.0207 35.8309 26.0207 29.4531 25.998C26.1793 25.9754 23.3586 25.9867 23.166 26.0094ZM34.7773 29.5664C36.6125 29.8609 38.1871 31.209 38.8328 33.0555C38.9914 33.5312 39.0141 34.5168 39.048 41.5969L39.0934 49.6172H29H18.9066L18.952 41.5969C18.9859 34.5168 19.0086 33.5312 19.1672 33.0555C19.8016 31.2543 21.3875 29.8609 23.1094 29.5777C23.993 29.4418 33.8711 29.4305 34.7773 29.5664ZM15.157 33.9391L15.4063 34.007V41.8121V49.6285L10.0027 49.5945L4.58789 49.5605L4.21406 49.3C3.43242 48.7449 3.45508 48.8809 3.45508 43.2168C3.45508 38.1531 3.45508 38.1191 3.72695 37.3488C4.23672 35.8535 5.5168 34.5734 6.9668 34.109C7.57852 33.9051 7.99766 33.8824 11.2715 33.8824C13.2652 33.8711 15.0098 33.9051 15.157 33.9391ZM50.9879 34.0976C52.4719 34.5621 53.752 35.8309 54.273 37.3488C54.5449 38.1191 54.5449 38.1531 54.5449 43.2168C54.5449 48.8809 54.5676 48.7449 53.7859 49.3L53.4121 49.5605L48.0086 49.5945L42.5938 49.6285V41.8121C42.5938 34.4715 42.6051 33.9957 42.7977 33.9504C42.8996 33.9164 44.6328 33.8937 46.6266 33.8824C49.9797 33.8711 50.3309 33.8937 50.9879 34.0976Z" fill="#086B7D"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="coundown d-flex flex-column">
+                                                    <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                                                        <div class="plus-icon">
+                                                            <h3 class="odometer" data-odometer-final="500">�&nbsp;</h3><i class="bi bi-plus-lg"></i>
+                                                        </div>
+                                                    </div>
+                                                    <p>Travel Guides</p>
+                                                </div>
+                                            </div>
+                                        </div> -->
 
                                     </div>
                                 </div>
@@ -460,7 +551,7 @@
 <!-- About Us End -->
 <!-- Our Services Start -->
 
-<section class="elementor-section elementor-top-section elementor-element elementor-element-aa8649e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aa8649e" data-element_type="section" style="margin-top: 60px !important;">
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-aa8649e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="aa8649e" data-element_type="section" style="margin-top: 60px !important;">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7c7b2d8" data-id="7c7b2d8" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -509,7 +600,7 @@
     </section>
     
 
-<section class="elementor-section elementor-top-section elementor-element elementor-element-04a950f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="04a950f" data-element_type="section" style="margin-top: 0px !important;">
+    <section class="elementor-section elementor-top-section elementor-element elementor-element-04a950f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="04a950f" data-element_type="section" style="margin-top: 0px !important;">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-34259fb" data-id="34259fb" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -563,6 +654,10 @@
                                 </div>
 
                             </div>
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -653,6 +748,8 @@
 
                 </div>
             </div>
+
+            <!-- </div> -->
     </section>
 <!-- Testimoni Start -->
 <div class="page-wrapper sec-mar">
@@ -777,6 +874,8 @@
                                             }
 
                                             .card {
+                                                position: relative;
+                                                overflow: hidden;
                                                 border: none;
                                                 border-radius: 15px;
                                                 box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
@@ -796,259 +895,363 @@
                                                 font-size: 16px;
                                                 color: #555;
                                             }
+                                            
+                                            .card .image {
+        position: relative;
+    }
+
+    .card .image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+        display: block;
+    }
+                                            
+                                            .card .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Bayangan hitam */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.5s ease, transform 0.5s ease;
+    }
+
+    .card .overlay h4 {
+        color: white;
+        font-weight: 700;
+        font-family: 'Open Sans';
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover .image img {
+        transform: scale(1.1);
+        /* Zoom in pada gambar */
+    }
+
+    .card:hover .overlay {
+        background: rgba(0, 0, 0, 0.7);
+        /* Membuat bayangan lebih gelap saat di-hover */
+        transform: scale(1.1);
+        /* Zoom in pada bayangan hitam */
+    }
+
+    .card:hover .overlay h4 {
+        transform: scale(1.1);
+        /* Zoom in pada tulisan saat di-hover */
+    }
                                         </style>
 
+                                <!-- start section -->
+                    <div class="destination-custom1">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-md-12">
+                                <!-- Card Container -->
+                                <div class="card" style="background-color: #f8f9fa; border-radius: 10px; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+                                    <div class="card1 flex-md-row">
+                                        <!-- Carousel -->
+                                        <div id="carouselExample" class="carousel slide carousel-container" data-bs-ride="carousel">
+                                            <?php
+                                            // Folder yang berisi gambar testimoni
+                                            $folder = 'assets/images/testimoni/';
+                                            // Membaca semua file gambar dari folder
+                                            $images = glob($folder . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
-                                   <!-- start section -->
-                                   <div class="destination-custom1">
-    <div class="row justify-content-center">
-        <div class="col-lg-10 col-md-12">
-            <div class="card1 flex-md-row">
-                <!-- Carousel -->
-                <div id="carouselExample" class="carousel slide carousel-container" data-bs-ride="carousel">
-                    <?php
-                    // Folder yang berisi gambar testimoni
-                    $folder = 'assets/images/testimoni/';
-                    // Membaca semua file gambar dari folder
-                    $images = glob($folder . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
+                                            // Mengecek apakah ada gambar yang ditemukan
+                                            if ($images && count($images) > 0):
+                                            ?>
+                                                <!-- Tambahkan indikator di sini -->
+                                                <div class="carousel-indicators">
+                                                    <?php
+                                                    // Menghitung jumlah gambar
+                                                    for ($i = 0; $i < count($images); $i++) {
+                                                        $activeClass = $i === 0 ? 'active' : '';
+                                                        echo '<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="' . $i . '" class="' . $activeClass . '" aria-current="true" aria-label="Slide ' . ($i + 1) . '"></button>';
+                                                    }
+                                                    ?>
+                                                </div>
+                                                <div class="carousel-inner">
+                                                    <?php
+                                                    $isFirst = true;
+                                                    foreach ($images as $image) {
+                                                        // Menentukan kelas 'active' untuk item pertama
+                                                        $activeClass = $isFirst ? 'active' : '';
+                                                        // Link Instagram
+                                                        $linkUrl = "https://www.instagram.com/yourprivateeurope/";
+                                                        $altText = $linkUrl; // Menggunakan URL Instagram sebagai alt text
 
-                    // Mengecek apakah ada gambar yang ditemukan
-                    if ($images && count($images) > 0):
-                    ?>
-                        <!-- Tambahkan indikator di sini -->
-                        <div class="carousel-indicators">
-                            <?php
-                            // Menghitung jumlah gambar
-                            for ($i = 0; $i < count($images); $i++) {
-                                $activeClass = $i === 0 ? 'active' : '';
-                                echo '<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="' . $i . '" class="' . $activeClass . '" aria-current="true" aria-label="Slide ' . ($i + 1) . '"></button>';
-                            }
-                            ?>
+                                                        echo '<div class="carousel-item ' . $activeClass . '">';
+                                                        echo '<a href="' . $linkUrl . '" target="_blank" title="' . $altText . '">';
+                                                        echo '<img src="' . base_url($image) . '" class="d-block w-100 img-fluid carousel-image" alt="' . $altText . '">';
+                                                        echo '</a>';
+                                                        echo '</div>';
+                                                        $isFirst = false;
+                                                    }
+
+                                                    ?>
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                                    <i class='fas fa-chevron-circle-left' style='font-size:37px'></i>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                                    <i class='fas fa-chevron-circle-right' style='font-size:37px'></i>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            <?php else: ?>
+                                                <p>No images found in the specified folder.</p>
+                                            <?php endif; ?>
+                                        </div>
+
+                                        <!-- Konten Sosmed -->
+                                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                            <div class="info-box1">
+                                                <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
+                                                    <div class="trip-rating">
+                                                        <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Open Sans'; font-weight: 500;  line-height: 24px;">
+                                                            <img src="<?= base_url('assets/images/trustpilot.png') ?>" alt="trustpilot-rating">
+                                                            <p style="padding-top:15px;font-size:20px;font-weight:bold;">See our 37 reviews on Trustpilot</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <ul class="topbar-right-social_list1">
+                                                    <li>
+                                                        <a target="_blank" href="https://www.instagram.com/yourprivateeurope/">
+                                                            <i class="fab fa-instagram"></i>
+                                                            <span class="follow-us">Follow us on <span class="platform-name">Instagram</span></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a target="_blank" href="https://www.tiktok.com/@yourprivateeurope">
+                                                            <i class="fa-brands fa-tiktok"></i>
+                                                            <span class="follow-us">Follow us on <span class="platform-name">TikTok</span></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a target="_blank" href="https://www.youtube.com/@yourprivateeurope">
+                                                            <i class="fa-brands fa-youtube"></i>
+                                                            <span style="margin-left: 13px;" class="follow-us">Follow us on <span class="platform-name">Youtube</span></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a target="_blank" href="https://www.linkedin.com/company/your-private-europe/">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                            <span class="follow-us">Follow us on <span class="platform-name">LinkedIN</span></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <style>
+                                            .carousel-inner {
+                                                width: 100%;
+                                                height: 100%;
+                                            }
+
+                                            .carousel-item img.carousel-image {
+                                                width: 100%;
+                                                height: 650px;
+                                                /* Set height to ensure consistent image size */
+                                                object-fit: cover;
+                                                /* Ensure images cover the container */
+                                                object-position: center;
+                                            }
+
+                                            .carousel-container {
+                                                width: 50%;
+                                                margin-bottom: 15px;
+                                                border-radius: 10px;
+                                                overflow: hidden;
+                                            }
+
+                                            .topbar-right-social_list1 {
+                                                display: flex;
+                                                flex-direction: column;
+                                                align-items: center;
+                                                /* Center horizontally */
+                                                justify-content: center;
+                                                /* Center vertically */
+                                                list-style: none;
+                                                margin-right: 0;
+                                                width: 100%;
+                                            }
+
+                                            .topbar-right-social_list1 li {
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: flex-start;
+                                                /* Align content to the left */
+                                                background-color: white;
+                                                border-radius: 10px;
+                                                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                                                width: 500px;
+                                                height: 100px;
+                                                margin: 10px;
+                                                padding: 10px;
+                                                transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+                                            }
+
+                                            .topbar-right-social_list1 li:hover {
+                                                background-color: #f8f9fa;
+                                                /* Warna background saat hover */
+                                                color: rgb(224, 188, 109);
+                                                /* Warna tulisan saat hover */
+                                                transform: translateY(-5px);
+                                                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                                            }
+
+
+                                            /* CSS for larger logos */
+                                            .topbar-right-social_list1 li i {
+                                                font-size: 35px;
+                                                /* Membuat ikon lebih besar */
+                                                margin-left: 25px;
+                                                margin-right: 20px;
+                                                /* Sesuaikan jarak antara ikon dan teks */
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: flex-start;
+                                            }
+
+                                            .topbar-right-social_list1 li img {
+                                                height: 35px;
+                                                /* Memperbesar logo */
+                                                width: auto;
+                                                /* Biarkan width menyesuaikan secara otomatis */
+                                                margin-right: 15px;
+                                                /* Jarak antara logo dan teks */
+                                            }
+
+                                            .topbar-right-social_list1 li a {
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: start;
+                                                text-decoration: none;
+                                                font-size: 20px;
+                                                color: inherit;
+                                                width: 100%;
+                                                text-align: center;
+                                                /* Menjaga agar konten berada di tengah */
+                                            }
+
+
+                                            .topbar-right-social_list1 .trustpilot img {
+                                                margin-right: 15px;
+                                                /* Space between logo and text */
+                                                margin-left: 0;
+                                                /* Ensure the logo starts from the left */
+                                                align-self: flex-start;
+                                                /* Align the logo to the top left */
+                                            }
+
+                                            .topbar-right-social_list1 .trustpilot span {
+                                                font-size: 16px;
+                                                color: #333;
+                                            }
+
+                                            .follow-us {
+                                                font-family: var(--font-work-sans);
+                                                font-weight: bold;
+                                                margin-left: 20px;
+                                            }
+
+                                            .destination-custom1 {
+                                                padding: 20px 0;
+                                                margin-top: 100px;
+                                            }
+
+                                            .destination-custom1 .card1 {
+                                                border: none;
+                                                border-radius: 10px;
+                                                overflow: hidden;
+                                                display: flex;
+                                                flex-direction: column;
+                                            }
+
+                                            .destination-custom1 .card-body {
+                                                padding: 15px;
+                                                background-color: #f8f9fa;
+                                                width: 50%;
+                                            }
+
+                                            .destination-custom1 .card-title {
+                                                margin-bottom: 10px;
+                                                color: #333;
+                                            }
+
+                                            .destination-custom1 .info-box1 .cnt {
+                                                display: flex;
+                                                flex-direction: column;
+                                                align-items: center;
+                                                margin-bottom: 20px;
+                                            }
+
+                                            .destination-custom1 .info-box1 img {
+                                                height: 27px;
+                                                width: 110px;
+                                            }
+
+                                            .destination-custom1 .info-box1 p {
+                                                text-align: center;
+                                            }
+
+                                            @media (min-width: 992px) {
+                                                .destination-custom1 .card1 {
+                                                    flex-direction: row;
+                                                }
+
+                                                .destination-custom1 .carousel-container {
+                                                    width: 40%;
+                                                    margin-bottom: 0;
+                                                }
+
+                                                .destination-custom1 .card-body {
+                                                    width: 30%;
+                                                }
+                                            }
+
+                                            /* Tambahan CSS untuk responsive mobile */
+                                            @media (max-width: 767px) {
+                                                .carousel-container {
+                                                    width: 100%;
+                                                    margin-bottom: 15px;
+                                                }
+
+                                                .topbar-right-social_list1 li {
+                                                    width: 100%;
+                                                    height: auto;
+                                                    padding: 15px;
+                                                    margin-right: 40px;
+                                                }
+
+                                                .topbar-right-social_list1 li i {
+                                                    margin-right: 10px;
+                                                }
+
+                                                .destination-custom1 .card-body {
+                                                    width: 100%;
+                                                }
+
+                                                .destination-custom1 .info-box1 img {
+                                                    height: 20px;
+                                                    width: 90px;
+                                                }
+                                            }
+                                        </style>
+                                    </div>
+                                </div> <!-- End of Card Container -->
+                            </div>
                         </div>
-                        <div class="carousel-inner">
-                            <?php
-                            $isFirst = true;
-                            foreach ($images as $image) {
-                                // Menentukan kelas 'active' untuk item pertama
-                                $activeClass = $isFirst ? 'active' : '';
-                                echo '<div class="carousel-item ' . $activeClass . '">';
-                                echo '<img src="' . base_url($image) . '" class="d-block w-100 img-fluid carousel-image" alt="Image">';
-                                echo '</div>';
-                                $isFirst = false;
-                            }
-                            ?>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <i class='fas fa-chevron-circle-left' style='font-size:37px'></i>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <i class='fas fa-chevron-circle-right' style='font-size:37px'></i>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    <?php else: ?>
-                        <p>No images found in the specified folder.</p>
-                    <?php endif; ?>
-                </div>
-
-               <!-- Konten Sosmed -->
-<div class="card-body d-flex flex-column align-items-center justify-content-center">
-    <div class="info-box1">
-        <ul class="topbar-right-social_list1">
-        <li class="trustpilot">
-                <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount">
-                    <img src="<?= base_url('assets/images/trustpilot.png') ?>" alt="trustpilot-rating">
-                    <span>See our 37 reviews on Trustpilot</span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="https://www.instagram.com/yourprivateeurope/">
-                    <i class="fab fa-instagram"></i>
-                    <span class="follow-us ">Follow us on <span class="platform-name">Instagram</span></span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="https://www.tiktok.com/@yourprivateeurope">
-                    <i class="fa-brands fa-tiktok"></i>
-                    <span class="follow-us" >Follow us on <span class="platform-name">TikTok</span></span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="https://www.youtube.com/@yourprivateeurope">
-                    <i class="fa-brands fa-youtube"></i>
-                    <span class="follow-us">Follow us on <span class="platform-name">Youtube</span></span>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="https://www.linkedin.com/company/your-private-europe/">
-                    <i class="fab fa-linkedin-in"></i>
-                    <span class="follow-us">Follow us on <span class="platform-name">LinkedIN</span></span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<style>
-    .carousel-inner {
-        width: 100%;
-        height: 100%;
-    }
-
-    .carousel-item img.carousel-image {
-        width: 100%;
-        height: 779px; /* Set height to ensure consistent image size */
-        object-fit: cover; /* Ensure images cover the container */
-        object-position: center;
-    }
-
-    .carousel-container {
-        width: 50%;
-        margin-bottom: 15px;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .topbar-right-social_list1 {
-        display: flex;
-        list-style: none;
-        margin-right: 30px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .topbar-right-social_list1 li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        border-radius: 10px; /* Slightly rounded corners */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        width: 500px; /* Adjust width as needed */
-        height: 100px; /* Adjust height as needed */
-        margin: 10px; /* Space between the cards */
-        padding: 10px; /* Adjust padding for more spacing inside the cards */
-    }
-
-    .topbar-right-social_list1 li a {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        text-decoration: none;
-        font-size: 30px; /* Increase the size of the icons */
-        color: inherit;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-    }
-
-    .topbar-right-social_list1 li a:hover {
-        color: #0073e6;
-    }
-
-    .topbar-right-social_list1 .trustpilot {
-        font-size: 18px; /* Adjust for text content */
-        color: #0073e6;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        flex-direction: column; /* Stack logo and text vertically */
-    }
-
-    .topbar-right-social_list1 .trustpilot img {
-        height: 25px;
-        width: 110px;
-        margin-bottom: 5px; /* Space between logo and text */
-    }
-
-    .topbar-right-social_list1 .trustpilot span {
-        font-size: 16px;
-        color: #333;
-        text-align: center; /* Center the text */
-    }
-
-    .follow-us {
-        font-family: var(--font-work-sans);
-        margin-left: 10px;
-        font-weight: bold;
-        font-size: 24px;
-    }
-
-
-    .destination-custom1 {
-        padding: 20px 0;
-        margin-top: 100px;
-    }
-
-    .destination-custom1 .card1 {
-        border: none;
-        border-radius: 10px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .destination-custom1 .card-body {
-        padding: 15px;
-        background-color: #fff;
-        width: 50%;
-    }
-
-    .destination-custom1 .card-title {
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    .destination-custom1 .info-box1 .cnt {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .destination-custom1 .info-box1 img {
-        height: 25px;
-        width: 110px;
-    }
-
-    .destination-custom1 .info-box1 p {
-        text-align: center;
-    }
-
-    @media (min-width: 992px) {
-        .destination-custom1 .card1 {
-            flex-direction: row;
-        }
-
-        .destination-custom1 .carousel-container {
-            width: 40%;
-            margin-bottom: 0;
-        }
-
-        .destination-custom1 .card-body {
-            width: 30%;
-        }
-    }
-
-    /* Tambahan CSS untuk responsive mobile */
-    @media (max-width: 768px) {
-        .destination-custom1 .card1 {
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .destination-custom1 .carousel-container {
-            width: 100%;
-        }
-
-        .destination-custom1 .card-body {
-            width: 100%;
-            padding-top: 20px;
-        }
-    }
-</style>
+                    </div>
+                    <!-- end section -->
 
 
                                 </div>
@@ -1060,7 +1263,6 @@
         </div>
     </article>
 </div>
-
 
 <!-- External JS for slick slider -->
 <script>
@@ -1099,7 +1301,7 @@ $(document).ready(function() {
 </script>
 
 <!-- Testimoni End -->
-    <section style="padding-top: 60px !important; background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
+    <section style="padding-top:50px;margin-top: 60px !important;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0442f94" data-id="0442f94" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1144,7 +1346,7 @@ $(document).ready(function() {
         </div>
     </section>
 
-    <section class="elementor-section elementor-top-section elementor-element elementor-element-926134b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="926134b" data-element_type="section" style="padding-bottom:60px;background-color: #f9f9f9;">
+    <section style="padding-top:20px;background-color:#f9f9f9;margin-top:0px;padding-bottom:50px;" class="elementor-section elementor-top-section elementor-element elementor-element-926134b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="926134b" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4cda8d9" data-id="4cda8d9" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1154,7 +1356,7 @@ $(document).ready(function() {
                                 <div class="row justify-content-center g-xxl-5 g-4">
                                     <?php foreach ($commitments as $commitment) : ?>
                                         <div class="col-xl-2 col-lg-3 col-md-6 col-sm-4"> <!-- col-sm-4 untuk 3 kolom pada layar kecil -->
-                                            <div class="category-single1 d-flex flex-column h-100" style="box-shadow: none !important; background-color:#f9f9f9;">
+                                            <div class="category-single1 d-flex flex-column h-100" style="box-shadow: none !important;">
                                                 <div class="icon" style="display: flex; justify-content: center; align-items: center; width: 95px; height: 95px; background-color: #D4B264; border-radius: 50%; transition: none !important; border: 0px !important;">
                                                     <img loading="lazy" style="max-width: 48px; filter: brightness(0) invert(1);" src="<?= base_url('assets/images/commitments/') . $commitment['image'] ?>" alt="<?= $commitment['alt_image'] ?>" srcset="">
                                                 </div>
@@ -1227,7 +1429,7 @@ $(document).ready(function() {
         </style>
     </section>
 
-    <section aria-hidden="true" class="elementor-section elementor-top-section elementor-element elementor-element-16674b5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="16674b5" data-element_type="section" style="padding-top: 0px !important;">
+    <section aria-hidden="true" class="elementor-section elementor-top-section elementor-element elementor-element-16674b5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="16674b5" data-element_type="section" style="padding-top: 60px !important;margin-top:0px;">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2bd2882" data-id="2bd2882" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1271,7 +1473,7 @@ $(document).ready(function() {
             </div>
         </div>
     </section>
-    <section style="margin-top: 0px !important;padding-top: 50px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-535e7b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="535e7b3" data-element_type="section">
+    <section style=" margin-top: 0px !important;padding-top: 50px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-535e7b3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="535e7b3" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-811c3aa" data-id="811c3aa" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1290,11 +1492,11 @@ $(document).ready(function() {
                                     <div class="circle-background mb-4">
                                         <h4 class="deal-title mb-0"><b><?= strtoupper($destination['title']) ?></b></h4>
                                         <div class="price">
-                                            <span style="font-size: 13px; line-height: 24px; font-weight: 600; font-family: 'Open Sans';">
+                                            <span style="font-size: 16px; line-height: 24px; font-weight: 500; font-family: 'Open Sans';">
                                                 <?= $language == 'id' ? $destination['duration_id'] : $destination['duration_en'] ?>
                                             </span>
                                         </div>
-                                        <p class="deal-description" style="font-size: 16px; line-height: 24px; font-weight: 500; font-family: 'Open Sans';">
+                                        <p class="deal-description">
                                             Explore this beautiful destination and enjoy a memorable experience.
                                         </p>
                                     </div>
@@ -1365,7 +1567,7 @@ $(document).ready(function() {
 
                             .deal-content-overlay {
     position: absolute;
-    top: 105%; /* Start at the bottom */
+    top: 100%; /* Start at the bottom */
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
@@ -1403,28 +1605,14 @@ $(document).ready(function() {
     font-weight: 500;
     font-family: 'Open Sans';
     color: white;
-    margin-top: 10px; /* Add margin to create space between title and price */
+    margin-top: 15px; /* Add margin to create space between title and price */
 }
 
 .deal-description {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.5;
-    margin-top: 10px;
+    margin-top: 15px;
     color: white;
-}
-
-/* Media Query for Smaller Screens */
-@media (max-width: 768px) {
-    .deal-content-overlay {
-        top: 105%; /* Keep the circle in the center */
-        transition: none; /* Remove transition effects */
-        transform: translate(-50%, -50%);
-    }
-
-    .card-link:hover .deal-content-overlay {
-        top: 105%; /* No change on hover */
-        transition: none; /* Disable hover transition */
-    }
 }
 
                         </style>
@@ -1458,7 +1646,7 @@ $(document).ready(function() {
     </section>
 
 
-    <section style="padding-top: 60px;margin-top:0px !important;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-8104c8f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8104c8f" data-element_type="section">
+    <section style="background-color:#F9F9F9; padding-top:50px;margin-top: 0px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-8104c8f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8104c8f" data-element_type="section">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-128b5f8" data-id="128b5f8" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1505,15 +1693,15 @@ $(document).ready(function() {
 
     <style>
     .destination-custom {
-        padding: 30px 0;
-        background-color: #F9f9f9;
+        padding: 30px;
+        background-color:#f9f9f9;
     }
 
     .destination-custom .card {
         border: none;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0px 4px 8px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: row;
     }
@@ -1534,7 +1722,7 @@ $(document).ready(function() {
     .destination-custom .card-body {
         padding: 20px;
         width: 50%;
-        background-color: #f9f9f9;
+        background-color: #f8f9fa;
     }
 
     .destination-custom .card-title {
@@ -1626,112 +1814,241 @@ $(document).ready(function() {
 </style>
 
     <!-- start section -->
-    <div class="destination-custom">
-            <div class="row justify-content-center">
-                                                <div class="col-lg-8 col-md-10">
-                                                    <div class="card flex-md-row">
-                                                        <!-- Gambar di sebelah kiri dengan judul -->
-                                                        <div class="position-relative card-img-left">
-                                                            <img src="<?= base_url('assets/images/services/taylor.jpeg') ?>" class="img-fluid" alt="Cover Image">
-                                                        </div>
+<div class="destination-custom" style="padding-bottom:80px;">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card flex-md-row">
+                <!-- Gambar di sebelah kiri dengan judul -->
+                <div class="position-relative card-img-left">
+                    <img src="<?= base_url('assets/images/taylor.jpeg') ?>" class="img-fluid" alt="Cover Image">
+                </div>
 
-                                                        <!-- Daftar Destinasi di sebelah kanan -->
-                                                        <div class="card-body">
-                                                            <div class="destinations-cards">
-                                                                <div class="card mb-3 custom-card">
-                                                                    <div class="card-body d-flex align-items-center">
-                                                                        <!-- Bagian kotak tanggal dan bulan -->
-                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
-                                                                            <span class="date-number">7</span>
-                                                                            <span class="date-month">September</span>
-                                                                        </div>
+                <!-- Daftar Destinasi di sebelah kanan -->
+                <div class="card-body">
+                    <div class="destinations-cards">
+                        <div class="card mb-3 custom-card">
+                            <div class="card-body d-flex align-items-center">
+                                <!-- Bagian kotak tanggal dan bulan -->
+                                <div class="date-box d-flex flex-column align-items-center mr-3">
+                                    <span class="date-number">7</span>
+                                    <span class="date-month">September</span>
+                                </div>
+                                <!-- Bagian informasi -->
+                                <div class="info-box">
+                                    <p class="destination-name">Italian GP</p>
+                                    <p class="date-text">Monza</p>
+                                </div>
+                            </div>
+                        </div>
 
-                                                                        <!-- Bagian informasi -->
-                                                                        <div class="info-box">
-                                                                            <p class="destination-name">Italian GP</p>
-                                                                            <p class="date-text">
-                                                                                 Paris
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card mb-3 custom-card">
-                                                                    <div class="card-body d-flex align-items-center">
-                                                                        <!-- Bagian kotak tanggal dan bulan -->
-                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
-                                                                            <span class="date-number">13-17</span>
-                                                                            <span class="date-month">September</span>
-                                                                        </div>
+                        <div class="card mb-3 custom-card">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="date-box d-flex flex-column align-items-center mr-3">
+                                    <span class="date-number">13-17</span>
+                                    <span class="date-month">September</span>
+                                </div>
+                                <div class="info-box">
+                                    <p class="destination-name">London Fashion Week</p>
+                                    <p class="date-text">London</p>
+                                </div>
+                            </div>
+                        </div>
 
-                                                                        <!-- Bagian informasi -->
-                                                                        <div class="info-box">
-                                                                            <p class="destination-name">London Fashion Week</p>
-                                                                            <p class="date-text">
-                                                                                 London
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card mb-3 custom-card">
-                                                                    <div class="card-body d-flex align-items-center">
-                                                                        <!-- Bagian kotak tanggal dan bulan -->
-                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
-                                                                            <span class="date-number">17-19</span>
-                                                                            <span class="date-month">September</span>
-                                                                        </div>
+                        <div class="card mb-3 custom-card">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="date-box d-flex flex-column align-items-center mr-3">
+                                    <span class="date-number">17-19</span>
+                                    <span class="date-month">September</span>
+                                </div>
+                                <div class="info-box">
+                                    <p class="destination-name">IFTM Top Resa 2024</p>
+                                    <p class="date-text">Paris</p>
+                                </div>
+                            </div>
+                        </div>
 
-                                                                        <!-- Bagian informasi -->
-                                                                        <div class="info-box">
-                                                                            <p class="destination-name">IFTM Top Resa 2024</p>
-                                                                            <p class="date-text">
-                                                                                 Paris
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card mb-3 custom-card">
-                                                                    <div class="card-body d-flex align-items-center">
-                                                                        <!-- Bagian kotak tanggal dan bulan -->
-                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
-                                                                            <span class="date-number">17-23</span>
-                                                                            <span class="date-month">September</span>
-                                                                        </div>
+                        <div class="card mb-3 custom-card">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="date-box d-flex flex-column align-items-center mr-3">
+                                    <span class="date-number">17-23</span>
+                                    <span class="date-month">September</span>
+                                </div>
+                                <div class="info-box">
+                                    <p class="destination-name">Milan Fashion Week</p>
+                                    <p class="date-text">Milan</p>
+                                </div>
+                            </div>
+                        </div>
 
-                                                                        <!-- Bagian informasi -->
-                                                                        <div class="info-box">
-                                                                            <p class="destination-name">Milan Fashion Week</p>
-                                                                            <p class="date-text">
-                                                                                 Milan
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card mb-3 custom-card">
-                                                                    <div class="card-body d-flex align-items-center">
-                                                                        <!-- Bagian kotak tanggal dan bulan -->
-                                                                        <div class="date-box d-flex flex-column align-items-center mr-3">
-                                                                            <span class="date-number">23 - 1</span>
-                                                                            <span class="date-month">October</span>
-                                                                        </div>
+                        <div class="card mb-3 custom-card">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="date-box d-flex flex-column align-items-center mr-3">
+                                    <span class="date-number">1-23</span>
+                                    <span class="date-month">September</span>
+                                </div>
+                                <div class="info-box">
+                                    <p class="destination-name">Paris Fashion Week</p>
+                                    <p class="date-text">Paris</p>
+                                </div>
+                            </div>
+                        </div>
 
-                                                                        <!-- Bagian informasi -->
-                                                                        <div class="info-box">
-                                                                            <p class="destination-name">Paris Fashion Week</p>
-                                                                            <p class="date-text">
-                                                                                 Paris
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end section -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
 
-    <section aria-hidden="true" class="elementor-section elementor-top-section elementor-element elementor-element-8104c8f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8104c8f" data-element_type="section" style="padding-top: 60px !important;background-color: #F9F9F9;">
+<style>
+    .destination-custom {
+        padding: 30px 0;
+    }
+
+    .destination-custom .card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: row;
+    }
+
+    .destination-custom .card-img-left {
+        width: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    .destination-custom .card-img-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .destination-custom .card-body {
+        padding: 20px;
+        width: 50%;
+        background-color: #f8f9fa;
+    }
+
+    .destination-custom .card-title {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .destination-custom .destinations-cards .card {
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .destination-custom .destinations-cards .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: #e0bc6d;
+    }
+
+    .destination-custom .list-img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin-right: 15px;
+        border-radius: 5px;
+    }
+
+    .destination-custom .small.text-muted {
+        margin-top: -10px;
+    }
+
+    .custom-card {
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .custom-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: #e0bc6d;
+    }
+
+    .custom-card .card-body {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .date-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffffff;
+        border-top: 7px solid rgb(224, 188, 109);
+        padding: 10px;
+        text-align: center;
+        margin-right: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+    .date-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    .date-month {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .destination-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        transition: color 0.3s ease;
+    }
+
+    .date-text {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .date-text i {
+        margin-right: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .destination-custom .card {
+            flex-direction: column;
+        }
+
+        .destination-custom .card-img-left,
+        .destination-custom .card-body {
+            width: 100%;
+        }
+    }
+</style>
+
+
+    <section aria-hidden="true" class="elementor-section elementor-top-section elementor-element elementor-element-8104c8f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8104c8f" data-element_type="section" style="margin-top:0px;padding-top: 50px !important;">
         <div class="elementor-container elementor-column-gap-default">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-128b5f8" data-id="128b5f8" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1775,7 +2092,7 @@ $(document).ready(function() {
             </div>
         </div>
     </section>
-    <section style="background-color: #F9F9F9; margin-top: 0px !important;padding-top: 50px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-3f21453 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="3f21453" data-element_type="section">
+    <section style=" margin-top: 0px !important;padding-top: 50px !important;" class="elementor-section elementor-top-section elementor-element elementor-element-3f21453 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="3f21453" data-element_type="section">
         <div class="elementor-container elementor-column-gap-no">
             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-fe9d011" data-id="fe9d011" data-element_type="column">
                 <div class="elementor-widget-wrap elementor-element-populated">
@@ -1826,7 +2143,11 @@ $(document).ready(function() {
                                                             <div class="best-plan-single1" style="border: none;">
                                                                 <div class="image" style="display: flex;justify-content: center;">
 
-                                                                    <div style="width: 60px; height: 100px; display: flex; justify-content: center; align-items: center;" class="img-fluid wp-post-image">
+                                                                    <!--<div style="width:225px;height: 145px; display: flex;justify-content: center; align-items: center;" class="img-fluid wp-post-image">-->
+                                                                    <!-- <i class="fa-solid fa-envelope fa-2xl" style="color: #90B956; "></i> -->
+                                                                    <!--    <img loading="lazy" style="max-width: 80px;" src="<?= base_url('assets/images/how_it_works/') . $howItWork['image'] ?>" alt="<?= $howItWork['alt_image'] ?>" srcset="">-->
+                                                                    <!--</div>-->
+                                                                    <div style="width: 100px; height: 100px; display: flex; justify-content: center; align-items: center;" class="img-fluid wp-post-image">
                                                                         <img loading="lazy" style="width: 100%; height: 100%;" src="<?= base_url('assets/images/how_it_works/') . $howItWork['image'] ?>" alt="<?= $howItWork['alt_image'] ?>">
                                                                     </div>
 
@@ -1860,7 +2181,11 @@ $(document).ready(function() {
                                                             <div class="best-plan-single1" style="border: none;">
                                                                 <div class="image" style="display: flex;justify-content: center;">
 
-                                                                    <div style="width: 60px; height: 100px; display: flex; justify-content: center; align-items: center;" class="img-fluid wp-post-image">
+                                                                    <!--<div style="width:225px;height: 145px; display: flex;justify-content: center; align-items: center;" class="img-fluid wp-post-image">-->
+                                                                    <!--     <i class="fa-solid fa-envelope fa-2xl" style="color: #90B956; "></i> -->
+                                                                    <!--    <img loading="lazy" style="max-width: 80px;" src="<?= base_url('assets/images/how_it_works/') . $howItWork['image'] ?>" alt="<?= $howItWork['alt_image'] ?>" srcset="">-->
+                                                                    <!--</div>-->
+                                                                    <div style="width: 60px; height: 60px; display: flex; justify-content: center; align-items: center;" class="img-fluid wp-post-image">
                                                                         <img loading="lazy" style="width: 100%; height: 100%;" src="<?= base_url('assets/images/how_it_works/') . $howItWork['image'] ?>" alt="<?= $howItWork['alt_image'] ?>">
                                                                     </div>
 
@@ -1878,7 +2203,7 @@ $(document).ready(function() {
                                                                     </div>
                                                                     <div class="list-area">
 
-                                                                        <ul class="plan-list1" style="text-align: center;">
+                                                                        <ul class="plan-list1" style="text-align: center;padding-left:0px!important;">
                                                                             <?= $language == 'id' ? $howItWork['description_id'] : $howItWork['description_en'] ?>
                                                                         </ul>
                                                                     </div>
@@ -1900,11 +2225,11 @@ $(document).ready(function() {
                 </div>
             </div>
         </div>
-    </section>
+    </section>>
 
 
 
-<section style="margin-top: 60px;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
+<section style="padding-top:50px;margin-top: 30px;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
     <div class="elementor-container elementor-column-gap-default" style="max-width: 1140px;">
         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0442f94" data-id="0442f94" data-element_type="column">
             <div class="elementor-widget-wrap elementor-element-populated">
@@ -1949,7 +2274,7 @@ $(document).ready(function() {
     </div>
 </section>
 
-<section style="margin-bottom: 100px" class="elementor-section elementor-top-section elementor-element elementor-element-e2c78fd elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e2c78fd" data-element_type="section" style="margin-bottom: 50px !important;">
+<section style="padding-bottom: 100px;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-e2c78fd elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e2c78fd" data-element_type="section" style="margin-bottom: 50px !important;">
     <div class="elementor-container elementor-column-gap-default" style="display: flex;justify-content: center; padding: 50px 0px 0px 0px;">
         <div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-b17fe2a" data-id="b17fe2a" data-element_type="column" style="width: 100%;">
             <div class="elementor-widget-wrap elementor-element-populated">
@@ -1999,19 +2324,19 @@ $(document).ready(function() {
             </div>
         </div>
 </section>
-<section style="margin-top: 60px;" class="elementor-section elementor-top-section elementor-element elementor-element-a3bd80e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="a3bd80e" data-element_type="section">
+<section style="margin-top: 0px;" class="elementor-section elementor-top-section elementor-element elementor-element-a3bd80e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="a3bd80e" data-element_type="section">
         <div class="elementor-background-overlay" style="background-image: url('https://yourprivateeurope.eu/wp-content/uploads/2020/08/zaanse-5018794_1280-min-1024x682.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 1; position: absolute; width: 100%; height: 100%;"></div>
 
         <div class="container" style="position: relative; z-index: 1;">
             <div class="row justify-content-center align-items-center">
                 <!-- Kolom untuk teks -->
-                <div class="col-md-6 col-text" style="margin-top: 50px; margin-bottom: 50px;">
-                        <h2 style="color: white;"><?= lang("text_homepage.title_contact_us") ?></h2>
+                <div class="col-md-6 col-text" style="margin-top: 70px; margin-bottom: 70px; color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); /* Bayangan teks hitam */">
+                    <h2 class="tect"><?= lang("text_homepage.title_contact_us") ?></h2>
                 </div>
 
                 <!-- Kolom untuk tombol -->
-                <div class="col-md-4 col-button" style="color: white; margin-top: 50px; margin-bottom: 50px; ">
-                    <a aria-hidden="true" href="/<?= $language ?>/hubungi-kami" class="eg-btn btn--primary btn--lg" style="border-radius:30px;background-color: #e0bc6d; font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                <div class="col-md-4 col-button" style="color: white; margin-top: 50px; margin-bottom: 50px;">
+                    <a aria-hidden="true" href="/<?= $language ?>/hubungi-kami" class="eg-btn btn--primary btn--lg" style="border-radius: 30px; background-color: #e0bc6d; font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
                         <?= lang("text_homepage.button_contact_us") ?>
                     </a>
                 </div>
