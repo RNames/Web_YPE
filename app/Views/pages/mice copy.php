@@ -97,7 +97,7 @@
                     <div class="text-section" style="margin-left: 20px;">
                         <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">Event Management & Logistics</h2>
                         <p>Trust us with organizing your event in Europe. We are ready to help with the preparation and implementation of your event, from conceptual thinking, execution, to other logistical items.</p>
-
+                        <p>Mulai dari <strong>Gala Dinner, Brand/Product Launching, Company Party</strong> hingga Event bisnis lainnya, kami telah berpengalaman dan selalu menerapkan cara kerja yang holistik, dan melihat Event Anda secara end-to-end.</p>
                         <p>Kami siap melayani dalam pengadaan:</p>
                         <ul>
                             <li>Venue</li>
@@ -225,8 +225,6 @@
 
                     .container1.reverse .text-section ul li {
                         margin-bottom: 10px;
-                        font-weight: 500;
-                        font-family: 'Open Sans', Arial, sans-serif;
                     }
 
 
@@ -241,7 +239,6 @@
                         justify-content: center;
                         text-align: justify;
                         padding-right: 50px;
-                        font-weight: 500;
                     }
 
                     .text-section h2 {
@@ -272,23 +269,13 @@
 
                     .image-section {
                         flex: 1;
-                        padding: 20px;
-                        box-sizing: border-box;
-                        display: flex;
-                        align-items: center;
-                        /* Center vertically */
-                        justify-content: center;
-                        /* Center horizontally (optional if needed) */
                     }
 
                     .image-section img {
                         width: 100%;
-                        height: auto;
+                        height: 100%;
                         object-fit: cover;
-                        border-radius: 8px;
                     }
-
-
 
 
                     /* Mobile Styles */
@@ -313,11 +300,7 @@
                         }
 
                         .image-section img {
-                            width: 60%;
                             height: auto;
-                            display: block;
-                            /* Ensure the image is treated as a block-level element */
-                            margin: 0 auto;
                         }
                     }
                 </style>
