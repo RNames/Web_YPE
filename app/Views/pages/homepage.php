@@ -834,7 +834,7 @@
                                             </div>
                                         </div>
 
-                                        <script>
+                                        <!-- <script>
                                             $(document).ready(function() {
                                                 $('.slider-container').slick({
                                                     slidesToShow: 3, // Jumlah slide yang ditampilkan di tampilan web
@@ -855,7 +855,7 @@
                                                     }]
                                                 });
                                             });
-                                        </script>
+                                        </script> -->
 
                                         <style>
                                             .deal-single1 {
@@ -1265,7 +1265,7 @@
 </div>
 
 <!-- External JS for slick slider -->
-<script>
+<!-- <script>
 $(document).ready(function() {
     $('.slider-container').slick({
         slidesToShow: 3,
@@ -1298,7 +1298,7 @@ $(document).ready(function() {
     });
 });
 
-</script>
+</script> -->
 
 <!-- Testimoni End -->
     <section style="padding-top:50px;margin-top: 60px !important;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
@@ -1513,7 +1513,7 @@ $(document).ready(function() {
 
 
 
-                        <script>
+                        <!-- <script>
                             $(document).ready(function() {
                                 $('.slider-container').slick({
                                     slidesToShow: 3, // Number of slides to show on desktop
@@ -1534,7 +1534,7 @@ $(document).ready(function() {
                                     }]
                                 });
                             });
-                        </script>
+                        </script> -->
                         <style>
                             .card-link {
                                 text-decoration: none;
