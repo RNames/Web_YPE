@@ -60,15 +60,20 @@ class HomepageController extends BaseController
     public function index(): void
     {
         $session = session();
-        $activeLanguage = session()->get('lang');
 
-        if ($activeLanguage == null) {
-            $session->remove('lang');
-            $session->set('lang', 'id');
-            $activeLanguage = session()->get('lang');
-            $this->language = $activeLanguage;
-            redirect()->to(base_url());
+        // Detect the language from the URL segment (e.g., /en or /id)
+        $uri = service('uri');
+        $segment = $uri->getSegment(1);
+        $locale = ($segment === 'en') ? 'en' : 'id';
+
+        // Update the session language if it does not match the detected locale
+        if ($session->get('lang') !== $locale) {
+            $session->set('lang', $locale);
+            $this->language = $locale;
         }
+
+        // Set the locale for the current request
+        service('request')->setLocale($locale);
 
         $data = [
             'title' => $this->homepageModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
@@ -95,10 +100,7 @@ class HomepageController extends BaseController
                 'MIN(image_destination.alt_image) as alt_image',
             ])->join('image_destination', 'image_destination.destination_id = destination.id', 'left')->groupBy('destination.id')->findAll(),
             'services' => $this->servicesModel->findAll(),
-
         ];
-
-        // dd($data['services']);
 
         echo view('pages/homepage', $data);
     }
