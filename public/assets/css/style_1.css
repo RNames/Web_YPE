@@ -3193,10 +3193,10 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   height: 100%;
   width: 100%;
   opacity: 0.35;
-  style="filter: brightness(1.5);";
-  background-color: #000;00; */
+  filter: brightness(1.5);
+  background-color: #000;
   z-index: 2;
-  style="filter: brightness(1.5);";
+  filter: brightness(1.5);
   opacity: 20%;
   z-index: 2;
 }
