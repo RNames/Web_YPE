@@ -23,11 +23,21 @@ class AboutUsController extends BaseController
         $this->aboutModel = new AboutUsModel();
 
         $this->currentUrl = current_url();
-        $this->language = session()->get('lang');
     }
 
     public function index(): void
     {
+        // Check the URL segment to determine the locale
+        $segment = $this->request->uri->getSegment(1);
+
+        // Ensure the locale is either 'id' or 'en', default to 'id' if invalid
+        $locale = ($segment === 'en') ? 'en' : 'id';
+
+        // Update the session language
+        session()->set('lang', $locale);
+        $this->language = $locale;
+
+        // Prepare data for the view
         $data = [
             'title' => $this->aboutModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
             'description' => $this->aboutModel->select(['seo_description_id', 'seo_description_en'])->first(),
@@ -36,8 +46,6 @@ class AboutUsController extends BaseController
             'socmeds' => $this->socmedModel->findAll(),
             'aboutUs' => $this->aboutModel->first(),
         ];
-
-        // dd($data['aboutUs']);
 
         echo view('pages/about_us', $data);
     }

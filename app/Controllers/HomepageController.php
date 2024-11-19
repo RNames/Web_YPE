@@ -62,8 +62,7 @@ class HomepageController extends BaseController
         $session = session();
 
         // Detect the language from the URL segment (e.g., /en or /id)
-        $uri = service('uri');
-        $segment = $uri->getSegment(1);
+        $segment = $this->request->uri->getSegment(1);
         $locale = ($segment === 'en') ? 'en' : 'id';
 
         // Update the session language if it does not match the detected locale
@@ -94,6 +93,8 @@ class HomepageController extends BaseController
                 'destination.slug',
                 'destination.duration_id',
                 'destination.duration_en',
+                'destination.itinerary_notes_id',
+                'destination.itinerary_notes_en',
                 'MIN(image_destination.image) as image',
                 'MIN(image_destination.image_name_id) as image_name_id',
                 'MIN(image_destination.image_name_en) as image_name_en',

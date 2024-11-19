@@ -91,7 +91,7 @@ html,body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: visible;
   max-width: 100vw;
 }
 
@@ -3193,10 +3193,8 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   height: 100%;
   width: 100%;
   opacity: 0.35;
-  style="filter: brightness(1.5);";
-  background-color: #000;00; */
-  z-index: 2;
-  style="filter: brightness(1.5);";
+  background-color: #000000; 
+  filter: brightness(1.5);
   opacity: 20%;
   z-index: 2;
 }
@@ -3465,8 +3463,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   /* animation: fadeInUp 1.7s; */
 }
 
-.swiper-slide-active .
--btn {
+.swiper-slide-active .-btn {
   /* animation: fadeInUp 1.7s; */
 }
 
@@ -6352,6 +6349,7 @@ header.style-5 .main-nav ul li.menu-item-has-children > i {
   
   margin: 2px;
   padding: ;
+
 }
 .list-area ul.plan-list1 li {
   position: relative;

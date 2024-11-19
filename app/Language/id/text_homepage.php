@@ -26,6 +26,7 @@ return [
     'all_faq' => 'LIHAT FAQ LAINNYA',
     'title_contact_us' => 'Siap Untuk Mencoba Pelayanan Kami?',
     'button_contact_us' => 'HUBUNGI KAMI SEGERA',
+    'wisata_desc' => 'Jelajahi destinasi indah ini & nikmati pengalaman yang tak terlupakan.',
 
     // text for footer -> quick_link
     'quick_links' => 'QUICK LINKS',
@@ -43,5 +44,5 @@ return [
     'disclaimer' => 'Disclaimer',
 
     // text for footer -> socmed
-    'social_media' => 'Our Social Media',
+    'social_media' => 'Sosial Media Kami',
 ];

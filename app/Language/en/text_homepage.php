@@ -26,6 +26,7 @@ return [
     'all_faq' => 'READ OTHER FAQ',
     'title_contact_us' => 'Ready To Try Our Services?',
     'button_contact_us' => 'CONTACT US NOW',
+    'wisata_desc' => 'Explore this beautiful destination and enjoy a memorable experience.',
 
     // text for footer -> quick_link
     'quick_links' => 'QUICK LINKS',

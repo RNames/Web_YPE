@@ -1,3 +1,7 @@
+<?php
+$language = session()->get('lang');
+?>
+
 <!DOCTYPE html>
 <html lang="<?= $language == 'id' ? 'id-ID' : 'en-US' ?>">
 
@@ -46,7 +50,7 @@
     <!--        });-->
     <!--    });-->
     <!--</script>-->
-    
+
 
     <script src="https://kit.fontawesome.com/278b3e3446.js" crossorigin="anonymous"></script>
 
@@ -982,7 +986,7 @@
 </head>
 
 <body class="home page-template page-template-elementor_header_footer page page-id-234 wp-embed-responsive theme-astrip woocommerce-js elementor-default elementor-template-full-width elementor-kit-8 elementor-page elementor-page-234">
-    
+
 
     <header class="header-area style-2" style="padding:0px 36px !important">
         <div class=" d-flex gap-5 justify-content-between align-items-center" style="margin: auto;">
@@ -1017,53 +1021,50 @@
                                 <img style="margin-bottom: 3px;" src="<?= base_url('assets/images/house-solid.svg') ?>" alt="link-home" width="20" height="20">
                             </a>
                         </li>
-                        <!-- <li id="menu-item-1995" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1995">
-                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/corporate-and-travel-agent">TRAVEL AGENT & CORPORATE</a><i class="bi bi-chevron-down"></i>
-                        </li> -->
-                        <!-- <li id="menu-item-1995" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1995">
-                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>"><?= lang("text_homepage.services") ?></a><i class="bi bi-chevron-down"></i>
-                        </li> -->
                         <li id="menu-item-2339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2339">
-    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="#"><?= lang("text_homepage.services") ?></a><i class="bi bi-chevron-down"></i>
-    <ul class="sub-menu">
-        <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/vip-services' : 'our-services/vip-services' ?>">VIP SERVICES</a><i class="bi bi-chevron-down"></i>
-        </li>
-        <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/private-tour' : 'our-services/private-tour' ?>">PRIVATE TOUR</a><i class="bi bi-chevron-down"></i>
-        </li>
-        <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/service/mice">MICE</a><i class="bi bi-chevron-down"></i>
-        </li>
-    </ul>
-</li>
+                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="#">
+                                <?= lang("text_homepage.services") ?></a><i class="bi bi-chevron-down"></i>
+                            <ul class="sub-menu">
+                                <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/vip-services' : 'our-services/vip-services' ?>">VIP SERVICES</a><i class="bi bi-chevron-down"></i>
+                                </li>
+                                <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/private-tour' : 'our-services/private-tour' ?>">PRIVATE TOUR</a><i class="bi bi-chevron-down"></i>
+                                </li>
+                                <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/service/mice">MICE</a><i class="bi bi-chevron-down"></i>
+                                </li>
+                            </ul>
+                        </li>
 
                         <li id="menu-item-2339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2339">
                             <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="#"><?= lang("text_homepage.information") ?></a><i class="bi bi-chevron-down"></i>
                             <ul class="sub-menu">
 
                                 <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>"><?= lang("text_homepage.destination") ?></a><i class="bi bi-chevron-down"></i>
-                                </li>
-                                <!--<li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">-->
-                                <!--    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/events"><?= lang("text_homepage.events") ?></a><i class="bi bi-chevron-down"></i>-->
-                                <!--</li>-->
-                                <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/blog"><?= lang("text_homepage.blog") ?></a><i class="bi bi-chevron-down"></i>
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>">
+                                        <?= lang("text_homepage.destination") ?></a><i class="bi bi-chevron-down"></i>
                                 </li>
                                 <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-lainnya' : 'other-services' ?>"><?= lang("text_homepage.other_services") ?></a><i class="bi bi-chevron-down"></i>
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/blog">
+                                        <?= lang("text_homepage.blog") ?></a><i class="bi bi-chevron-down"></i>
+                                </li>
+                                <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-lainnya' : 'other-services' ?>">
+                                        <?= lang("text_homepage.other_services") ?></a><i class="bi bi-chevron-down"></i>
                                 </li>
 
                             </ul>
                         </li>
 
                         <li id="menu-item-2013" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2013">
-                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>"><?= lang("text_homepage.about_us_navbar") ?></a>
+                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>">
+                                <?= lang("text_homepage.about_us_navbar") ?></a>
                         </li>
 
                         <li id="menu-item-2013" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2013">
-                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'hubungi-kami' : 'contact-us' ?>"><?= lang("text_homepage.contact_us_navbar") ?></a>
+                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'hubungi-kami' : 'contact-us' ?>">
+                                <?= lang("text_homepage.contact_us_navbar") ?></a>
                         </li>
                         <li id="menu-item-2013" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2013">
                             <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/faq">FAQ</a>
@@ -1231,77 +1232,77 @@
                     </div>
                     <div class="col-lg-3 col-md-6 d-flex justify-content-lg-end">
                         <div class="footer-item">
-                        <div id="egens_contacts-3" class="destination-widget-item widget_egens_contacts">
-                            <div class="destination-widget-title">
-                                <h3><?= strtoupper(lang("text_homepage.social_media")) ?></h3>
-                            </div>
-                            <ul class="contact-list">
-                                <li>
-                                    <div class="icon">
-                                        <i class="bi bi-instagram"></i>
-                                    </div>
-                                    <div class="text">
-                                        <a href="https://www.instagram.com/yourprivateeurope/">@yourprivateeurope</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="bi bi-linkedin"></i>
-                                    </div>
-                                    <div class="text">
-                                        <a href="https://www.linkedin.com/company/your-private-europe">Your Private Europe | Tour Organizer & DMC Europe</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="bi bi-facebook"></i>
-                                    </div>
-                                    <div class="text">
-                                        <a href="https://www.facebook.com/yourprivateeurope/">yourprivateeurope</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="bi bi-youtube"></i>
-                                    </div>
-                                    <div class="text">
-                                        <a href="#">@yourprivateeurope</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="bi bi-skype"></i>
-                                    </div>
-                                    <div class="text">
-                                        <a href="skype:chris.suhartono?chat">Skype</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <!-- Vertically aligned logo below the social media links -->
-                            <div class="d-flex justify-content-center mt-3">
-                                <img src="https://yourprivateeurope.eu/wp-content/uploads/2024/02/Logo-white-IATA-600-480x160.png" alt="IATA Logo" style="max-width: 200px; height: auto;">
+                            <div id="egens_contacts-3" class="destination-widget-item widget_egens_contacts">
+                                <div class="destination-widget-title">
+                                    <h3><?= strtoupper(lang("text_homepage.social_media")) ?></h3>
+                                </div>
+                                <ul class="contact-list">
+                                    <li>
+                                        <div class="icon">
+                                            <i class="bi bi-instagram"></i>
+                                        </div>
+                                        <div class="text">
+                                            <a href="https://www.instagram.com/yourprivateeurope/">@yourprivateeurope</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="bi bi-linkedin"></i>
+                                        </div>
+                                        <div class="text">
+                                            <a href="https://www.linkedin.com/company/your-private-europe">Your Private Europe | Tour Organizer & DMC Europe</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="bi bi-facebook"></i>
+                                        </div>
+                                        <div class="text">
+                                            <a href="https://www.facebook.com/yourprivateeurope/">yourprivateeurope</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="bi bi-youtube"></i>
+                                        </div>
+                                        <div class="text">
+                                            <a href="#">@yourprivateeurope</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="bi bi-skype"></i>
+                                        </div>
+                                        <div class="text">
+                                            <a href="skype:chris.suhartono?chat">Skype</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- Vertically aligned logo below the social media links -->
+                                <div class="d-flex justify-content-center mt-3">
+                                    <img src="https://yourprivateeurope.eu/wp-content/uploads/2024/02/Logo-white-IATA-600-480x160.png" alt="IATA Logo" style="max-width: 200px; height: auto;">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="footer-bottom mt-80">
-            <div class="row d-flex align-items-center g-3 justify-content-md-between">
-                <div class="col-md-6 d-flex justify-content-lg-start justify-content-center text-lg-start text-center">
-                    <p>
-                        Copyright 2024 <a href="#">Your Private Europe</a> | Design By
-                        <a href="3">Your Private Europe</a>
-                    </p>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+
+        <div class="container">
+            <div class="footer-bottom mt-80">
+                <div class="row d-flex align-items-center g-3 justify-content-md-between">
+                    <div class="col-md-6 d-flex justify-content-lg-start justify-content-center text-lg-start text-center">
+                        <p>
+                            Copyright 2024 <a href="#">Your Private Europe</a> | Design By
+                            <a href="3">Your Private Europe</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         (function() {

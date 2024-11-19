@@ -30,6 +30,16 @@ class DestinationController extends BaseController
 
     public function index(): void
     {
+        // Check the URL segment to determine the locale
+        $segment = $this->request->uri->getSegment(1);
+
+        // Ensure the locale is either 'id' or 'en', default to 'id' if invalid
+        $locale = ($segment === 'en') ? 'en' : 'id';
+
+        // Update the session language
+        session()->set('lang', $locale);
+        $this->language = $locale;
+        
         // $data['title'] = 'Tour Destination – Astrip';
         $data = [
             'title' => $this->destinationModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),

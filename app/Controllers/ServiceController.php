@@ -29,6 +29,16 @@ class ServiceController extends BaseController
 
     public function index()
     {
+        // Check the URL segment to determine the locale
+        $segment = $this->request->uri->getSegment(1);
+
+        // Ensure the locale is either 'id' or 'en', default to 'id' if invalid
+        $locale = ($segment === 'en') ? 'en' : 'id';
+
+        // Update the session language
+        session()->set('lang', $locale);
+        $this->language = $locale;
+
         $data = [
             'title' => $this->serviceModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
             'description' => $this->serviceModel->select(['seo_description_id', 'seo_description_en'])->first(),
@@ -41,7 +51,18 @@ class ServiceController extends BaseController
         echo view('pages/services', $data);
     }
 
-    public function detail($slug = null){
+    public function detail($slug = null)
+    {
+        // Check the URL segment to determine the locale
+        $segment = $this->request->uri->getSegment(1);
+
+        // Ensure the locale is either 'id' or 'en', default to 'id' if invalid
+        $locale = ($segment === 'en') ? 'en' : 'id';
+
+        // Update the session language
+        session()->set('lang', $locale);
+        $this->language = $locale;
+
         $data = [
             'title' => $this->serviceModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
             'description' => $this->serviceModel->select(['seo_description_id', 'seo_description_en'])->first(),
@@ -56,6 +77,16 @@ class ServiceController extends BaseController
 
     public function mice()
     {
+        // Check the URL segment to determine the locale
+        $segment = $this->request->uri->getSegment(1);
+
+        // Ensure the locale is either 'id' or 'en', default to 'id' if invalid
+        $locale = ($segment === 'en') ? 'en' : 'id';
+
+        // Update the session language
+        session()->set('lang', $locale);
+        $this->language = $locale;
+
         $data = [
             'title' => $this->serviceModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
             'description' => $this->serviceModel->select(['seo_description_id', 'seo_description_en'])->first(),
@@ -70,9 +101,7 @@ class ServiceController extends BaseController
                 'desc_en' => 'Through our MICE services. From large conferences to small corporate events, we provide the facilities and services needed for the success of your event'
             ],
         ];
-    
+
         echo view('pages/mice', $data);
     }
-    
-
 }
