@@ -853,7 +853,7 @@
                                             </div>
                                         </div>
 
-                                        <script>
+                                        <!-- <script>
                                             $(document).ready(function() {
                                                 $('.slider-container').slick({
                                                     slidesToShow: 3, // Jumlah slide yang ditampilkan di tampilan web
@@ -874,7 +874,7 @@
                                                     }]
                                                 });
                                             });
-                                        </script>
+                                        </script> -->
 
                                         <style>
                                             .deal-single1 {
@@ -1283,39 +1283,41 @@
         </article>
     </div>
 
-    <!-- External JS for slick slider -->
-    <script>
-        $(document).ready(function() {
-            $('.slider-container').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                arrows: true,
-                dots: true,
-                infinite: true,
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            dots: true,
-                            arrows: true
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: true,
-                            arrows: false
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
+<!-- External JS for slick slider -->
+<!-- <script>
+$(document).ready(function() {
+    $('.slider-container').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        dots: true,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false
+                }
+            }
+        ]
+    });
+});
+
+</script> -->
 
     <!-- Testimoni End -->
     <section style="padding-top:50px;margin-top: 60px !important;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
@@ -1530,7 +1532,7 @@
 
 
 
-                        <script>
+                        <!-- <script>
                             $(document).ready(function() {
                                 $('.slider-container').slick({
                                     slidesToShow: 3, // Number of slides to show on desktop
@@ -1551,7 +1553,7 @@
                                     }]
                                 });
                             });
-                        </script>
+                        </script> -->
                         <style>
                             .card-link {
                                 text-decoration: none;
