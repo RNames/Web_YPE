@@ -5,8 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+// Routes for language switching
+$routes->get('lang/(:segment)', 'Language::switch/$1');
 
-$routes->get('lang/{locale}', 'Language::index');
+
 
 //  default language: id-ID
 $routes->get('/', function() {

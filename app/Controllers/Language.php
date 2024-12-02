@@ -3,25 +3,20 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
 
 class Language extends BaseController
 {
-    public function __construct()
+    public function switch($locale)
     {
-        helper(['url']);
-    }
+        // Validate locale (ensure it's either 'en' or 'id')
+        if (!in_array($locale, ['en', 'id'])) {
+            $locale = 'id'; // Default fallback
+        }
 
-    public function index()
-    {
-
-        $session = session();
-        $locale = $this->request->getLocale();
-        $session->remove('lang');
-        $session->set('lang', $locale);
-        $activeLanguage = session()->get('lang');
-        $url = base_url();
-        return redirect()->to($url . "$activeLanguage");
-        
+        // Set the locale in session
+        session()->set('lang', $locale);
+        log_message('debug', 'Locale switched to: ' . $locale);
+        // Redirect to the appropriate URL
+        return redirect()->to("/{$locale}");
     }
 }
