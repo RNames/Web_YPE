@@ -55,6 +55,9 @@ $routes->get('/en/footer/(:any)', 'OtherFooterController::index/$1');
 $routes->get('/id/events', 'EventsController::index');
 $routes->get('/en/events', 'EventsController::index');
 
+$routes->get('/en/sitemap', 'Sitemapctrl::index');
+$routes->get('/id/sitemap', 'Sitemapctrl::index');
+
 //admin
 // Define your routes
 $routes->get('login', 'admin\Loginctrl::index');
