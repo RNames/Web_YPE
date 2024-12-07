@@ -1,4 +1,3 @@
-
 <?= $this->extend('adminLayout/template') ?>
 
 <?= $this->section('content') ?>
@@ -11,8 +10,8 @@
             </div>
             </br>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="<?php echo base_url() . "/tambahArticle" ?>" class="btn btn-primary me-md-2"> + Tambah  </a>
-            </div> 
+                <a href="<?php echo base_url() . "/tambahArticle" ?>" class="btn btn-primary me-md-2"> + Tambah </a>
+            </div>
         </div>
 
         <div class="tab-content" id="orders-table-tab-content">
@@ -30,19 +29,22 @@
                             <table class="table app-table-hover mb-0 text-left">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" valign="middle">seo_tag_title_id</th>
-                                        <th class="text-center" valign="middle">seo_tag_title_en</th>
-                                        <th class="text-center" valign="middle">seo_description_id</th>
-                                        <th class="text-center" valign="middle">seo_description_en</th>
-                                        <th class="text-center" valign="middle">alt_image</th>
-                                        <th class="text-center" valign="middle">destination_id</th>   
+                                        <th class="text-center" valign="middle">seo title id</th>
+                                        <th class="text-center" valign="middle">seo title en</th>
+                                        <th class="text-center" valign="middle">seo description id</th>
+                                        <th class="text-center" valign="middle">seo description en</th>
+
+                                        
                                         <th class="text-center" valign="middle">Title id</th>
                                         <th class="text-center" valign="middle">Title En</th>
-                                        <th class="text-center" valign="middle">Description_id</th>
-                                        <th class="text-center" valign="middle">Description_en</th>
-                                        <th class="text-center" valign="middle">slug</th>
+                                        <th class="text-center" valign="middle">Description id</th>
+                                        <th class="text-center" valign="middle">Description en</th>
+                                        <th class="text-center" valign="middle">Snippet id</th>
+                                        <th class="text-center" valign="middle">Snippet en</th>
+                                        <th class="text-center" valign="middle">slug Id</th>
+                                        <th class="text-center" valign="middle">slug en</th>
                                         <th class="text-center" valign="middle">date</th>
-                                        <th class="text-center" valign="middle">writer</th>                                   
+                                        <th class="text-center" valign="middle">writer</th>
                                         <th class="text-center" valign="middle">cover image</th>
                                     </tr>
                                 </thead>
@@ -53,19 +55,20 @@
                                             <td style="text-align: center;"><?= $tampilAktivitas['seo_tag_title_id'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['seo_tag_title_en'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['seo_description_id'] ?></td>
-                                            <td style="text-align: center;"><?= $tampilAktivitas['seo_description_en'] ?></td> 
-                                            <td style="text-align: center;"><?= $tampilAktivitas['alt_image'] ?></td>
-                                            <td style="text-align: center;"><?= $tampilAktivitas['destination_id'] ?></td>
-                                           <td style="text-align: center;"><?= $tampilAktivitas['title_id'] ?></td>
+                                            <td style="text-align: center;"><?= $tampilAktivitas['seo_description_en'] ?></td>
+                                            <td style="text-align: center;"><?= $tampilAktivitas['title_id'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['title_en'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['description_id'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['description_en'] ?></td>
+                                            <td style="text-align: center;"><?= $tampilAktivitas['snippet_id'] ?></td>
+                                            <td style="text-align: center;"><?= $tampilAktivitas['snippet_en'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['slug'] ?></td>
+                                            <td style="text-align: center;"><?= $tampilAktivitas['slug_en'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['date'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['writer'] ?></td>
 
                                             <td class="center-text" style="text-align: center;">
-                                            <img src="<?= base_url('assets/images/articles/') . $tampilAktivitas['cover_image'] ?>" class="img-fluid" style="max-width: 100px; max-height: 100px; display: inline-block;" alt="image">
+                                                <img src="<?= base_url('assets/images/blogs/') . $tampilAktivitas['cover_image'] ?>" class="img-fluid" style="max-width: 100px; max-height: 100px; display: inline-block;" alt="image">
                                             </td>
                                             <td valign="middle">
                                                 <div class="d-grid gap-2">

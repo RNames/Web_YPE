@@ -7,6 +7,7 @@ use App\Models\DestinationModel;
 use App\Models\SocialMediaModel;
 use App\Controllers\BaseController;
 use App\Models\ImageDescriptionDestinationModel;
+use App\Models\HomepageModel;
 
 class DestinationController extends BaseController
 {
@@ -14,12 +15,13 @@ class DestinationController extends BaseController
     protected $itineraryModel;
     protected $imageDescriptionDestinationModel;
     protected $socmedModel;
-
+    protected $homepageModel;
     protected $currentUrl;
     protected $language;
 
     public function __construct()
     {
+        $this->homepageModel = new HomepageModel();
         $this->destinationModel = new DestinationModel();
         $this->imageDescriptionDestinationModel = new ImageDescriptionDestinationModel();
         $this->itineraryModel = new ItineraryModel();
@@ -46,6 +48,7 @@ class DestinationController extends BaseController
             'description' => $this->destinationModel->select(['seo_description_id', 'seo_description_en'])->first(),
             'currentUrl' => $this->currentUrl,
             'language' => $this->language,
+            'homepage' => $this->homepageModel->first(),
             'navbarDestinations' => $this->destinationModel->select(['title', 'slug'])->findAll(),
             'destinations' => $this->destinationModel->select([
                 'destination.*',

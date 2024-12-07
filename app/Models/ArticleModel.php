@@ -22,9 +22,12 @@ class ArticleModel extends Model
         'title_id',
         'title_en',
         'slug',
+        'slug_en',
         'date',
         'description_id',
         'description_en',
+        'snippet_id',
+        'snippet_en',
         'writer',
     ];
 

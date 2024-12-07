@@ -61,9 +61,9 @@
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
                 <div class="breadcrumb-area">
-                    <h1 id="heading1-detail-article">
+                    <h2 id="heading2-detail-article" style="text-shadow:2px 2px #69727d">
                         <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
-                    </h1>
+                    </h2>
                 </div>
             </div>
         </div>
@@ -85,6 +85,12 @@
                                     <?php endforeach; ?>
                                 </figure>
 
+                                <div class="breadcrumb-area">
+                                    <h2 id="heading2-detail-article" style="color:black;padding-bottom:20px">
+                                        <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
+                                    </h2>
+                                </div>
+
                                 <div class="blog-details-single">
                                     <span style="font-family: 'Open Sans' !important;">
                                         <?= $language == 'id' ? $article['description_id'] : $article['description_en'] ?>
@@ -97,23 +103,57 @@
                     </article>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-10">
-                <div class="blog-sidebar ps-lg-4">
+            <div class="col-lg-4">
+                <div class="blog-sidebar ps-lg-4" style="border-left: 2px solid #ddd; border-right: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 15px;">
                     <div id="block-2" class="blog-widget-item widget_block widget_search">
-                        <form role="search" method="get" action="#" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label class="wp-block-search__label" for="wp-block-search__input-2">Search</label>
-                            <div class="wp-block-search__inside-wrapper "><input class="wp-block-search__input" id="wp-block-search__input-2" placeholder="<?= lang('text_article.search_field') ?>" value="" type="search" name="s" required=""><button aria-label="Search" class="wp-block-search__button wp-element-button" type="submit"><?= lang('text_article.search_button') ?></button></div>
+                        <form role="search" method="get" action="#" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search">
+                            <label class="wp-block-search__label" for="wp-block-search__input-1">Search</label>
+                            <div class="wp-block-search__inside-wrapper">
+                                <input class="wp-block-search__input" id="wp-block-search__input-1" placeholder="<?= lang('text_article.search_field') ?>" value="" type="search" name="s" required="">
+                                <button aria-label="Search" class="wp-block-search__button wp-element-button" type="submit"><?= lang('text_article.search_button') ?></button>
+                            </div>
                         </form>
                     </div>
+
                     <div id="block-3" class="blog-widget-item widget_block">
                         <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
                             <div class="wp-block-group__inner-container">
-                                <h2 style="font-family: 'Open Sans' !important;" class="wp-block-heading">
+                                <h2 class="wp-block-heading" style="font-family: 'Open Sans' !important;font-weight: 700;font-size: 30px;line-height: 42px;">
+                                    <?= lang('text_article.other_article') ?>
+                                </h2>
+
+                                <ul class="wp-block-latest-posts__list has-dates wp-block-latest-posts mb-4">
+                                    <?php foreach ($latestArticle as $article) : ?>
+                                        <li class="latest-article-card">
+                                            <div class="wp-block-latest-posts__featured-image alignleft mb-0">
+                                                <img loading="lazy" decoding="async" width="150" height="150" src="<?= base_url('assets/images/blogs/' . $article['cover_image']) ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" style="max-width:100%; height:auto; border-radius:8px;" sizes="(max-width: 150px) 100vw, 150px">
+                                                <time datetime="2023-02-18T09:42:49+00:00" class="wp-block-latest-posts__post-date" style="font-family: 'Open Sans' !important; margin-left: 10px;">
+                                                    <?= $article['date'] ?>
+                                                </time>
+                                            </div>
+                                            <a href="/<?= $language ?>/blog/<?= $article['slug'] . '/' . $article['id'] ?>" style="margin-left: 10px;">
+                                                <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
+                                            </a>
+
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="block-3" class="blog-widget-item widget_block">
+                        <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
+                            <div class="wp-block-group__inner-container">
+                                <h2 class="wp-block-heading" style="font-family: 'Open Sans' !important;font-weight: 700;font-size: 30px;line-height: 42px;">
                                     <?= lang('text_article.services') ?>
                                 </h2>
+
                                 <ul class="wp-block-latest-posts__list has-dates wp-block-latest-posts">
                                     <?php foreach ($services as $service) : ?>
                                         <li>
-                                            <a class="wp-block-latest-posts__post-title" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/<?= $service['slug'] ?>">
+                                            <a class="wp-block-latest-posts__post-title d-block p-3 rounded" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); font-family: 'Open Sans', sans-serif;font-weight: 500;font-size: 16px;line-height: 24px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/<?= $service['slug'] ?>">
                                                 <?= $service['title_en'] ?>
                                             </a>
                                         </li>
@@ -123,33 +163,12 @@
                             </div>
                         </div>
                     </div>
-                    <div id="block-3" class="blog-widget-item widget_block">
-                        <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
-                            <div class="wp-block-group__inner-container">
-                                <h2 class="wp-block-heading">
-                                    <?= lang('text_article.latest_article') ?>
-                                </h2>
 
 
-                                <ul class="wp-block-latest-posts__list has-dates wp-block-latest-posts">
-                                    <?php foreach ($latestArticle as $article) : ?>
-                                        <li>
-                                            <div class="wp-block-latest-posts__featured-image alignleft">
-                                                <img loading="lazy" decoding="async" width="150" height="150" src="<?= base_url('assets/images/blogs/' . $article['cover_image']) ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" style="max-width:110px;max-height:110px;" sizes="(max-width: 150px) 100vw, 150px">
-                                            </div>
-                                            <a class="wp-block-latest-posts__post-title" href="">
-                                                <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
-                                            </a>
-                                            <time datetime="2023-02-18T09:42:49+00:00" class="wp-block-latest-posts__post-date">
-                                                <?= $article['date']  ?>
-                                            </time>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div id="block-21" class="blog-widget-item widget_block">
+                    <!-- Additional blocks can be added here -->
+                </div>
+            </div>
+            <!-- <div id="block-21" class="blog-widget-item widget_block">
                         <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
                             <div class="wp-block-group__inner-container">
                                 <h2 class="wp-block-heading">
@@ -172,7 +191,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <!-- <div id="block-23" class="blog-widget-item widget_block">
+            <!-- <div id="block-23" class="blog-widget-item widget_block">
                         <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
                             <div class="wp-block-group__inner-container">
                                 <h2 class="wp-block-heading">
@@ -201,11 +220,61 @@
                             </div>
                         </div>
                     </div> -->
-                </div>
-            </div>
         </div>
     </div>
 </div>
+</div>
+</div>
 
+<style>
+    .blog-sidebar .latest-article-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        transition: all 0.3s ease;
+    }
+
+    .blog-sidebar .latest-article-card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+    }
+
+    .blog-sidebar .latest-article-card img {
+        max-width: 100px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .blog-sidebar .latest-article-card a {
+        display: block;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 0;
+        margin-left: 10px;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .blog-sidebar .latest-article-card a:hover {
+        color: #e0bc6d;
+    }
+
+    .blog-sidebar .latest-article-card time {
+        display: block;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12px;
+        color: #777;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+</style>
 
 <?= $this->endSection() ?>

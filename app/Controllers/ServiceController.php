@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\ServicesModel;
 use App\Models\DestinationModel;
 use App\Models\SocialMediaModel;
+use App\Models\HomepageModel;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
@@ -13,7 +14,7 @@ class ServiceController extends BaseController
     protected $destinationModel;
     protected $socmedModel;
     protected $serviceModel;
-
+    protected $homepageModel;
     protected $currentUrl;
     protected $language;
 
@@ -21,7 +22,7 @@ class ServiceController extends BaseController
     {
         $this->destinationModel = new DestinationModel();
         $this->serviceModel = new ServicesModel();
-
+        $this->homepageModel = new HomepageModel();
         $this->currentUrl = current_url();
         $this->language = session()->get('lang');
         $this->socmedModel = new SocialMediaModel();
@@ -46,6 +47,7 @@ class ServiceController extends BaseController
             'language' => $this->language,
             'socmeds' => $this->socmedModel->findAll(),
             'services' => $this->serviceModel->findAll(),
+            'homepage' => $this->homepageModel->first(),
         ];
 
         echo view('pages/services', $data);
@@ -95,8 +97,8 @@ class ServiceController extends BaseController
             'socmeds' => $this->socmedModel->findAll(),
             'service' => [
                 'head_title' => 'MICE',
-                'title_id' => 'Rencanakan acara bisnis Anda dengan sempurna',
-                'title_en' => 'Plan your business events perfectly ',
+                'title_id' => 'Partner Terbaik untuk Event Perusahaan Anda',
+                'title_en' => 'The Best Partner for Your Corporate Event',
                 'desc_id' => 'Melalui layanan MICE kami. Dari konferensi besar hingga acara perusahaan kecil, kami menyediakan fasilitas dan layanan yang dibutuhkan untuk kesuksesan acara Anda',
                 'desc_en' => 'Through our MICE services. From large conferences to small corporate events, we provide the facilities and services needed for the success of your event'
             ],

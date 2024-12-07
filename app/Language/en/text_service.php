@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'heading' => 'Our Services',
+    'heading' => 'Tour Organizer & Destination Management Company in Europe',
 ];

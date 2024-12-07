@@ -31,8 +31,8 @@ $language = session()->get('lang');
     <link rel="dns-prefetch" href="//use.fontawesome.com" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
     <!--<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />-->
     <!--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
@@ -1022,7 +1022,7 @@ $language = session()->get('lang');
                             </a>
                         </li>
                         <li id="menu-item-2339" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2339">
-                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="#">
+                            <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>">
                                 <?= lang("text_homepage.services") ?></a><i class="bi bi-chevron-down"></i>
                             <ul class="sub-menu">
                                 <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
@@ -1032,7 +1032,7 @@ $language = session()->get('lang');
                                     <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/private-tour' : 'our-services/private-tour' ?>">PRIVATE TOUR</a><i class="bi bi-chevron-down"></i>
                                 </li>
                                 <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/service/mice">MICE</a><i class="bi bi-chevron-down"></i>
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/mice' : 'our-services/mice' ?>">MICE</a><i class="bi bi-chevron-down"></i>
                                 </li>
                             </ul>
                         </li>
@@ -1280,7 +1280,7 @@ $language = session()->get('lang');
                                 </ul>
                                 <!-- Vertically aligned logo below the social media links -->
                                 <div class="d-flex justify-content-center mt-3">
-                                    <img src="https://yourprivateeurope.eu/wp-content/uploads/2024/02/Logo-white-IATA-600-480x160.png" alt="IATA Logo" style="max-width: 200px; height: auto;">
+                                    
                                 </div>
                             </div>
                         </div>

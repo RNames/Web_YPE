@@ -50,7 +50,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="feature-image-group d-flex flex-row justify-content-center gap-5">
                                                         <div class="feature-image translate-y">
-                                                            <img decoding="async" src="<?= base_url('assets/images/feature-4.png') ?>" class="img-fluid" alt="feature-image-one">
+                                                            <img loading="lazy" decoding="async" src="<?= base_url('assets/images/about_us_travel_expert.png') ?>" class="img-fluid" alt="feature-image-one">
                                                         </div>
                                                     </div>
                                                 </div>

@@ -55,8 +55,8 @@
                                                             </defs>
                                                         </svg>
                                                     </div>
-                                                    <p style="color:black !important;margin-top: 20px !important;font-family: 'Open Sans' !important; font-weight: 500; font-size: 18px; line-height: 1.4;">
-                                                    <?= $language == 'id' ? $service['desc_id'] : $service['desc_en'] ?>
+                                                    <p style="margin-top: 20px;text-align:center;font-family:'Open Sans';font-size: 18px; line-height: 24px;font-weight: 500;text-transform:none">
+                                                        <?= $language == 'id' ? $service['desc_id'] : $service['desc_en'] ?>
                                                     </p>
                                                 </div>
                                             </div>

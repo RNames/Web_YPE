@@ -542,7 +542,7 @@
                                             <span class="about-us-desc" style="color: black !important; font-family: 'Open Sans', Arial, sans-serif !important; line-height: 24px;">
                                                 <?php
                                                 $description = $language == 'id' ? $aboutUs['description_id'] : $aboutUs['description_en'];
-                                                echo substr($description, 0, 1000);
+                                                echo substr($description, 0, 950);
                                                 ?>
                                             </span>
                                         </div>
@@ -551,7 +551,7 @@
                                         <div class="elementor-widget-container">
                                             <div class="row justify-content-center">
                                                 <div class="btn-align">
-                                                    <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d;font-family: 'Open Sans', Arial, sans-serif !important;border-radius: 30px;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                                                    <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>" class="eg-btn btn--primary-outline btn--lg" style="border-radius: 30px; background-color: rgb(224, 188, 109); font-family: Oswald; color: white;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
                                                         <?= strtoupper(lang("text_homepage.button_about_us")) ?>
                                                     </a>
                                                 </div>
@@ -853,7 +853,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- <script>
+                                         <script>
                                             $(document).ready(function() {
                                                 $('.slider-container').slick({
                                                     slidesToShow: 3, // Jumlah slide yang ditampilkan di tampilan web
@@ -874,7 +874,7 @@
                                                     }]
                                                 });
                                             });
-                                        </script> -->
+                                        </script> 
 
                                         <style>
                                             .deal-single1 {
@@ -1284,7 +1284,7 @@
     </div>
 
 <!-- External JS for slick slider -->
-<!-- <script>
+ <script>
 $(document).ready(function() {
     $('.slider-container').slick({
         slidesToShow: 3,
@@ -1317,7 +1317,7 @@ $(document).ready(function() {
     });
 });
 
-</script> -->
+</script> 
 
     <!-- Testimoni End -->
     <section style="padding-top:50px;margin-top: 60px !important;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
@@ -1532,7 +1532,7 @@ $(document).ready(function() {
 
 
 
-                        <!-- <script>
+                        <script>
                             $(document).ready(function() {
                                 $('.slider-container').slick({
                                     slidesToShow: 3, // Number of slides to show on desktop
@@ -1553,7 +1553,7 @@ $(document).ready(function() {
                                     }]
                                 });
                             });
-                        </script> -->
+                        </script> 
                         <style>
                             .card-link {
                                 text-decoration: none;

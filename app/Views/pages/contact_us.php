@@ -88,7 +88,7 @@
                                         <textarea placeholder="<?= lang('text_contact_us.message') ?>" name="message" required></textarea>
                                     </div>
                                     <div>
-                                        <a href="" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d;border-radius: 30px; font-family: 'Open Sans';font-weight: 600!important; width: 100%;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">kirim</a>
+                                        <a href="" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d;border-radius: 30px; font-family: 'Open Sans';font-weight: 600!important; width: 100%;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'"><?= lang('text_contact_us.send') ?></a>
                                     </div>
 
                                 </form>
@@ -101,7 +101,7 @@
                                 <?= $language == 'id' ? $contactUs['title_contact_id'] : $contactUs['title_contact_en'] ?>
                             </h3>
                             <div class="contact-info-box">
-                                <h3 style="color:black !important;letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 700;"><i class="fas fa-phone-alt"></i> WHATSAPP / PONSEL</h3>
+                                <h3 style="color:black !important;letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 700;"><i class="fas fa-phone-alt"></i> WHATSAPP / PHONE</h3>
                                 <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><strong>EU: </strong><?= $contactUs['phone_number_eu']  ?></p>
                                 <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><strong>ID: </strong><?= $contactUs['phone_number_id']  ?></p>
                             </div>
@@ -112,7 +112,7 @@
                             <!-- Kotak Live Chat -->
                             <div class="chat-info-box">
                                 <h3 style="color:black !important;letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 700;"><i class="fas fa-comments"></i> Live Chat</h3>
-                                <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;">Gunakan fungsi Live Chat untuk berbicara dengan salah satu anggota tim kami.</p>
+                                <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><?= lang('text_contact_us.live') ?></p>
                             </div>
                         </div>
                 

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Elecomp Indonesia</title>
+    <title>Your Private Europe</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -72,7 +72,7 @@
             <div class="app-branding">
                 <a class="app-logo" href="<?= base_url('admin/dashboard') ?>">
                     <img class="logo-icon me-2" src="<?= base_url('assets/images/app-logo.svg') ?>" alt="logo">
-                    <span class="logo-text">ELECOMP</span>
+                    <span class="logo-text">Your Private Europe</span>
                 </a>
             </div>
 

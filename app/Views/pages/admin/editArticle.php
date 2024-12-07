@@ -24,37 +24,34 @@
                             <div class="col">
                             <div class="mb-3">
                                     <label class="form-label">seo_tag_title_id<br><span class="custom-color custom-label"></span></label>
-                                    <textarea class="form-control tiny" id="seo_tag_title_id" name="seo_tag_title_id"><?=$all_data_Article['seo_tag_title_id']; ?></textarea>
+                                    <textarea class="form-control" id="seo_tag_title_id" name="seo_tag_title_id"><?=$all_data_Article['seo_tag_title_id']; ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">seo_tag_title_en<br><span class="custom-color custom-label"></span></label>
                                    
-                                    <textarea class="form-control tiny" id="seo_tag_title_en" name="seo_tag_title_en"><?=$all_data_Article['seo_tag_title_en']; ?></textarea>
+                                    <textarea class="form-control" id="seo_tag_title_en" name="seo_tag_title_en"><?=$all_data_Article['seo_tag_title_en']; ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">seo_description_id <br><span class="custom-color custom-label"></span></label>
-                                    <textarea class="form-control tiny" id="seo_description_id" name="seo_description_id"><?=$all_data_Article['seo_description_id']; ?></textarea>
+                                    <textarea class="form-control" id="seo_description_id" name="seo_description_id"><?=$all_data_Article['seo_description_id']; ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">seo_description_en <br><span class="custom-color custom-label"></span></label>
                                     
-                                    <textarea class="form-control tiny" id="seo_description_en" name="seo_description_en"><?=$all_data_Article['seo_description_en']; ?></textarea>
+                                    <textarea class="form-control" id="seo_description_en" name="seo_description_en"><?=$all_data_Article['seo_description_en']; ?></textarea>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">alt_image<br><span class="custom-color custom-label"></span></label>
-                                    <textarea class="form-control tiny" id="alt_image" name="alt_image"><?=$all_data_Article['alt_image']; ?></textarea>
-                                </div>
+                                
                                 <div class="mb-3">
                                     <label class="form-label">Title id<br><span class="custom-color custom-label"></span></label>
-                                    <textarea class="form-control tiny" id="title_id" name="title_id"><?=$all_data_Article['title_id']; ?></textarea>
+                                    <textarea class="form-control" id="title_id" name="title_id"><?=$all_data_Article['title_id']; ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Title En <br><span class="custom-color custom-label"></span></label>
                                    
-                                    <textarea class="form-control tiny" id="title_en" name="title_en"><?=$all_data_Article['title_en']; ?></textarea>
+                                    <textarea class="form-control" id="title_en" name="title_en"><?=$all_data_Article['title_en']; ?></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Descriptio Id <br><span class="custom-color custom-label"></span></label>
+                                    <label class="form-label">Description Id <br><span class="custom-color custom-label"></span></label>
                                    
                                     <textarea class="form-control tiny" id="description_id" name="description_id"><?=$all_data_Article['description_id']; ?></textarea>
                                 </div>
@@ -63,11 +60,26 @@
                                     
                                     <textarea class="form-control tiny" id="description_en" name="description_en"><?=$all_data_Article['description_en']; ?></textarea>
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Snippet Id <br><span class="custom-color custom-label"></span></label>
+                                    
+                                    <textarea class="form-control tiny" id="snippet_id" name="snippet_id"><?=$all_data_Article['snippet_id']; ?></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">slug<br><span class="custom-color custom-label"></span></label>
+                                    <label class="form-label">Snippet En <br><span class="custom-color custom-label"></span></label>
+                                    
+                                    <textarea class="form-control tiny" id="snippet_en" name="snippet_en"><?=$all_data_Article['snippet_en']; ?></textarea>
+                                </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">slug Id<br><span class="custom-color custom-label"></span></label>
                                    
-                                    <textarea class="form-control tiny" id="slug" name="slug"><?=$all_data_Article['slug']; ?></textarea>
+                                    <textarea class="form-control" id="slug" name="slug"><?=$all_data_Article['slug']; ?></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">slug En<br><span class="custom-color custom-label"></span></label>
+                                   
+                                    <textarea class="form-control" id="slug_en" name="slug_en"><?=$all_data_Article['slug_en']; ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">date <br><span class="custom-color custom-label"></span></label>
@@ -76,13 +88,13 @@
                                 <div class="mb-3">
                                     <label class="form-label">writer <br><span class="custom-color custom-label"></span></label>
                                     
-                                    <textarea class="form-control tiny" id="writer" name="writer"><?=$all_data_Article['writer']; ?></textarea>
+                                    <textarea class="form-control" id="writer" name="writer"><?=$all_data_Article['writer']; ?></textarea>
                                 </div>
                                 
                                 <div class="mb-3">
                                     <label class="form-label">Gambar</label>
                                     <br>
-                                    <img width="150px" class="img-thumbnail" src="<?= base_url() . "assets/images/articles/" . $all_data_Article['cover_image']; ?>">
+                                    <img width="150px" class="img-thumbnail" src="<?= base_url() . "assets/images/blogs/" . $all_data_Article['cover_image']; ?>">
                                     <input class="form-control <?= ($validation->hasError('cover_image')) ? 'is-invalid' : '' ?>" type="file" id="cover_image" name="cover_image">
                                     <?= $validation->getError('cover_image') ?>
                                     

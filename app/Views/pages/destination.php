@@ -44,7 +44,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
                 <div class="breadcrumb-area">
-                    <h2>
+                    <h2 style="text-transform: uppercase;">
                         <?= lang('text_destination.text_banner') ?>
                     </h2>
                     <div class="query-data"></div>
@@ -100,6 +100,11 @@
 <div class="pt-50" style="padding-bottom: 50px !important;">
     <div class="container">
         <div class="row g-4">
+            <div class="about3-title text-start" style="padding-right: 0px !important;">
+                <span style="text-align: justify;font-family:'Open Sans';font-size: 18px; line-height: 24px;font-weight: 500;text-transform:none">
+                    <?= $language == 'id' ? $homepage['destination_desc_id'] : $homepage['destination_desc_en'] ?>
+                </span>
+            </div>
 
             <?php foreach ($destinations as $destination) : ?>
                 <div class="col-lg-4 col-md-6 col-sm-12" id="card-destination">
@@ -129,7 +134,7 @@
                                 </div>
                             </div>
                             <a href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d;border-radius: 30px; font-family: 'Open Sans';font-weight: 600!important;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'"><?= lang('text_destination.explore_button') ?></a>
-                            
+
                         </div>
                     </div>
                 </div>

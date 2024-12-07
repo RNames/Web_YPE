@@ -32,9 +32,9 @@ $routes->get('/id/faq', 'FAQController::index');
 $routes->get('/en/faq', 'FAQController::index');
 
 $routes->get('/id/blog', 'ArticleController::index');
-$routes->get('/id/blog/(:segment)/(:segment)', 'ArticleController::detail/$1/$2');
+$routes->get('/id/blog/(:segment)', 'ArticleController::detail/$1');
 $routes->get('/en/blog', 'ArticleController::index');
-$routes->get('/en/blog/(:segment)/(:segment)', 'ArticleController::detail/$1/$2');
+$routes->get('/en/blog/(:segment)', 'ArticleController::detail/$1');
 
 $routes->get('/id/layanan-kami', 'ServiceController::index');
 $routes->get('/en/our-services', 'ServiceController::index');
@@ -45,9 +45,13 @@ $routes->get('/en/corporate-and-travel-agent', 'CorporateController::index');
 $routes->get('/id/layanan-lainnya', 'OtherServicesController::index');
 $routes->get('/en/other-services', 'OtherServicesController::index');
 
+$routes->get('/en/our-service/mice', 'ServiceController::mice');
+$routes->get('/id/layanan-kami/mice', 'ServiceController::mice');
+
 $routes->get('/id/layanan-kami/(:any)', 'ServiceController::detail/$1');
 $routes->get('/en/our-services/(:any)', 'ServiceController::detail/$1');
-$routes->get('/service/mice', 'ServiceController::mice');
+
+
 
 $routes->get('/id/footer/(:any)', 'OtherFooterController::index/$1');
 $routes->get('/en/footer/(:any)', 'OtherFooterController::index/$1');

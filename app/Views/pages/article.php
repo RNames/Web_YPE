@@ -45,7 +45,7 @@
 
                                     <div class="blog-content">
                                         <h3>
-                                            <a style="font-family: 'Open Sans' !important;font-weight: 700;font-size: 30px;line-height: 42px;" href="/<?= $language ?>/blog/<?= $article['slug'] . '/' . $article['id'] ?>">
+                                            <a style="font-family: 'Open Sans' !important;font-weight: 700;font-size: 30px;line-height: 42px;" href="blog/<?= $language == 'id' ? $article['slug'] : $article['slug_en'] ?>">
                                                 <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
                                             </a>
                                         </h3>
@@ -55,12 +55,12 @@
                                             </p>
                                         </div>
                                         <span style="font-family: 'Open Sans' !important;font-weight: 500;font-size: 18px;line-height: 24px;">
-                                            <?= $language == 'id' ? substr($article['description_id'], 0, strpos($article['description_id'], '</p>', 150)) . '...' : substr($article['description_en'], 0, strpos($article['description_en'], '</p>', 150)) . '...' ?>
+                                            <?= $language == 'id' ? $article['snippet_id'] : $article['snippet_en'] ?>
                                         </span>
 
                                         <br><br>
                                         <div style="text-align: right;">
-                                            <a href="/<?= $language ?>/blog/<?= $article['slug'] . '/' . $article['id']  ?>" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d; font-family: 'Open Sans';font-weight: 600!important;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                                            <a href="blog/<?= $language == 'id' ? $article['slug'] : $article['slug_en'] ?>" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d; font-family: 'Open Sans';font-weight: 600!important;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
                                                 <?= lang('text_article.continue_reading') ?>
                                             </a>
                                         </div>
@@ -83,28 +83,7 @@
                             </div>
                         </form>
                     </div>
-                    
-                    <div id="block-3" class="blog-widget-item widget_block">
-                        <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
-                            <div class="wp-block-group__inner-container">
-                                <h2 class="wp-block-heading" style="font-family: 'Open Sans' !important;font-weight: 700;font-size: 30px;line-height: 42px;">
-                                    <?= lang('text_article.services') ?>
-                                </h2>
 
-                                <ul class="wp-block-latest-posts__list has-dates wp-block-latest-posts">
-                                    <?php foreach ($services as $service) : ?>
-                                        <li>
-                                            <a class="wp-block-latest-posts__post-title d-block p-3 rounded" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); font-family: 'Open Sans' !important;font-weight: 500;font-size: 18px;line-height: 24px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/<?= $service['slug'] ?>">
-                                                <?= $service['title_en'] ?>
-                                            </a>
-                                        </li>
-                                    <?php endforeach; ?>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
                     <div id="block-3" class="blog-widget-item widget_block">
                         <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
                             <div class="wp-block-group__inner-container">
@@ -131,6 +110,29 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div id="block-3" class="blog-widget-item widget_block">
+                        <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
+                            <div class="wp-block-group__inner-container">
+                                <h2 class="wp-block-heading" style="font-family: 'Open Sans' !important;font-weight: 700;font-size: 30px;line-height: 42px;">
+                                    <?= lang('text_article.services') ?>
+                                </h2>
+
+                                <ul class="wp-block-latest-posts__list has-dates wp-block-latest-posts">
+                                    <?php foreach ($services as $service) : ?>
+                                        <li>
+                                            <a class="wp-block-latest-posts__post-title d-block p-3 rounded" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); font-family: 'Open Sans' !important;font-weight: 500;font-size: 16px;line-height: 24px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/<?= $service['slug'] ?>">
+                                                <?= $service['title_en'] ?>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <!-- Additional blocks can be added here -->
                 </div>
