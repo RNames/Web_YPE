@@ -4,6 +4,7 @@
 
 <!-- ========== header end============= -->
 <div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/contact_us.jpg') ?>);">
+ <img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="An image of someone contact us" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">

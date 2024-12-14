@@ -168,7 +168,8 @@
 
 
 <!-- ========== header end============= -->
-<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/breadcrumb-bg.jpg') ?>);">
+<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/layanan-kami.jpg') ?>);">
+    <img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="A Female looking at a map" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
@@ -280,11 +281,11 @@
                                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-4">
                                                     <div class="card blog-single1 h-90">
                                                         <div class="image">
-                                                            <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
+                                                            <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/destination-event">
                                                                 <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt10.jpg') ?>" class="card-img-top img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt10.jpg') ?> 870w, <?= base_url('assets/images/blog-dt10-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt10-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt10-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt10-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
                                                                 <div class="overlay">
                                                                     <h4 class="card-title">
-                                                                        MICE
+                                                                        Destination Event
                                                                     </h4>
                                                                 </div>
                                                             </a>

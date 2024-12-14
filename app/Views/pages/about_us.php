@@ -3,7 +3,8 @@
 <?= $this->section('content') ?>
 
 <!-- ========== header end============= -->
-<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/breadcrumb-bg.jpg') ?>);">
+<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/about-us.jpg') ?>);">
+<img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="A Beautiful view of the city in europe" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">

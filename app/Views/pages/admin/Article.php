@@ -34,7 +34,7 @@
                                         <th class="text-center" valign="middle">seo description id</th>
                                         <th class="text-center" valign="middle">seo description en</th>
 
-                                        
+
                                         <th class="text-center" valign="middle">Title id</th>
                                         <th class="text-center" valign="middle">Title En</th>
                                         <th class="text-center" valign="middle">Description id</th>
@@ -58,8 +58,30 @@
                                             <td style="text-align: center;"><?= $tampilAktivitas['seo_description_en'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['title_id'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['title_en'] ?></td>
-                                            <td style="text-align: center;"><?= $tampilAktivitas['description_id'] ?></td>
-                                            <td style="text-align: center;"><?= $tampilAktivitas['description_en'] ?></td>
+                                            <td style="text-align: center;">
+                                                <?php
+                                                // Limit the description to 100 words
+                                                $description_id = $tampilAktivitas['description_id'];
+                                                $words = explode(' ', $description_id); // Split the description into words
+                                                if (count($words) > 100) {
+                                                    $description_id = implode(' ', array_slice($words, 0, 100)) . '...'; // Get the first 100 words
+                                                }
+                                                echo $description_id;
+                                                ?>
+                                            </td>
+
+                                            <td style="text-align: center;">
+                                                <?php
+                                                // Limit the description to 100 words
+                                                $description_en = $tampilAktivitas['description_en'];
+                                                $words = explode(' ', $description_en); // Split the description into words
+                                                if (count($words) > 100) {
+                                                    $description_en = implode(' ', array_slice($words, 0, 100)) . '...'; // Get the first 100 words
+                                                }
+                                                echo $description_en;
+                                                ?>
+                                            </td>
+
                                             <td style="text-align: center;"><?= $tampilAktivitas['snippet_id'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['snippet_en'] ?></td>
                                             <td style="text-align: center;"><?= $tampilAktivitas['slug'] ?></td>

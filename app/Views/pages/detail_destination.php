@@ -107,10 +107,13 @@
           <div class="tab-pane fade show active" id="v-pills-information" role="tabpanel" aria-labelledby="v-pills-information-tab">
             <div class="tour-information">
               <div class="tour-price">
-                <h3>
+                <!-- <h3>
                   <?= $language == 'id' ? 'Rp' . number_format($data['price_id'], 0, ',', '.') : '$' . number_format($data['price_en'], 2, '.', ',') ?>
+                </h3> 
+                <h3>
+                  <?= $language == 'id' ? 'Rp' . '-' : '$' . '-' ?>
                 </h3>
-                <!-- <del>$768</del> <span>(Per Person )</span> -->
+                <del>$768</del> <span>(Per Person )</span> -->
               </div>
               <ul class="tour-info-metalist">
                 <li>

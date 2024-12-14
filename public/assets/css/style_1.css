@@ -81,9 +81,7 @@ h6 {
   font-family: var(--font-merriw);
 }
 
-h2,tect{
-  color:white;
-}
+
 
 html,body {
   color: var(--text-secondary);

@@ -45,11 +45,17 @@ $routes->get('/en/corporate-and-travel-agent', 'CorporateController::index');
 $routes->get('/id/layanan-lainnya', 'OtherServicesController::index');
 $routes->get('/en/other-services', 'OtherServicesController::index');
 
-$routes->get('/en/our-service/mice', 'ServiceController::mice');
-$routes->get('/id/layanan-kami/mice', 'ServiceController::mice');
+$routes->get('/en/our-services/destination-event', 'ServiceController::mice');
+$routes->get('/id/layanan-kami/destination-event', 'ServiceController::mice');
 
-$routes->get('/id/layanan-kami/(:any)', 'ServiceController::detail/$1');
-$routes->get('/en/our-services/(:any)', 'ServiceController::detail/$1');
+$routes->get('/id/layanan-kami/private-tour', 'ServiceController::privatetour');
+$routes->get('/en/our-services/private-tour', 'ServiceController::privatetour');
+
+$routes->get('/id/layanan-kami/tour-agent', 'ServiceController::touragent');
+$routes->get('/en/our-services/tour-agent', 'ServiceController::touragent');
+
+$routes->get('/id/layanan-kami/vip-services', 'ServiceController::vip');
+$routes->get('/en/our-services/vip-services', 'ServiceController::vip');
 
 
 
@@ -107,7 +113,7 @@ $routes->get('/editdetail_corporate_agent/(:num)', 'admin\DetailCorporateAgentct
 $routes->post('/proses_edit_detail_corporate_agent/(:num)', 'admin\DetailCorporateAgentctrl::proses_edit/$1');
 $routes->get('/delete_detail_corporate_agent/(:any)', 'admin\DetailCorporateAgentctrl::delete/$1');
 
-$routes->get('/Article', 'admin\Articlectrl::index');
+$routes->get('/article', 'admin\Articlectrl::index');
 $routes->get('/tambahArticle', 'admin\Articlectrl::tambah');
 $routes->post('/proses_tambah_Article', 'admin\Articlectrl::proses_tambah');
 $routes->get('/editArticle/(:num)', 'admin\Articlectrl::edit/$1');

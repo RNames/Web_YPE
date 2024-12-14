@@ -6,15 +6,28 @@
         font-family: 'Open Sans' !important;
         font-weight: 600 !important;
     }
+
+    .blog-image img {
+        width: 100%;
+        max-width: 870px;
+        /* Set the width for consistency */
+        height: 500px;
+        /* Fixed height */
+        object-fit: cover;
+        /* Ensures the image scales and crops to fit */
+        border-radius: 8px;
+        /* Optional: add rounded corners */
+    }
 </style>
 
-<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/breadcrumb-bg.jpg') ?>);">
+<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/blog-banner.jpg') ?>);">
+<img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="A man looking his tablet with the beautiful background" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
                 <div class="breadcrumb-area">
                     <h2>
-                        Blog
+                        BLOG
                     </h2>
                 </div>
             </div>

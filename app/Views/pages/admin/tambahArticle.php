@@ -95,7 +95,7 @@
                                     <input class="form-control <?= ($validation->hasError('image')) ? 'is-invalid' : '' ?>" type="file" id="image" name="image">
                                     <?= $validation->getError('image') ?>
                                 </div>
-                                <p>*File maksimal berukuran 2 Mb</p>
+                                <p>*File maksimal berukuran 5 MB</p>
                                
                             </div>
                         </div>

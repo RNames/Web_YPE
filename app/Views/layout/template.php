@@ -13,6 +13,9 @@ $language = session()->get('lang');
     <link rel="dns-prefetch" href="//astrip-wp.b-cdn.net" />
 
     <title><?= $language == 'id' ? $title['seo_tag_title_id'] : $title['seo_tag_title_en']   ?></title>
+    <!-- meta description -->
+    <meta name="description" content="<?= $language == 'id' ? $description['seo_description_id'] : $description['seo_description_en'] ?>">
+    <!-- meta description -->
     <!-- hreflang, fetchpriority -->
     <link rel="fetch" hreflang="<?= $language ?>" href="<?= $currentUrl ?>" />
     <!-- hreflang, fetchpriority -->
@@ -21,9 +24,7 @@ $language = session()->get('lang');
     <link rel="canonical" href="<?= $currentUrl ?>" />
     <!-- canonical tag -->
 
-    <!-- meta description -->
-    <meta name="description" content="<?= $language == 'id' ? $description['seo_description_id'] : $description['seo_description_en'] ?>">
-    <!-- meta description -->
+
 
     <meta name="robots" content="max-image-preview:large" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -1032,7 +1033,11 @@ $language = session()->get('lang');
                                     <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/private-tour' : 'our-services/private-tour' ?>">PRIVATE TOUR</a><i class="bi bi-chevron-down"></i>
                                 </li>
                                 <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/mice' : 'our-services/mice' ?>">MICE</a><i class="bi bi-chevron-down"></i>
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/destination-event' : 'our-services/destination-event' ?>">DESTINATION EVENTS</a><i class="bi bi-chevron-down"></i>
+                                </li>
+                                <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-lainnya' : 'other-services' ?>">
+                                        <?= lang("text_homepage.other_services") ?></a><i class="bi bi-chevron-down"></i>
                                 </li>
                             </ul>
                         </li>
@@ -1050,10 +1055,8 @@ $language = session()->get('lang');
                                         <?= lang("text_homepage.blog") ?></a><i class="bi bi-chevron-down"></i>
                                 </li>
                                 <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-lainnya' : 'other-services' ?>">
-                                        <?= lang("text_homepage.other_services") ?></a><i class="bi bi-chevron-down"></i>
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/tour-agent' : 'our-services/tour-agent' ?>">TOUR AGENT</a><i class="bi bi-chevron-down"></i>
                                 </li>
-
                             </ul>
                         </li>
 
@@ -1280,7 +1283,7 @@ $language = session()->get('lang');
                                 </ul>
                                 <!-- Vertically aligned logo below the social media links -->
                                 <div class="d-flex justify-content-center mt-3">
-                                    
+
                                 </div>
                             </div>
                         </div>

@@ -22,26 +22,30 @@
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
-                                <label for="article_id">Article ID:</label>
-                                <select name="article_id" id="article_id" class="form-control">
-                                    <?php foreach ($articles as $article): ?>
-                                        <option value="<?= $article['id'] ?>" <?php if ($article['id'] == $image_article['article_id']) echo 'selected' ?>>
-                                            <?= $article['id'] ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                                </div>
-                               
-                                <div class="mb-3" >
-                                <label for="slug">Slug:</label>
-                                    <input type="text" name="slug" class="form-control" id="slug" value="<?= $image_article['slug'] ?>">
+                                    <label for="article_id">Article ID:</label>
+                                    <select name="article_id" id="article_id" class="form-control">
+                                        <?php foreach ($articles as $article): ?>
+                                            <option value="<?= $article['id'] ?>" <?php if ($article['id'] == $image_article['article_id']) echo 'selected' ?>>
+                                                <?= $article['id'] ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
 
-                                <div class="mb-3" >
-                                <label for="slug">url:</label>
+                                <div class="mb-3">
+                                    <label class="form-label">Upload Gambar</label>
+                                    <input type="file" class="form-control <?= ($validation->hasError('image')) ? 'is-invalid' : '' ?>" id="image" name="image">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('image') ?>
+                                    </div>
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="slug">url:</label>
                                     <input type="text" name="url" class="form-control" id="url" value="<?= $image_article['url'] ?>">
                                 </div>
-                               
+
                             </div>
                         </div>
                         <div class="row">
@@ -60,4 +64,4 @@
                 </div>
             </div><!--//app-card-->
         </div><!--//row-->
- <?= $this->endSection() ?>
+        <?= $this->endSection() ?>

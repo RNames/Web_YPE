@@ -39,7 +39,8 @@
     }
 </style>
 
-<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/destinations/banner.jpg') ?>);">
+<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/destinations/destination-banner.jpg') ?>);">
+    <img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="A view of a city in the Europe" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
@@ -101,7 +102,7 @@
     <div class="container">
         <div class="row g-4">
             <div class="about3-title text-start" style="padding-right: 0px !important;">
-                <span style="text-align: justify;font-family:'Open Sans';font-size: 18px; line-height: 24px;font-weight: 500;text-transform:none">
+                <span style="text-align: center;font-family:'Open Sans';font-size: 18px; line-height: 24px;font-weight: 500;text-transform:none">
                     <?= $language == 'id' ? $homepage['destination_desc_id'] : $homepage['destination_desc_en'] ?>
                 </span>
             </div>
@@ -128,7 +129,7 @@
                                 </div>
                                 <div class="list-area">
                                     <h5 style="font-family: 'Open Sans' !important;font-weight: 700 !important;font-size: 30px; line-height: 42px;"><?= lang('text_destination.includes') ?> :</h5>
-                                    <ul class="plan-list1" style="font-family: 'Open Sans' !important;font-weight: 500;font-size: 18px; line-height: 24px;">
+                                    <ul class="plan-list1" style="font-family: 'Open Sans' !important;font-weight: 500;font-size: 18px; line-height: 24px;padding:15px !important;">
                                         <?= $language == 'id' ? $destination['includes_id'] : $destination['includes_en'] ?>
                                     </ul>
                                 </div>

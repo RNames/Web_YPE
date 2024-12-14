@@ -78,12 +78,12 @@ class Articlectrl extends BaseController
         // Validate data
         if (!$this->validate([
             'image' => [
-                'rules' => 'uploaded[image]|is_image[image]|max_size[image,5120]|mime_in[image,image/webp,image/svg+xml]',
+                'rules' => 'uploaded[image]|is_image[image]|max_size[image,5120]|mime_in[image,image/webp,image/svg+xml,image/jpg,image/jpeg,image/png]',
                 'errors' => [
                     'uploaded' => 'Pilih foto terlebih dahulu',
                     'is_image' => 'File yang anda pilih bukan gambar',
                     'max_size' => 'Maksimal ukuran file adalah 5MB',
-                    'mime_in' => 'File yang anda pilih wajib berekstensikan webp atau svg'
+                    'mime_in' => 'File yang anda pilih wajib berekstensikan webp, svg, jpg, jpeg, atau png'
                 ]
             ]
         ])) {
@@ -95,8 +95,9 @@ class Articlectrl extends BaseController
             $newFileName = $image->getRandomName();
 
             // Move uploaded file to the 'writable/uploads' directory
-            $image->move(FCPATH . 'assets/images/articles/', $newFileName);
+            $image->move(FCPATH . 'assets/images/blogs/', $newFileName);
 
+            // Save data in database
             $Article_model = new ArticleModel();
             $data = [
                 'seo_tag_title_id' => $seo_tag_title_id,
@@ -116,13 +117,12 @@ class Articlectrl extends BaseController
                 'slug_en' => $slug_en,
                 'date' => $date,
                 'writer' => $writer,
-
             ];
             $Article_model->save($data);
 
             // Redirect with success message
             session()->setFlashdata('success', 'Data berhasil disimpan');
-            return redirect()->to(base_url('/Article'));
+            return redirect()->to(base_url('/article'));
         }
     }
 
@@ -154,7 +154,7 @@ class Articlectrl extends BaseController
         if (!$Data) {
             // Tangani kasus di mana tidak ada data yang ditemukan untuk ID yang diberikan
             session()->setFlashdata('error', 'Data tidak ditemukan');
-            return redirect()->to(base_url('/Article'));
+            return redirect()->to(base_url('/article'));
         }
 
         // Periksa apakah file baru 'foto_penulis' diunggah
@@ -162,7 +162,7 @@ class Articlectrl extends BaseController
             // Hapus file 'foto_penulis' lama setelah memperbarui data di database
             $cover_image = $this->request->getFile('cover_image');
             $fotoName = $cover_image->getRandomName();
-            $cover_image->move('assets/images/articles/', $fotoName);
+            $cover_image->move('assets/images/blogs/', $fotoName);
 
             // Perbarui bidang 'foto_penulis' di database dengan klausa "where"
             $Article_model->where('id', $id)->set([
@@ -207,7 +207,7 @@ class Articlectrl extends BaseController
         }
 
         session()->setFlashdata('success', 'Berkas berhasil diperbarui');
-        return redirect()->to(base_url('/Article'));
+        return redirect()->to(base_url('/article'));
     }
 
     public function delete($id = null)
@@ -228,6 +228,6 @@ class Articlectrl extends BaseController
         $Article_model->delete($id);
 
         session()->setFlashdata('success', 'Data berhasil dihapus');
-        return redirect()->to(base_url('/Article'));
+        return redirect()->to(base_url('/article'));
     }
 }
