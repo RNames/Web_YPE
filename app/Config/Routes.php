@@ -5,8 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+// Routes for language switching
+$routes->get('lang/(:segment)', 'Language::switch/$1');
 
-$routes->get('lang/{locale}', 'Language::index');
+
 
 //  default language: id-ID
 $routes->get('/', function() {
@@ -30,9 +32,9 @@ $routes->get('/id/faq', 'FAQController::index');
 $routes->get('/en/faq', 'FAQController::index');
 
 $routes->get('/id/blog', 'ArticleController::index');
-$routes->get('/id/blog/(:segment)/(:segment)', 'ArticleController::detail/$1/$2');
+$routes->get('/id/blog/(:segment)', 'ArticleController::detail/$1');
 $routes->get('/en/blog', 'ArticleController::index');
-$routes->get('/en/blog/(:segment)/(:segment)', 'ArticleController::detail/$1/$2');
+$routes->get('/en/blog/(:segment)', 'ArticleController::detail/$1');
 
 $routes->get('/id/layanan-kami', 'ServiceController::index');
 $routes->get('/en/our-services', 'ServiceController::index');
@@ -43,9 +45,19 @@ $routes->get('/en/corporate-and-travel-agent', 'CorporateController::index');
 $routes->get('/id/layanan-lainnya', 'OtherServicesController::index');
 $routes->get('/en/other-services', 'OtherServicesController::index');
 
-$routes->get('/id/layanan-kami/(:any)', 'ServiceController::detail/$1');
-$routes->get('/en/our-services/(:any)', 'ServiceController::detail/$1');
-$routes->get('/service/mice', 'ServiceController::mice');
+$routes->get('/en/our-services/destination-event', 'ServiceController::mice');
+$routes->get('/id/layanan-kami/destination-event', 'ServiceController::mice');
+
+$routes->get('/id/layanan-kami/private-tour', 'ServiceController::privatetour');
+$routes->get('/en/our-services/private-tour', 'ServiceController::privatetour');
+
+$routes->get('/id/layanan-kami/tour-agent', 'ServiceController::touragent');
+$routes->get('/en/our-services/tour-agent', 'ServiceController::touragent');
+
+$routes->get('/id/layanan-kami/vip-services', 'ServiceController::vip');
+$routes->get('/en/our-services/vip-services', 'ServiceController::vip');
+
+
 
 $routes->get('/id/footer/(:any)', 'OtherFooterController::index/$1');
 $routes->get('/en/footer/(:any)', 'OtherFooterController::index/$1');
@@ -104,7 +116,7 @@ $routes->get('/editdetail_corporate_agent/(:num)', 'admin\DetailCorporateAgentct
 $routes->post('/proses_edit_detail_corporate_agent/(:num)', 'admin\DetailCorporateAgentctrl::proses_edit/$1');
 $routes->get('/delete_detail_corporate_agent/(:any)', 'admin\DetailCorporateAgentctrl::delete/$1');
 
-$routes->get('/Article', 'admin\Articlectrl::index');
+$routes->get('/article', 'admin\Articlectrl::index');
 $routes->get('/tambahArticle', 'admin\Articlectrl::tambah');
 $routes->post('/proses_tambah_Article', 'admin\Articlectrl::proses_tambah');
 $routes->get('/editArticle/(:num)', 'admin\Articlectrl::edit/$1');

@@ -23,6 +23,8 @@ class HomepageModel extends Model
         'commitment_section_en',
         'commitment_title_id',
         'commitment_title_en',
+        'our_service_desc_id',
+        'our_service_desc_en',
         'trending_destination_section_id',
         'trending_destination_section_en',
         'trending_destination_title_id	',

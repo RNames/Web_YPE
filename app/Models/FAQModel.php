@@ -12,7 +12,20 @@ class FAQModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_faq_category', 'title_id', 'title_en', 'description_id', 'description_en', 'seo_tag_title_id', 'seo_tag_title_en', 'seo_description_id', 'seo_description_en', 'faq_section_id', 'faq_section_en', 'faq_title_id', 'faq_title_en'];
+    protected $allowedFields    = ['
+    id_faq_category', 
+    'title_id', 
+    'title_en', 
+    'description_id', 
+    'description_en', 
+    'seo_tag_title_id', 
+    'seo_tag_title_en', 
+    'seo_description_id', 
+    'seo_description_en', 
+    'faq_section_id', 
+    'faq_section_en', 
+    'faq_title_id', 
+    'faq_title_en'];
 
     protected bool $allowEmptyInserts = false;
 

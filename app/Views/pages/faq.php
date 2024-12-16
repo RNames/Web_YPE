@@ -78,8 +78,8 @@
                                         foreach ($faqCategories as $faqCat) : ?>
                                             <div style="text-align: center;">
                                                 <h3 style="margin: 30px 0px; font-weight: 700; font-size: 30px; line-height: 42px; font-family: 'Open Sans' !important; color: black; position: relative; padding-bottom: 10px; display: inline-block; 
-                transition: color 0.3s ease;">
-                                                     <?= $language == 'id_faq_category' ? $faqCat['name_id'] : $faqCat['name_en'] ?>
+                                 transition: color 0.3s ease;">
+                                                    <?= $language == 'id_faq_category' ? $faqCat['name_id'] : $faqCat['name_en'] ?>
                                                     <span style="content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background-color: #086b72;"></span>
                                                 </h3>
                                             </div>
@@ -107,15 +107,13 @@
                                                     <?php endforeach; ?>
                                                 </div>
                                             </div>
-
-
                                         <?php endforeach; ?>
-
-
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </section>
     </article>
 </div>
 <?= $this->endSection() ?>

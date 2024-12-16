@@ -16,29 +16,32 @@
                             <p><?php echo session()->getFlashdata('error'); ?></p>
                         </div>
                     <?php endif; ?>
-                    
 
                     <form action="<?= base_url('/proses_tambah_image_articles') ?>" method="POST" enctype="multipart/form-data">
                         <?= csrf_field(); ?>
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
-                                <select name="article_id" id="article_id" class="form-control">
-                                    <?php foreach ($articles as $article): ?>
-                                        <option value="<?= $article['id'] ?>"><?= $article['id'] ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                                    <label class="form-label">ID Article</label>
+                                    <select name="article_id" id="article_id" class="form-control">
+                                        <?php foreach ($articles as $article): ?>
+                                            <option value="<?= $article['id'] ?>"><?= $article['id'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
-                                <div class="mb-3" >
-                                    <label class="form-label">Link</label>
-                                    <input type="text" class="form-control " id="url" name="url" value="<?= old('url') ?>" />
+                                <div class="mb-3">
+                                    <label class="form-label">Upload Gambar</label>
+                                    <input type="file" class="form-control <?= ($validation->hasError('image')) ? 'is-invalid' : '' ?>" id="image" name="image">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('image') ?>
+                                    </div>
                                 </div>
-                                <div class="mb-3" >
-                                    <label class="form-label">slug</label>
-                                    <input type="text" class="form-control " id="slug" name="slug" value="<?= old('slug') ?>" />
-                                </div>                              
-                               
-                               
+
+                                <div class="mb-3">
+                                    <label class="form-label">Slug</label>
+                                    <input type="text" class="form-control" id="slug" name="slug" value="<?= old('slug') ?>" />
+                                </div>
+                                <p>*File maksimal berukuran 5 MB</p>
                             </div>
                         </div>
                         <div class="row">
@@ -57,4 +60,7 @@
                 </div>
             </div><!--//app-card-->
         </div><!--//row-->
- <?= $this->endSection() ?>
+    </div><!--//container-->
+</div><!--//app-content-->
+
+<?= $this->endSection() ?>

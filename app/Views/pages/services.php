@@ -2,13 +2,179 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    .eg-btn {
+        font-family: 'Open Sans' !important;
+        font-weight: 600 !important;
+    }
+
+    @media (min-width: 0px) {
+        .heading-section {
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            font-family: 'Open Sans' !important;
+        }
+    }
+
+    /* Responsiveness for mobile (375px) */
+    @media (min-width: 0px) {
+        #heading1-homepage {
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 500;
+            text-shadow: 1px 1px #69727d;
+            margin-bottom: 5px;
+            /* Reduced margin */
+        }
+
+        #heading2-banner-homepage {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 5px;
+            /* Reduced margin */
+        }
+
+        #slider-homepage {
+            padding: 0px 15px;
+        }
+
+        .title-section {
+            font-size: 22px !important;
+            font-weight: 700 !important;
+            font-family: 'Open Sans' !important;
+        }
+
+    }
+
+    /* Responsiveness for tablet (768px) */
+    @media (min-width: 426px) and (max-width: 768px) {
+
+
+        .title-section {
+            font-size: 30px !important;
+            font-weight: 700 !important;
+            font-family: 'Open Sans' !important;
+        }
+
+    }
+
+    /* Responsiveness for laptop (1024px) */
+    @media (min-width: 769px) {
+
+
+        .title-section {
+            font-size: 30px !important;
+            font-weight: 700 !important;
+            font-family: 'Open Sans' !important;
+        }
+
+    }
+</style>
+
+<style>
+    .deal-single1 {
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        margin: 30px;
+    }
+
+    .deal-image img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        position: relative;
+        overflow: hidden;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h4 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .card .price {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .card .image {
+        position: relative;
+    }
+
+    .card .image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+        display: block;
+    }
+
+    .card .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Bayangan hitam */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.5s ease, transform 0.5s ease;
+    }
+
+    .card .overlay h4 {
+        color: white;
+        font-weight: 700;
+        font-family: 'Open Sans';
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover .image img {
+        transform: scale(1.1);
+        /* Zoom in pada gambar */
+    }
+
+    .card:hover .overlay {
+        background: rgba(0, 0, 0, 0.7);
+        /* Membuat bayangan lebih gelap saat di-hover */
+        transform: scale(1.1);
+        /* Zoom in pada bayangan hitam */
+    }
+
+    .card:hover .overlay h4 {
+        transform: scale(1.1);
+        /* Zoom in pada tulisan saat di-hover */
+    }
+</style>
+
+
 <!-- ========== header end============= -->
-<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/breadcrumb-bg.jpg') ?>);">
+<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/layanan-kami.jpg') ?>);">
+    <img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="A Female looking at a map" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
                 <div class="breadcrumb-area">
-                    <h2>
+                    <h2 style="text-transform:uppercase">
                         <?= lang('text_service.heading') ?>
                     </h2>
                 </div>
@@ -31,11 +197,11 @@
 
                                         <div class=" justify-content-center">
                                             <div class="section-title1">
-                                                <span style="color:#086B7D !important;font-weight: 700;letter-spacing: 0px !important;">
-                                                    LAYANAN UTAMA KAMI
+                                                <span class="heading-section" style="color:#086B7D !important;letter-spacing: 0px !important;">
+                                                    <?= $language == 'id' ? $homepage['our_services_section_id'] : $homepage['our_services_section_en'] ?>
                                                 </span>
-                                                <h2 style="font-size: 30px; font-weight: bold;">
-                                                    Mulailah Petualangan Eksklusif Tak Terlupakan Bersama Kami
+                                                <h2 class="title-section" style="color:black;">
+                                                    <?= $language == 'id' ? $homepage['our_services_title_id'] : $homepage['our_services_title_en'] ?>
                                                 </h2>
                                                 <div class="heading-ribbon flex justify-center">
                                                     <svg width="370" height="18" viewBox="0 0 370 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,60 +243,60 @@
                                     <div class="elementor-widget-container">
 
                                         <div class="blog-section overflow-hidden">
-                                            <div class="row justify-content-center">
-                                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                                                    <div class="blog-single1">
+                                            <div class="about3-title text-start" style="padding-right: 0px !important;">
+                                                <span style="text-align: justify;font-family:'Open Sans';font-size: 18px; line-height: 24px;font-weight: 500;text-transform:none">
+                                                    <?= $language == 'id' ? $homepage['our_service_desc_id'] : $homepage['our_service_desc_en'] ?>
+                                                </span>
+                                            </div>
+                                            <div class="row justify-content-center mb-5">
+
+                                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-1">
+                                                    <div class="card blog-single1 h-90">
                                                         <div class="image">
                                                             <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
-                                                                <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt8.jpg') ?>" class="img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt8.jpg') ?> 870w, <?= base_url('assets/images/blog-dt8-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt8-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt8-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt8-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                                <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt8.jpg') ?>" class="card-img-top img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt8.jpg') ?> 870w, <?= base_url('assets/images/blog-dt8-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt8-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt8-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt8-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                                <div class="overlay">
+                                                                    <h4 class="card-title">
+                                                                        VIP Services
+                                                                    </h4>
+                                                                </div>
                                                             </a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <h4 style="text-align: center;">
-                                                                <a style="font-weight: normal !important;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/vip-services">
-                                                                    VIP Services
-                                                                </a>
-                                                            </h4>
-
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                                                    <div class="blog-single1">
+                                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-1">
+                                                    <div class="card blog-single1 h-90">
                                                         <div class="image">
                                                             <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
-                                                                <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt9.jpg') ?>" class="img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt9.jpg') ?> 870w, <?= base_url('assets/images/blog-dt9-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt9-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt9-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt9-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                                <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt9.jpg') ?>" class="card-img-top img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt9.jpg') ?> 870w, <?= base_url('assets/images/blog-dt9-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt9-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt9-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt9-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                                <div class="overlay">
+                                                                    <h4 class="card-title">
+                                                                        Private Tour
+                                                                    </h4>
+                                                                </div>
                                                             </a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <h4 style="text-align: center;">
-                                                                <a style="font-weight: normal !important;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/private-tour">
-                                                                    Private Tour
-                                                                </a>
-                                                            </h4>
-
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10">
-                                                    <div class="blog-single1">
+                                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-4">
+                                                    <div class="card blog-single1 h-90">
                                                         <div class="image">
-                                                            <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
-                                                                <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt10.jpg') ?>" class="img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt10.jpg') ?> 870w, <?= base_url('assets/images/blog-dt10-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt10-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt10-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt10-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                            <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/destination-event">
+                                                                <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt10.jpg') ?>" class="card-img-top img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt10.jpg') ?> 870w, <?= base_url('assets/images/blog-dt10-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt10-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt10-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt10-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
+                                                                <div class="overlay">
+                                                                    <h4 class="card-title">
+                                                                        Destination Event
+                                                                    </h4>
+                                                                </div>
                                                             </a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <h4 style="text-align: center;">
-                                                                <a style="font-weight: normal !important;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
-                                                                    MICE
-                                                                </a>
-                                                            </h4>
-
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
+
                                         </div>
+
 
 
 

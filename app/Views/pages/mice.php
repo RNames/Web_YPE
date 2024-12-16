@@ -3,7 +3,8 @@
 <?= $this->section('content') ?>
 
 <!-- ========== header end============= -->
-<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/breadcrumb-bg.jpg') ?>);">
+<div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/destination-event.jpg') ?>);">
+    <img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="A view of a city with a bridge" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
@@ -56,7 +57,7 @@
                                                         </defs>
                                                     </svg>
                                                 </div>
-                                                <p style="color:black !important;margin-top: 20px !important;font-family: 'Open Sans' !important; font-weight: 500; font-size: 18px; line-height: 1.4;">
+                                                <p style="margin-top: 20px;text-align:center;font-family:'Open Sans';font-size: 18px; line-height: 24px;font-weight: 500;text-transform:none">
                                                     <?= $language == 'id' ? $service['desc_id'] : $service['desc_en'] ?>
                                                 </p>
                                             </div>
@@ -69,24 +70,24 @@
                     </div>
                 </section>
 
+                
+
                 <!-- Mice Start -->
                 <div class="container1 reverse">
                     <div class="text-section">
-                        <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">Incentives Group Tour</h2>
-                        <p>Do you want to plan an Incentives Group Tour to Europe? Or do you need custom-made private & group tour solutions for your clients?</p>
-                        <p>Whether you are a travel agent or a multinational company, we are experienced in working with you to provide the best solution.</p>
-                        <p>According to your wishes and budget, we will create a special program that would surely satisfy your clients, further boost your ambition and motivate your top performers.</p>
-                        <p>We are ready to serve you with:</p>
-                        <ul>
-                            <li>Itinerary & program</li>
-                            <li>Airplane tickets & visa</li>
-                            <li>Accommodation</li>
-                            <li>Venue</li>
-                            <li>Transportation</li>
-                            <li>Staffing</li>
-                            <li>F&B</li>
-                            <li>Other logistical items</li>
-                        </ul>
+                        <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">Incentives Tour</h2>
+                        <p>
+                            <?= $language == 'en' ? 'Planning a <strong>conference or meeting in Europe?</strong> At Your Private Europe (YPE), we are experts in providing <strong>tailored MICE solutions</strong> designed to meet your corporate needs, whether it’s for a small meeting or a large-scale event.' : 'Sedang merencanakan <strong>Incentives Group Tour ke Eropa?</strong> Di Your Private Europe (YPE), kami ahli dalam menyusun solusi <strong>private dan group tour</strong> yang disesuaikan dengan kebutuhan Anda, baik itu untuk travel agents maupun perusahaan besar yang ingin memotivasi <strong>top performer.</strong>'; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'We will collaborate with you to create a program that fits your goals and budget. The aim? To deliver a seamless and impactful event that aligns with your brand’s values. From <strong>agenda planning and venue selection to transportation, accommodation, and audiovisual systems,</strong> we manage all aspects of your event.' : 'Kami akan bekerja sama dengan Anda untuk membuat program perjalanan yang sesuai dengan anggaran dan keinginan. Tujuannya? Memberikan pengalaman yang memotivasi dan menginspirasi tim atau klien Anda. Mulai dari <strong>itinerary dan tiket pesawat, hingga pengaturan akomodasi, venue, dan logistik lainnya,</strong> kami siap menangani semua aspek perjalanan.'; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'Our team will ensure every detail, such as <strong>refreshments and staffing</strong>, is perfectly organized, ensuring a smooth and successful event. Everything is crafted to provide a <strong>stress-free experience</strong> that leaves a lasting impression on your attendees.' : 'Tim kami juga akan memastikan setiap detail, seperti <strong>F&B dan staffing</strong>, diatur dengan sempurna agar perjalanan Anda berjalan lancar tanpa hambatan. Semua dibuat untuk memberikan pengalaman yang <strong>memotivasi dan meninggalkan kesan positif pada peserta.</strong>'; ?>
+                        </p>
+
                     </div>
                     <div class="image-section">
                         <img src="<?= base_url('assets/images/mice/mice1.jpg') ?>" alt="Event Management">
@@ -95,18 +96,21 @@
 
                 <div class="container1">
                     <div class="text-section" style="margin-left: 20px;">
-                        <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">Event Management & Logistics</h2>
-                        <p>Trust us with organizing your event in Europe. We are ready to help with the preparation and implementation of your event, from conceptual thinking, execution, to other logistical items.</p>
+                        <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">
+                        <?= $language == 'en' ? 'Exhibitions & Trade Shows' : 'Event Management & Logistics'; ?>
+                        </h2>
+                        <p>
+                            <?= $language == 'en' ? 'Planning an <strong>event in Europe</strong>? Let YPE handle the details. Whether it’s a <strong>gala dinner, product launch, or company party</strong>, we manage every step from planning to execution. We specialize in delivering <strong>end-to-end solutions</strong>, ensuring that every element of your event is handled with precision.' : 'Merencanakan event di Eropa? Nggak usah pusing. Di Your Private Europe (YPE), kami siap bantu Anda mulai dari perencanaan hingga eksekusi. Kami paham setiap detail penting, apapun jenis acaranya entah itu <strong>Gala Dinner, Brand/Product Launching, atau Company Party</strong> kami urus semuanya dari awal sampai akhir.'; ?>
+                        </p>
 
-                        <p>Kami siap melayani dalam pengadaan:</p>
-                        <ul>
-                            <li>Venue</li>
-                            <li>Accommodation</li>
-                            <li>Transportation & logistics</li>
-                            <li>Event staffing</li>
-                            <li>F&B</li>
-                            <li>Gifts & teasers</li>
-                        </ul>
+                        <p>
+                            <?= $language == 'en' ? 'From selecting the ideal <strong>venue</strong> to arranging <strong>accommodations, transportation, and logistics,</strong> our experienced event staff ensures everything runs smoothly. Need themed <strong>F&B options</strong> or personalized <strong>gifts for guests?</strong> We’ve got you covered.' : 'Kami percaya pada cara kerja<strong> end-to-end,</strong> di mana setiap aspek event Anda kami lihat secara menyeluruh. Mulai dari venue, akomodasi, hingga pengaturan transportasi dan logistik, semua dikelola secara <strong>detail</strong> dan <strong>profesional</strong>. Kami juga menyediakan event staffing yang berpengalaman, siap mengelola acara Anda dengan mulus.'; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'With YPE, your <strong>event will be seamless, memorable, and stress-free</strong>, leaving a lasting impression on all attendees.' : 'Butuh F&B yang sesuai dengan tema acara? Kami siap. Mau ide gifts & teasers untuk para tamu? Kami juga punya banyak opsi. Dengan pengalaman kami, acara Anda akan terasa <strong>seamless</strong> dan <strong>bebas dari kendala.</strong>'; ?>
+                        </p>
+
                     </div>
                     <div class="image-section">
                         <img src="<?= base_url('assets/images/mice/mice2.jpg') ?>" alt="Event Management">
@@ -116,17 +120,18 @@
                 <div class="container1 reverse">
                     <div class="text-section">
                         <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">Fair, Expo & Exhibition</h2>
-                        <p>Does your organization want to host <strong>exhibitions</strong> in Europe? Or do you want to participate in the <strong>Expo or International Trade Fair</strong> in Europe?</p>
-                        <p>Leverage the experience and <em>know-how</em> of our team, who are used to planning, designing, and managing Fairs & Exhibitions of various sizes across Europe.</p>
-                        <p>We are ready to serve you with:</p>
-                        <ul>
-                            <li>Venue & accommodation</li>
-                            <li>Design, logistics, and construction of exhibition stand</li>
-                            <li>Branding and signage</li>
-                            <li>Lighting, rigging, and other special effects</li>
-                            <li>Internet connection and electricity network</li>
-                            <li>Other logistical items</li>
-                        </ul>
+                        <p>
+                            <?= $language == 'en' ? 'Planning to host an <strong>exhibition in Europe</strong> or participate in a major trade fair? Your Private Europe (YPE) has the expertise to ensure your success. From <strong>venue selection and accommodation</strong> to designing standout exhibition booths, we take care of it all.' : 'Apakah organisasi Anda ingin mengadakan <strong>pameran di Eropa?</strong> Atau berencana berpartisipasi di <strong>Expo</strong> atau <strong>International Trade Fair?</strong> Dengan pengalaman dan keahlian yang kami miliki, Your Private Europe (YPE) siap membantu Anda mewujudkannya.'; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'Our services include comprehensive <strong>branding solutions</strong>, <strong>signage</strong>, and advanced <strong>lighting installations</strong> to make your booth stand out. We also manage technical requirements like <strong>internet</strong> and <strong>electrical setup</strong>, so you can focus on delivering your presentation and engaging with attendees.' : 'Kami siap membantu dari awal hingga akhir. Mulai dari <strong>venue, akomodasi, hingga pembangunan exhibition stand,</strong> semua ditangani dengan teliti. Selain itu, kami juga menawarkan solusi lengkap untuk <strong>branding, signage, serta instalasi lighting dan efek khusus lainnya</strong> yang akan membuat stand Anda menonjol.'; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'With YPE, your <strong>exhibition will be executed flawlessly</strong>, ensuring you make a lasting impression at every event.' : 'Tak perlu khawatir soal kebutuhan teknis seperti internet dan jaringan listrik, karena semua logistik <strong>kami tangani secara menyeluruh.</strong> Anda hanya perlu fokus pada presentasi dan konten, sementara kami urus sisanya.'; ?>
+                        </p>
+
                     </div>
                     <div class="image-section">
                         <img src="<?= base_url('assets/images/mice/mice3.jpg') ?>" alt="Event Management">
@@ -135,18 +140,18 @@
 
                 <div class="container1">
                     <div class="text-section">
-                        <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">Conference & Meetings</h2>
-                        <p>By combining our experience and listening to your needs, we believe we can provide an optimal solution for your Conference & Meetings.</p>
-                        <p>We adopt a collaborative, structured way of working and include an efficient, detailed, and integrated implementation process.</p>
-                        <p>We are ready to help you with:</p>
-                        <ul>
-                            <li>Venue selection</li>
-                            <li>Conference Room, Audio Visual & refreshments</li>
-                            <li>Agenda & execution</li>
-                            <li>Transportation & logistics</li>
-                            <li>Accommodation</li>
-                            <li>Other logistical items</li>
-                        </ul>
+                        <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">Corporate Group Tour</h2>
+                        <p>
+                            <?= $language == 'en' ? 'Organizing a <strong>private group tour</strong> for your company? Don’t settle for ordinary. YPE offers <strong>tailor-made corporate tours</strong> that combine business and leisure, ensuring a productive yet enjoyable experience.' : 'Sedang merencanakan <strong>group tour private ke luar negeri</strong> bersama orang-orang kantor? Jangan terburu-buru pesan tiket! Kami bisa menjadikan <strong>pengalaman group tour Anda lebih baik</strong> dengan memberikan rekomendasi hotel terbaik, mengatur rute perjalanan tercepat, dan mengorganisir destinasi wisata terbaik di sela-sela agenda bisnis.'; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'From recommending the best <strong>hotels</strong> and optimizing <strong>travel routes</strong> to organizing <strong>sightseeing excursions</strong>, our team ensures every detail is perfect. Whether it’s <strong>team-building activities</strong> or <strong>benchmarking visits,</strong> our services cater to a wide range of corporate needs.' : 'Mulai dari kegiatan <strong>team building hingga studi banding</strong>, kami memiliki pengalaman dalam melayani berbagai jenis perusahaan, mulai dari perusahaan swasta hingga organisasi pemerintah. Dengan layanan <strong>Incentive Group Tour</strong> kami, Anda dapat memastikan bahwa setiap aspek perjalanan Anda akan dirancang dengan teliti untuk memenuhi kebutuhan dan tujuan Anda. '; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'Start your journey with us today for an <strong>unforgettable group tour experience</strong> that balances work and relaxation seamlessly.' : 'Hubungi kami sekarang untuk memulai perjalanan menuju <strong>pengalaman wisata yang tak terlupakan!</strong>'; ?>
+                        </p>
                     </div>
                     <div class="image-section">
                         <img src="<?= base_url('assets/images/mice/mice4.jpg') ?>" alt="Event Management">
@@ -156,23 +161,24 @@
                 <div class="container1 reverse">
                     <div class="text-section">
                         <h2 style="color: #333; font-family: Open Sans, Arial, sans-serif; line-height: 1.7em; font-weight: 700; font-size: 24px;">Site Visit & Team Building</h2>
-                        <p>Do you want to host a <strong>Site Visit</strong>, <strong>Off-Site Training</strong>, or <strong>Team Building</strong> in Europe with your employees? Plan your activities with us.</p>
-                        <p>With our experience, skills, and creativity, you can be sure that your event is well organized, and that your team will be equipped with the right activities.</p>
-                        <p>Give motivation and energy to your team. We will work with you and provide solutions according to your organization's budget and goals.</p>
-                        <p>We are ready to help you with:</p>
-                        <ul>
-                            <li>Venue & activity selections</li>
-                            <li>Agenda & execution</li>
-                            <li>Transportation & logistics</li>
-                            <li>Speaker selection</li>
-                            <li>Accommodation</li>
-                            <li>Other logistical items</li>
-                        </ul>
+                        <p>
+                            <?= $language == 'en' ? 'Looking to organize a <strong>site visit, off-site training, or team-building event in Europe?</strong> Trust Your Private Europe (YPE) to bring your vision to life. With our creativity and expertise, we design <strong>activities that inspire, motivate, and rejuvenate</strong> your team.' : 'Ingin mengadakan <strong>Site Visit, Off-Site Training, atau Team Building</strong> di Eropa bersama karyawan Anda? Percayakan acara tersebut kepada <strong>Your Private Europe (YPE).</strong> Dengan pengalaman dan kreativitas kami yang luas, kami siap membantu menyusun dan mengorganisir aktivitas yang tepat untuk memotivasi dan menyegarkan tim Anda.'; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'From selecting <strong>unique venues</strong> to arranging <strong>stimulating activities</strong>, we tailor the experience to your company’s goals and budget. Let us handle the logistics—transportation, accommodation, and event coordination are all managed professionally, allowing you to focus on achieving your objectives.' : 'Kami memahami pentingnya memberikan <strong>pengalaman yang berkesan bagi karyawan,</strong> dan kami akan bekerja sama dengan Anda untuk memastikan acara Anda sesuai dengan budget dan tujuan perusahaan. Mulai dari pemilihan venue yang unik hingga aktivitas yang memacu semangat, kami siap mewujudkannya.'; ?>
+                        </p>
+
+                        <p>
+                            <?= $language == 'en' ? 'Let us transform your event into an <strong>inspiring and memorable experience</strong> that will leave a lasting impact on your team.' : 'Tidak perlu khawatir soal detail teknis—kami handle semuanya. Mulai dari pengaturan <strong>transportasi, logistik, hingga pemilihan pembicara, semua diatur dengan profesional</strong>. Jadi, Anda bisa fokus pada hasil yang ingin dicapai, sementara kami urus sisanya.'; ?>
+                        </p>
+
                     </div>
                     <div class="image-section">
                         <img src="<?= base_url('assets/images/mice/mice5.jpg') ?>" alt="Event Management">
                     </div>
                 </div>
+
 
                 <style>
                     .container1 {

@@ -302,8 +302,8 @@
                                                                         Private Tour
                                                                     </a>
                                                                     |
-                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
-                                                                        MICE
+                                                                    <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/destination-event">
+                                                                        Destination Event
                                                                     </a>
                                                                 </h2>
 
@@ -314,12 +314,12 @@
 
                                                                             <?= strtoupper(lang("text_homepage.banner_button")) ?>
                                                                         </a>
-                                                                    </div>
+                                                                    </div>i
                                                                     <a target="_blank" href="https://www.trustpilot.com/review/yourprivateeurope.eu?utm_medium=trustbox&utm_source=MicroReviewCount" class="rating-wrap">
                                                                         <div class="trip-rating">
                                                                             <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Open Sans'; font-weight: 500; font-size: 18px; line-height: 24px;">
                                                                                 <img loading="lazy" src="<?= base_url('assets/images/trustpilot.svg') ?>" alt="trustpilot-rating" style="height: 30px !important;width: 130px ;">
-                                                                                <p>See our 37 reviews on Trustpilot</p>
+                                                                                <p>See our 45 reviews on Trustpilot</p>
                                                                             </div>
                                                                         </div>
                                                                     </a>
@@ -542,7 +542,7 @@
                                             <span class="about-us-desc" style="color: black !important; font-family: 'Open Sans', Arial, sans-serif !important; line-height: 24px;">
                                                 <?php
                                                 $description = $language == 'id' ? $aboutUs['description_id'] : $aboutUs['description_en'];
-                                                echo substr($description, 0, 1000);
+                                                echo substr($description, 0, 950);
                                                 ?>
                                             </span>
                                         </div>
@@ -551,7 +551,7 @@
                                         <div class="elementor-widget-container">
                                             <div class="row justify-content-center">
                                                 <div class="btn-align">
-                                                    <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>" class="eg-btn btn--primary-outline btn--lg" style="background-color: #e0bc6d;font-family: 'Open Sans', Arial, sans-serif !important;border-radius: 30px;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                                                    <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'tentang-kami' : 'about-us' ?>" class="eg-btn btn--primary-outline btn--lg" style="border-radius: 30px; background-color: rgb(224, 188, 109); font-family: Oswald; color: white;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
                                                         <?= strtoupper(lang("text_homepage.button_about_us")) ?>
                                                     </a>
                                                 </div>
@@ -659,11 +659,11 @@
                                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 mb-4">
                                         <div class="card blog-single1 h-90">
                                             <div class="image">
-                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/mice">
+                                                <a href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami' : 'our-services' ?>/destination-event">
                                                     <img loading="lazy" decoding="async" width="870" height="500" src="<?= base_url('assets/images/blog-dt10.jpg') ?>" class="card-img-top img-fluid wp-post-image" alt="our-service" srcset="<?= base_url('assets/images/blog-dt10.jpg') ?> 870w, <?= base_url('assets/images/blog-dt10-600x345.jpg') ?> 600w, <?= base_url('assets/images/blog-dt10-300x172.jpg') ?> 300w, <?= base_url('assets/images/blog-dt10-768x441.jpg') ?> 768w, <?= base_url('assets/images/blog-dt10-370x213.jpg') ?> 370w" sizes="(max-width: 870px) 100vw, 870px">
                                                     <div class="overlay">
                                                         <h4 class="card-title">
-                                                            MICE
+                                                            Destination Event
                                                         </h4>
                                                     </div>
                                                 </a>
@@ -853,7 +853,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- <script>
+                                         <script>
                                             $(document).ready(function() {
                                                 $('.slider-container').slick({
                                                     slidesToShow: 3, // Jumlah slide yang ditampilkan di tampilan web
@@ -874,7 +874,7 @@
                                                     }]
                                                 });
                                             });
-                                        </script> -->
+                                        </script> 
 
                                         <style>
                                             .deal-single1 {
@@ -1036,7 +1036,7 @@
                                                                         <div class="trip-rating">
                                                                             <div class="cnt" style="display: flex;flex-direction: column;align-items: center;font-family: 'Open Sans'; font-weight: 500;  line-height: 24px;">
                                                                                 <img src="<?= base_url('assets/images/trustpilot.png') ?>" alt="trustpilot-rating">
-                                                                                <p style="padding-top:15px;font-size:20px;font-weight:bold;">See our 37 reviews on Trustpilot</p>
+                                                                                <p style="padding-top:15px;font-size:20px;font-weight:bold;">See our 45 reviews on Trustpilot</p>
                                                                             </div>
                                                                         </div>
                                                                     </a>
@@ -1284,7 +1284,7 @@
     </div>
 
 <!-- External JS for slick slider -->
-<!-- <script>
+ <script>
 $(document).ready(function() {
     $('.slider-container').slick({
         slidesToShow: 3,
@@ -1317,7 +1317,7 @@ $(document).ready(function() {
     });
 });
 
-</script> -->
+</script> 
 
     <!-- Testimoni End -->
     <section style="padding-top:50px;margin-top: 60px !important;background-color:#f9f9f9;" class="elementor-section elementor-top-section elementor-element elementor-element-86a3b54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="86a3b54" data-element_type="section">
@@ -1532,7 +1532,7 @@ $(document).ready(function() {
 
 
 
-                        <!-- <script>
+                        <script>
                             $(document).ready(function() {
                                 $('.slider-container').slick({
                                     slidesToShow: 3, // Number of slides to show on desktop
@@ -1553,7 +1553,7 @@ $(document).ready(function() {
                                     }]
                                 });
                             });
-                        </script> -->
+                        </script> 
                         <style>
                             .card-link {
                                 text-decoration: none;
@@ -2354,7 +2354,7 @@ $(document).ready(function() {
         <div class="container" style="position: relative; z-index: 1;">
             <div class="row justify-content-center align-items-center">
                 <!-- Kolom untuk teks -->
-                <div class="col-md-6 col-text" style="margin-top: 70px; margin-bottom: 70px; color: white; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); /* Bayangan teks hitam */">
+                <div class="col-md-6 col-text" style="margin-top: 70px; margin-bottom: 70px; color: white;">
                     <h2 class="tect"><?= lang("text_homepage.title_contact_us") ?></h2>
                 </div>
 
