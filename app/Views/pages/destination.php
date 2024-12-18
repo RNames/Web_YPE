@@ -111,7 +111,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-12" id="card-destination">
                     <div class="best-plan-single1 d-flex flex-column h-100">
                         <div class="image">
-                            <img width="425" height="345" src="<?= base_url('assets/images/destinations/') . $destination['image'] ?>" class="attachment-egns-img-one size-egns-img-one wp-post-image" alt="<?= $destination['alt_image'] ?>" decoding="async" loading="lazy" />
+                            <a href="/<?= $language ?>/<?= $language == 'id' ? 'destinasi' : 'destination' ?>/<?= $destination['slug'] ?>">
+                                <img width="425" height="345" src="<?= base_url('assets/images/destinations/') . $destination['image'] ?>" class="attachment-egns-img-one size-egns-img-one wp-post-image" alt="<?= $destination['alt_image'] ?>" decoding="async" loading="lazy" />
+                            </a>
                         </div>
                         <div class="content h-100 d-flex flex-column" style="justify-content: space-between;">
                             <div>
@@ -140,6 +142,7 @@
                     </div>
                 </div>
             <?php endforeach; ?>
+
 
         </div>
 

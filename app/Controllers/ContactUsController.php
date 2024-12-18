@@ -6,6 +6,10 @@ use App\Models\ContactUsModel;
 use App\Models\DestinationModel;
 use App\Models\SocialMediaModel;
 use App\Controllers\BaseController;
+use CodeIgniter\Email\Email;
+use CodeIgniter\Controller;
+
+
 
 class ContactUsController extends BaseController
 {
@@ -55,6 +59,39 @@ class ContactUsController extends BaseController
         echo view('pages/contact_us', $data);
 
         log_message('info', 'Detected language: ' . session()->get('lang'));
+    }
 
+    public function submit_contact_form()
+    {
+        // Load email library
+        $email = \Config\Services::email();
+
+        // Get form input data
+        $name = $this->request->getPost('name');
+        $phone = $this->request->getPost('phn-number');
+        $email_address = $this->request->getPost('email');
+        $message = $this->request->getPost('message');
+
+        // Prepare email content
+        $subject = "New Contact Form Submission";
+        $message_body = "NAME: $name\nPHONE: $phone\nEMAIL: $email_address\nMESSAGE: $message";
+
+        // Set up the email configuration
+        $email->setFrom('apetbone@gmail.com', 'Your Private Europe');
+        $email->setTo('apetbone@gmail.com');
+        $email->setSubject($subject);
+        $email->setMessage($message_body);
+
+        // Send the email
+        if ($email->send()) {
+            // On success, redirect with success message
+            $language = session()->get('lang');
+            return redirect()->to("/$language/contact-us")->with('success', 'Your message has been sent!');
+        } else {
+            // On failure, log the error and redirect with an error message
+            log_message('error', 'Email sending failed: ' . $email->printDebugger(['headers', 'subject', 'body']));
+            $language = session()->get('lang');
+            return redirect()->to("/$language/contact-us")->with('error', 'There was an error sending your message. Please try again.');
+        }
     }
 }

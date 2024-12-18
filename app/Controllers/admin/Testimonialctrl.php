@@ -141,7 +141,7 @@ public function proses_edit($id = null)
         $newFileName = $image->getRandomName();
 
         // Move uploaded file to the 'writable/uploads' directory
-        $image->move(ROOTPATH . 'assets/images/testimonials', $newFileName);
+        $image->move('assets/images/testimonials', $newFileName);
 
         // Set new image file name in the data array
         $data['image'] = $newFileName;

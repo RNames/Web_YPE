@@ -21,7 +21,7 @@
 </style>
 
 <div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/blog-banner.jpg') ?>);">
-<img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="A man looking his tablet with the beautiful background" style="display: none;">
+    <img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="A man looking his tablet with the beautiful background" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
@@ -50,10 +50,11 @@
                                         </span>
 
                                         <div class="blog-image">
-
-                                            <img loading="lazy" width="870" height="500" src="<?= base_url('assets/images/blogs/' . $article['cover_image']) ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="<?= $article['alt_image'] ?>" decoding="async" fetchpriority="high" sizes="(max-width: 870px) 100vw, 870px">
-
+                                            <a href="blog/<?= $language == 'id' ? $article['slug'] : $article['slug_en'] ?>">
+                                                <img loading="lazy" width="870" height="500" src="<?= base_url('assets/images/blogs/' . $article['cover_image']) ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="<?= $article['alt_image'] ?>" decoding="async" fetchpriority="high" sizes="(max-width: 870px) 100vw, 870px">
+                                            </a>
                                         </div>
+
                                     </div>
 
                                     <div class="blog-content">
@@ -87,7 +88,7 @@
 
             <div class="col-lg-4">
                 <div class="blog-sidebar ps-lg-4" style="border-left: 2px solid #ddd; border-right: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 15px;">
-                    <div id="block-2" class="blog-widget-item widget_block widget_search">
+                    <!--<div id="block-2" class="blog-widget-item widget_block widget_search">
                         <form role="search" method="get" action="#" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search">
                             <label class="wp-block-search__label" for="wp-block-search__input-1">Search</label>
                             <div class="wp-block-search__inside-wrapper">
@@ -95,34 +96,39 @@
                                 <button aria-label="Search" class="wp-block-search__button wp-element-button" type="submit"><?= lang('text_article.search_button') ?></button>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
 
                     <div id="block-3" class="blog-widget-item widget_block">
                         <div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow">
                             <div class="wp-block-group__inner-container">
                                 <h2 class="wp-block-heading" style="font-family: 'Open Sans' !important;font-weight: 700;font-size: 30px;line-height: 42px;">
-                                    <?= lang('text_article.latest_article') ?>
+                                    <?= lang('text_article.other_article') ?>
                                 </h2>
 
                                 <ul class="wp-block-latest-posts__list has-dates wp-block-latest-posts mb-4">
                                     <?php foreach ($latestArticle as $article) : ?>
-                                        <li class="latest-article-card">
-                                            <div class="wp-block-latest-posts__featured-image alignleft mb-0">
-                                                <img loading="lazy" decoding="async" width="150" height="150" src="<?= base_url('assets/images/blogs/' . $article['cover_image']) ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" style="max-width:100%; height:auto; border-radius:8px;" sizes="(max-width: 150px) 100vw, 150px">
-                                                <time datetime="2023-02-18T09:42:49+00:00" class="wp-block-latest-posts__post-date" style="font-family: 'Open Sans' !important; margin-left: 10px;">
-                                                    <?= $article['date'] ?>
-                                                </time>
-                                            </div>
-                                            <a href="/<?= $language ?>/blog/<?= $article['slug'] . '/' . $article['id'] ?>" style="margin-left: 10px;">
-                                                <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
+                                        <li class="latest-article-card" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                            <a href="<?= $language == 'id' ? $article['slug'] : $article['slug_en'] ?>" style="display: flex; width: 100%; text-decoration: none; color: inherit;">
+                                                <div class="wp-block-latest-posts__featured-image" style="flex-shrink: 0; display: flex; align-items: center;">
+                                                    <img loading="lazy" decoding="async" width="150" height="150" src="<?= base_url('assets/images/blogs/' . $article['cover_image']) ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" style="max-width:100%; height:auto; border-radius:8px;">
+                                                </div>
+                                                <div style="margin-left: 10px; display: flex; flex-direction: column; justify-content: center;">
+                                                    <span style="font-family: 'Open Sans'; font-weight: 500; font-size: 14px; line-height: 20px;">
+                                                        <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
+                                                    </span>
+                                                    <time datetime="2023-02-18T09:42:49+00:00" class="wp-block-latest-posts__post-date" style="font-family: 'Open Sans'; font-size: 12px; color: #777; margin-left:0px;">
+                                                        <?= $article['date'] ?>
+                                                    </time>
+                                                </div>
                                             </a>
-
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
+
                             </div>
                         </div>
                     </div>
+
 
 
                     <div id="block-3" class="blog-widget-item widget_block">

@@ -1269,7 +1269,7 @@ $language = session()->get('lang');
                                             <i class="bi bi-youtube"></i>
                                         </div>
                                         <div class="text">
-                                            <a href="#">@yourprivateeurope</a>
+                                            <a href="https://www.youtube.com/@yourprivateeurope">@yourprivateeurope</a>
                                         </div>
                                     </li>
                                     <li>

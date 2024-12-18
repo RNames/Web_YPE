@@ -2360,7 +2360,7 @@ $(document).ready(function() {
 
                 <!-- Kolom untuk tombol -->
                 <div class="col-md-4 col-button" style="color: white; margin-top: 50px; margin-bottom: 50px;">
-                    <a aria-hidden="true" href="/<?= $language ?>/hubungi-kami" class="eg-btn btn--primary btn--lg" style="border-radius: 30px; background-color: #e0bc6d; font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
+                    <a aria-hidden="true" href="/<?= $language ?>/<?= $language == 'id' ? 'hubungi-kami' : 'contact-us' ?>" class="eg-btn btn--primary btn--lg" style="border-radius: 30px; background-color: #e0bc6d; font-family: 'Oswald';" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'">
                         <?= lang("text_homepage.button_contact_us") ?>
                     </a>
                 </div>

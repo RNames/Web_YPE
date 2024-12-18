@@ -4,7 +4,7 @@
 
 <!-- ========== header end============= -->
 <div class="inner-banner-section" style="background-image: url(<?= base_url('assets/images/contact_us.jpg') ?>);">
- <img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="An image of someone contact us" style="display: none;">
+    <img src="<?= base_url('assets/images/contact_us.jpg') ?>" alt="An image of someone contact us" style="display: none;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
@@ -30,7 +30,7 @@
                                         <div class="justify-content-center">
                                             <div class="section-title1">
                                                 <span class="heading-section" style="color:#086B7D !important;letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 700;">
-                                                <?= $language == 'id' ? $contactUs['section_id'] : $contactUs['section_en'] ?>
+                                                    <?= $language == 'id' ? $contactUs['section_id'] : $contactUs['section_en'] ?>
                                                 </span>
                                                 <h2 class="title-section" style="color:black;font-family: 'Open Sans';font-size: 30px;line-height: 42px;font-weight: 700;">
                                                     <?= $language == 'id' ? $contactUs['title_id'] : $contactUs['title_en'] ?>
@@ -75,26 +75,41 @@
                                 <h3 style="color:black !important;letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 700;">
                                     <?= $language == 'id' ? $contactUs['title_form_id'] : $contactUs['title_form_en'] ?>
                                 </h3>
-                                <form action="#" method="post">
+
+                                <!-- Success/Error message display -->
+                                <?php if (session()->getFlashdata('success')): ?>
+                                    <div class="alert alert-success">
+                                        <?= session()->getFlashdata('success'); ?>
+                                    </div>
+                                <?php elseif (session()->getFlashdata('error')): ?>
+                                    <div class="alert alert-danger">
+                                        <?= session()->getFlashdata('error'); ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                <form action="<?= base_url("$language/contact/submit_contact_form") ?>" method="post">
+
                                     <div class="form-group">
-                                        <input type="text" placeholder="<?= lang('text_contact_us.name') ?>" required>
+                                        <input type="text" placeholder="<?= lang('text_contact_us.name') ?>" name="name" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" placeholder="<?= lang('text_contact_us.phone') ?>" value="" type="text" name="phn-number" required>
+                                        <input type="text" placeholder="<?= lang('text_contact_us.phone') ?>" name="phn-number" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" placeholder="<?= lang('text_contact_us.email') ?>" required>
+                                        <input type="email" placeholder="<?= lang('text_contact_us.email') ?>" name="email" required>
                                     </div>
                                     <div class="form-group">
                                         <textarea placeholder="<?= lang('text_contact_us.message') ?>" name="message" required></textarea>
                                     </div>
                                     <div>
-                                        <a href="" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d;border-radius: 30px; font-family: 'Open Sans';font-weight: 600!important; width: 100%;" onmouseover="this.style.color='#e0bc6d'" onmouseout="this.style.color='white'"><?= lang('text_contact_us.send') ?></a>
+                                        <button type="submit" class="eg-btn btn--primary btn--lg" style="background-color: #e0bc6d; border-radius: 30px; font-family: 'Open Sans'; font-weight: 600 !important; width: 100%;"><?= lang('text_contact_us.send') ?></button>
                                     </div>
 
                                 </form>
                             </div>
                         </div>
+
+
                         <!-- Kolom Kanan -->
                         <div class="col" style="flex: 1; margin-right: 10px;">
                             <!-- Kotak Kontak Kami -->
@@ -106,99 +121,129 @@
                                 <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><strong>EU: </strong><?= $contactUs['phone_number_eu']  ?></p>
                                 <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><strong>ID: </strong><?= $contactUs['phone_number_id']  ?></p>
                             </div>
-                        
+
                             <!-- Jarak antara dua kotak -->
                             <div style="height: 20px;"></div>
-                        
+
                             <!-- Kotak Live Chat -->
                             <div class="chat-info-box">
                                 <h3 style="color:black !important;letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 700;"><i class="fas fa-comments"></i> Live Chat</h3>
                                 <p style="letter-spacing: 0px !important; font-family: 'Open Sans';font-size: 18px;line-height: 27px;font-weight: 500;"><?= lang('text_contact_us.live') ?></p>
                             </div>
                         </div>
-                
+
+
                         <!-- Tambahkan gaya CSS -->
                         <style>
                             /* Kotak Kontak Kami dan Live Chat */
-                            .contact-info-box, .chat-info-box {
-                                background-color: #f9f9f9; /* Warna latar belakang */
-                                border-radius: 10px; /* Sudut melengkung */
-                                padding: 20px; /* Padding */
-                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan */
-                                margin-bottom: 20px; /* Jarak antara konten */
+                            .contact-info-box,
+                            .chat-info-box {
+                                background-color: #f9f9f9;
+                                /* Warna latar belakang */
+                                border-radius: 10px;
+                                /* Sudut melengkung */
+                                padding: 20px;
+                                /* Padding */
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                /* Bayangan */
+                                margin-bottom: 20px;
+                                /* Jarak antara konten */
                             }
-                        
+
                             /* Gaya judul */
                             h3 {
-                                font-size: 20px; /* Ukuran teks */
-                                margin-bottom: 10px; /* Jarak dengan konten */
+                                font-size: 20px;
+                                /* Ukuran teks */
+                                margin-bottom: 10px;
+                                /* Jarak dengan konten */
                             }
-                        
+
                             /* Ikon FontAwesome */
                             h3 i {
-                                margin-right: 10px; /* Jarak ikon dengan teks */
+                                margin-right: 10px;
+                                /* Jarak ikon dengan teks */
                             }
+
                             /* Gaya Kontainer Kontak */
                             .contact-container {
-                                width: 85%; /* Lebih lebar */
-                                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Bayangan kontainer */
-                                border-radius: 10px; /* Sudut melengkung */
-                                padding: 30px; /* Padding kontainer */
-                                background-color: #f8f9fa; /* Warna latar belakang kontainer */
-                                margin: auto; /* Pusatkan kontainer */
-                                margin-top: 40px; /* Margin atas kontainer */
-                                margin-bottom: 40px; /* Margin bawah kontainer */
+                                width: 85%;
+                                /* Lebih lebar */
+                                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                                /* Bayangan kontainer */
+                                border-radius: 10px;
+                                /* Sudut melengkung */
+                                padding: 30px;
+                                /* Padding kontainer */
+                                background-color: #f8f9fa;
+                                /* Warna latar belakang kontainer */
+                                margin: auto;
+                                /* Pusatkan kontainer */
+                                margin-top: 40px;
+                                /* Margin atas kontainer */
+                                margin-bottom: 40px;
+                                /* Margin bawah kontainer */
                             }
-                        
+
                             /* Gaya Form Kontak */
                             .contact-form form {
                                 display: flex;
                                 flex-direction: column;
-                                gap: 20px; /* Tambahkan jarak antar elemen */
+                                gap: 20px;
+                                /* Tambahkan jarak antar elemen */
                             }
-                        
+
                             .contact-form input,
                             .contact-form textarea {
-                                padding: 16px; /* Tambahkan padding */
-                                border: 1px solid #ccc; /* Batasan warna abu-abu */
-                                border-radius: 5px; /* Sudut melengkung */
-                                font-size: 12px; /* Ukuran teks */
-                                width: 100%; /* Lebar penuh */
+                                padding: 16px;
+                                /* Tambahkan padding */
+                                border: 1px solid #ccc;
+                                /* Batasan warna abu-abu */
+                                border-radius: 5px;
+                                /* Sudut melengkung */
+                                font-size: 12px;
+                                /* Ukuran teks */
+                                width: 100%;
+                                /* Lebar penuh */
                             }
-                        
+
                             /* Tombol Kirim */
                             .contact-form .btn-align {
-                                padding: 14px; /* Lebih besar */
-                                border: none; /* Hapus batasan */
-                                border-radius: 30px; /* Sudut melengkung */
-                                font-size: 18px; /* Ukuran teks */
-                                width: 100%; /* Tombol lebar penuh */
-                                cursor: pointer; /* Kursor pointer saat dihover */
+                                padding: 14px;
+                                /* Lebih besar */
+                                border: none;
+                                /* Hapus batasan */
+                                border-radius: 30px;
+                                /* Sudut melengkung */
+                                font-size: 18px;
+                                /* Ukuran teks */
+                                width: 100%;
+                                /* Tombol lebar penuh */
+                                cursor: pointer;
+                                /* Kursor pointer saat dihover */
                             }
-                        
-                            
-                        
-                            @media (max-width: 768px) {
-                        /* Atur container menjadi block untuk tampilan vertikal */
-                        .container {
-                            display: block;
-                        }
-                        /* Atur div menjadi full-width untuk tampilan vertikal */
-                        .row {
-                            flex-direction: column;
-                        }
-                        /* Atur margin dari elemen */
-                        .col {
-                            width: 100%;
-                            margin: 10px 0;
-                        }
-                    }
+
+                            .alert {
+                                margin-bottom: 20px;
+                                padding: 10px;
+                                border-radius: 5px;
+                                font-size: 16px;
+                            }
+
+                            .alert-success {
+                                background-color: #d4edda;
+                                color: #155724;
+                                border: 1px solid #c3e6cb;
+                            }
+
+                            .alert-danger {
+                                background-color: #f8d7da;
+                                color: #721c24;
+                                border: 1px solid #f5c6cb;
+                            }
                         </style>
-
-
-
+                    </div>
+                </section>
             </div>
-        </div>
     </article>
 </div>
 

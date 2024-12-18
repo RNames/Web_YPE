@@ -124,23 +124,29 @@
 
                                 <ul class="wp-block-latest-posts__list has-dates wp-block-latest-posts mb-4">
                                     <?php foreach ($latestArticle as $article) : ?>
-                                        <li class="latest-article-card">
-                                            <div class="wp-block-latest-posts__featured-image alignleft mb-0">
-                                                <img loading="lazy" decoding="async" width="150" height="150" src="<?= base_url('assets/images/blogs/' . $article['cover_image']) ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" style="max-width:100%; height:auto; border-radius:8px;" sizes="(max-width: 150px) 100vw, 150px">
-                                                <time datetime="2023-02-18T09:42:49+00:00" class="wp-block-latest-posts__post-date" style="font-family: 'Open Sans' !important; margin-left: 10px;">
-                                                    <?= $article['date'] ?>
-                                                </time>
-                                            </div>
-                                            <a href="/<?= $language ?>/blog/<?= $article['slug'] . '/' . $article['id'] ?>" style="margin-left: 10px;">
-                                                <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
+                                        <li class="latest-article-card" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                            <a href="<?= $language == 'id' ? $article['slug'] : $article['slug_en'] ?>" style="display: flex; width: 100%; text-decoration: none; color: inherit;">
+                                                <div class="wp-block-latest-posts__featured-image" style="flex-shrink: 0; display: flex; align-items: center;">
+                                                    <img loading="lazy" decoding="async" width="150" height="150" src="<?= base_url('assets/images/blogs/' . $article['cover_image']) ?>" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" style="max-width:100%; height:auto; border-radius:8px;">
+                                                </div>
+                                                <div style="margin-left: 10px; display: flex; flex-direction: column; justify-content: center;">
+                                                    <span style="font-family: 'Open Sans'; font-weight: 500; font-size: 14px; line-height: 20px;">
+                                                        <?= $language == 'id' ? $article['title_id'] : $article['title_en'] ?>
+                                                    </span>
+                                                    <time datetime="2023-02-18T09:42:49+00:00" class="wp-block-latest-posts__post-date" style="font-family: 'Open Sans'; font-size: 12px; color: #777; margin-left:0px;">
+                                                        <?= $article['date'] ?>
+                                                    </time>
+                                                </div>
                                             </a>
-
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
+
                             </div>
                         </div>
                     </div>
+
+
 
 
                     <div id="block-3" class="blog-widget-item widget_block">
