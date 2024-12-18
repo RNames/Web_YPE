@@ -24,7 +24,8 @@ $routes->get('/en/destination/(:segment)', 'DestinationController::detail/$1');
 
 $routes->get('/id/hubungi-kami', 'ContactUsController::index');
 $routes->get('/en/contact-us', 'ContactUsController::index');
-$routes->post('en/contact/submit_contact_form', 'ContactUsController::submit_contact_form'); // Handle the form submission
+$routes->post('en/contact/submit_contact_form', 'ContactUsController::submit_contact_form'); 
+$routes->post('id/kontak/submit_contact_form', 'ContactUsController::submit_contact_form'); 
 
 $routes->get('/id/tentang-kami', 'AboutUsController::index');
 $routes->get('/en/about-us', 'AboutUsController::index');

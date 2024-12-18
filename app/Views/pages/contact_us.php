@@ -87,7 +87,8 @@
                                     </div>
                                 <?php endif; ?>
 
-                                <form action="<?= base_url("$language/contact/submit_contact_form") ?>" method="post">
+                                <form action="<?= base_url($language == 'id' ? "$language/kontak/submit_contact_form" : "$language/contact/submit_contact_form") ?>" method="post">
+
 
                                     <div class="form-group">
                                         <input type="text" placeholder="<?= lang('text_contact_us.name') ?>" name="name" required>

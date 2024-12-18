@@ -84,14 +84,20 @@ class ContactUsController extends BaseController
 
         // Send the email
         if ($email->send()) {
-            // On success, redirect with success message
+            // Determine the URL path based on the language
             $language = session()->get('lang');
-            return redirect()->to("/$language/contact-us")->with('success', 'Your message has been sent!');
+            $path = ($language == 'id') ? 'hubungi-kami' : 'contact-us';
+        
+            // On success, redirect with success message
+            return redirect()->to("/$language/$path")->with('success', 'Your message has been sent!');
         } else {
             // On failure, log the error and redirect with an error message
             log_message('error', 'Email sending failed: ' . $email->printDebugger(['headers', 'subject', 'body']));
+        
             $language = session()->get('lang');
-            return redirect()->to("/$language/contact-us")->with('error', 'There was an error sending your message. Please try again.');
-        }
+            $path = ($language == 'id') ? 'hubungi-kami' : 'contact-us';
+        
+            return redirect()->to("/$language/$path")->with('error', 'There was an error sending your message. Please try again.');
+        }  
     }
 }
