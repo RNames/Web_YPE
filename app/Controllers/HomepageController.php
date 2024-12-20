@@ -66,10 +66,9 @@ class HomepageController extends BaseController
         $locale = ($segment === 'en') ? 'en' : 'id';
 
         // Update the session language if it does not match the detected locale
-        if ($session->get('lang') !== $locale) {
-            $session->set('lang', $locale);
-            $this->language = $locale;
-        }
+        // Update the session language
+        session()->set('lang', $locale);
+        $this->language = $locale;
 
         // Set the locale for the current request
         service('request')->setLocale($locale);
