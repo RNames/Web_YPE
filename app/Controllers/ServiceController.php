@@ -9,6 +9,7 @@ use App\Models\DestinationModel;
 use App\Models\SocialMediaModel;
 use App\Models\HomepageModel;
 use App\Controllers\BaseController;
+use App\Models\DestinationEventModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class ServiceController extends BaseController
@@ -17,12 +18,14 @@ class ServiceController extends BaseController
     protected $socmedModel;
     protected $VIPModel;
     protected $serviceModel;
+    protected $destinationEventModel;
     protected $homepageModel;
     protected $currentUrl;
     protected $language;
 
     public function __construct()
     {
+        $this->destinationEventModel = new DestinationEventModel();
         $this->destinationModel = new DestinationModel();
         $this->VIPModel = new VIPModel();
         $this->serviceModel = new ServicesModel();
@@ -144,6 +147,7 @@ class ServiceController extends BaseController
 
         $titleData = $this->serviceModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->findAll();
         $descriptionData = $this->serviceModel->select(['seo_description_id', 'seo_description_en'])->findAll();
+        $destinationEvents = $this->destinationEventModel->findAll();
 
         $data = [
             'title' => $titleData[2] ?? null, // Use the second record or null if it doesn't exist
@@ -152,6 +156,7 @@ class ServiceController extends BaseController
             'language' => $this->language,
             'socmeds' => $this->socmedModel->findAll(),
             'service' => $service,
+            'destinationEvents' => $destinationEvents,
         ];
 
         echo view('pages/mice', $data);

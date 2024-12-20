@@ -154,7 +154,7 @@
           </div>
           <div class="tab-pane fade" id="v-pills-plan" role="tabpanel" aria-labelledby="v-pills-plan-tab">
             <div class="tour-plan">
-              <h3 class="tour-details-subtitle">Jadwal Tur</h3>
+              <h3 class="tour-details-subtitle"><?= $language == 'id' ?  'Jadwal Tour' : 'Tour Schedule' ?></h3>
               <p style="margin-bottom: 50px;">
                 <?= $language == 'id' ? $data['itinerary_notes_id'] : $data['itinerary_notes_en'] ?>
               </p>

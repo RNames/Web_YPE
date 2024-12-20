@@ -12,7 +12,7 @@ class HowItWorksModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title_id', 'title_en', 'description_id', 'description_en', 'image', 'slug'];
+    protected $allowedFields    = ['title_id', 'title_en', 'description_id', 'description_en', 'image', 'slug', 'alt_image'];
 
     protected bool $allowEmptyInserts = false;
 

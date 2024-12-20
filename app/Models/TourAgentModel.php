@@ -4,32 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ContactUsModel extends Model
+class TourAgentModel extends Model
 {
-    protected $table            = 'contact_us';
+    protected $table            = 'tour_agent';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'seo_tag_title_id',
-        'seo_tag_title_en',
-        'seo_description_id',
-        'seo_description_en',
-        'heading_id',
-        'heading_en',
-        'section_id',
-        'section_en',
         'title_id',
         'title_en',
-        'phone_number_eu',
-        'phone_number_id',
-        'title_form_id',
-        'title_form_en',
-        'title_contact_id',
-        'title_contact_en',
-        
+        'desc_id',
+        'desc_en',
+        'image',
     ];
 
     protected bool $allowEmptyInserts = false;
@@ -57,4 +45,9 @@ class ContactUsModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getAll()
+    {
+        return $this->findAll();
+    }
 }

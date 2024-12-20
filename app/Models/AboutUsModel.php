@@ -13,7 +13,37 @@ class AboutUsModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        // tolong ditulis semuanya disini ya, saya males banyak bgt haha
+        'seo_tag_title_id',
+        'seo_tag_title_en',
+        'seo_description_id',
+        'seo_description_en',
+        'heading_id',
+        'heading_en',
+        'section_id',
+        'section_en',
+        'title_id',
+        'title_en',
+        'description_id', 
+        'description_en',
+        'image',
+        'year',
+        'year_title_id',
+        'year_title_en',
+        'destination_number',
+        'destination_number_title_id',
+        'destination_number_title_en',
+        'rating',
+        'rating_title_id',
+        'rating_title_en',
+        'section_message_id',
+        'section_message_en',
+        'title_message_id',
+        'title_message_en',
+        'message_id',
+        'message_en',
+        'image_founder',
+        'name',
+        'founder',
     ];
 
     protected bool $allowEmptyInserts = false;

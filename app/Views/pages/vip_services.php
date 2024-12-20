@@ -31,7 +31,7 @@
                                             <div class=" justify-content-center">
                                                 <div class="section-title1">
                                                     <p style="color:black !important;margin-top: 20px !important;font-family: 'Open Sans' !important; font-weight: 700; font-size: 30px; line-height: 1.4;">
-                                                        <?= $language == 'id' ? $service['title_id'] : $service['title_en'] ?>
+                                                        <?= $language == 'id' ? 'Mengapa Layanan VIP Kami' : 'Why Our VIP Services' ?>
                                                     </p>
                                                     <div class="heading-ribbon flex justify-center">
                                                         <svg width="370" height="18" viewBox="0 0 370 18" fill="none" xmlns="http://www.w3.org/2000/svg">
