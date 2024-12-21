@@ -13,6 +13,17 @@
                         <?= csrf_field() ?>
                         <div class="row">
                             <div class="col">
+                                <?php if (session()->has('errors')) : ?>
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            <?php foreach (session('errors') as $error) : ?>
+                                                <li><?= $error ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
+
+
                                 <div class="mb-3">
                                     <label class="form-label">Title (ID):</label>
                                     <input type="text" class="form-control" name="title_id" value="<?= old('title_id') ?>" required>
@@ -25,12 +36,12 @@
 
                                 <div class="mb-3">
                                     <label class="form-label">Description (ID):</label>
-                                    <textarea class="form-control tiny" name="desc_id" ><?= old('desc_id') ?></textarea>
+                                    <textarea class="form-control tiny" name="desc_id"><?= old('desc_id') ?></textarea>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label">Description (EN):</label>
-                                    <textarea class="form-control tiny" name="desc_en" ><?= old('desc_en') ?></textarea>
+                                    <textarea class="form-control tiny" name="desc_en"><?= old('desc_en') ?></textarea>
                                 </div>
 
                                 <div class="mb-3">

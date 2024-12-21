@@ -206,6 +206,13 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('/admin/about-us', 'admin\AboutUsController::index');
     $routes->get('/admin/about-us/edit/(:num)', 'admin\AboutUsController::edit/$1');
     $routes->post('/admin/about-us/update/(:num)', 'admin\AboutUsController::update/$1');
+
+    $routes->get('admin/destination/', 'admin\DestinationController::index');
+    $routes->get('admin/destination/create', 'admin\DestinationController::create');
+    $routes->post('admin/destination/store', 'admin\DestinationController::store');
+    $routes->get('admin/destination/edit/(:num)', 'admin\DestinationController::edit/$1');
+    $routes->post('admin/destination/update/(:num)', 'admin\DestinationController::update/$1');
+    $routes->get('admin/destination/delete/(:num)', 'admin\DestinationController::delete/$1');
 });
 
 // Page not found handler

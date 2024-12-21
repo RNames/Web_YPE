@@ -13,7 +13,12 @@ class DestinationModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
+        'seo_tag_title_id',
+        'seo_tag_title_en',
+        'seo_description_id',
+        'seo_description_en',
         'title',
+        'slug',
         'sub_title',
         'type_of_tour_id',
         'type_of_tour_en',
@@ -39,6 +44,7 @@ class DestinationModel extends Model
         'tour_period_en',
         'created_at',
         'updated_at',
+        'image',
     ];
 
     protected bool $allowEmptyInserts = false;

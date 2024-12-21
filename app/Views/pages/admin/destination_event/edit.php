@@ -13,6 +13,17 @@
                     <form action="/admin/destination-event/update/<?= $destinationEvent['id'] ?>" method="post" enctype="multipart/form-data">
                         <?= csrf_field() ?>
 
+                        <?php if (session()->has('errors')) : ?>
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <?php foreach (session('errors') as $error) : ?>
+                                        <li><?= $error ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
+
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
