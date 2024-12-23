@@ -50,12 +50,7 @@ class DestinationController extends BaseController
             'language' => $this->language,
             'homepage' => $this->homepageModel->first(),
             'navbarDestinations' => $this->destinationModel->select(['title', 'slug'])->findAll(),
-            'destinations' => $this->destinationModel->select([
-                'destination.*',
-                'MIN(image_destination.image) as image',
-                'MIN(image_destination.image_name_id) as image_name_id',
-                'MIN(image_destination.image_name_en) as image_name_en'
-            ])->join('image_destination', 'image_destination.destination_id = destination.id', 'left')->groupBy('destination.id')->findAll(),
+            'destinations' => $this->destinationModel->findAll(),
             'socmeds' => $this->socmedModel->findAll(),
         ];
 
