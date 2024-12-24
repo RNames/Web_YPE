@@ -43,7 +43,7 @@ class ArticleController extends BaseController
         // Update the session language
         session()->set('lang', $locale);
         $this->language = $locale;
-        
+
         $data = [
             'title' => $this->articleModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
             'description' => $this->articleModel->select(['seo_description_id', 'seo_description_en'])->first(),
@@ -64,12 +64,31 @@ class ArticleController extends BaseController
     public function detail($slug = '')
     {
         $field = $this->language == 'en' ? 'slug_en' : 'slug';
+        $locale = session('lang') ?? 'id';
         $article = $this->articleModel->where($field, $slug)->first();
-        
+
+        $article = $this->articleModel->where('slug', $slug)
+            ->orWhere('slug_en', $slug)
+            ->first();
+
         if (!$article) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Article not found');
+            throw new \CodeIgniter\Exceptions\PageNotFoundException("Article with slug $slug not found");
         }
-    
+
+        // Tentukan slug yang benar berdasarkan bahasa yang dipilih
+        $slug_id = $article['slug'];
+        $slug_en = $article['slug_en'];
+        $slug_baru = ($locale === 'id') ? $slug_id : $slug_en;
+
+        // Tentukan prefix URL berdasarkan bahasa
+        $prefix_url = ($locale === 'id') ? 'blog' : 'blog';
+
+        // Jika slug di URL tidak sesuai dengan bahasa yang dipilih, redirect ke slug yang benar
+        if ($slug !== $slug_baru) {
+            return redirect()->to(base_url($locale . '/' . $prefix_url . '/' . $slug_baru));
+        }
+
+
         $data = [
             'title' => $this->articleModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
             'description' => $this->articleModel->select(['seo_description_id', 'seo_description_en'])->first(),
@@ -82,8 +101,7 @@ class ArticleController extends BaseController
             'socmeds' => $this->socmedModel->findAll(),
             'services' => $this->servicesModel->findAll()
         ];
-    
+
         echo view('pages/detail_article', $data);
     }
-
 }

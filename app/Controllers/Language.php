@@ -6,17 +6,22 @@ use App\Controllers\BaseController;
 
 class Language extends BaseController
 {
-    public function switch($locale)
-    {
-        // Validate locale (ensure it's either 'en' or 'id')
-        if (!in_array($locale, ['en', 'id'])) {
-            $locale = 'id'; // Default fallback
-        }
+    
 
-        // Set the locale in session
-        session()->set('lang', $locale);
-        log_message('debug', 'Locale switched to: ' . $locale);
-        // Redirect to the appropriate URL
-        return redirect()->to("/{$locale}");
+    public function switchLanguage($lang)
+    {
+        // Ensure the language is valid
+        if (in_array($lang, ['en', 'id'])) {
+            session()->set('lang', $lang); // Set the language in session
+        }
+    
+        // Get the current URI and remove the existing language prefix
+        $currentUri = uri_string();
+        $currentUri = preg_replace('#^(id|en)/?#', '', $currentUri); // Remove the current language prefix
+    
+        // Redirect to the new language-prefixed URL
+        return redirect()->to(base_url("{$lang}" . ($currentUri ? "/{$currentUri}" : '')));
     }
+    
+    
 }

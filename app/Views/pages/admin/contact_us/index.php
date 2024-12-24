@@ -62,9 +62,6 @@
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
-
-                            <!--//table-responsive-->
-
                         </div><!--//app-card-body-->
                     </div><!--//app-card-->
                 </div><!--//tab-pane-->

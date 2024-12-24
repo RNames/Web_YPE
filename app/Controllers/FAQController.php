@@ -33,11 +33,25 @@ class FAQController extends BaseController
 
     public function index(): void
     {
+        // Detect the language segment from the URL (first segment)
+        $segment = $this->request->uri->getSegment(1);
+
+        // Determine the locale based on the URL segment
+        $locale = ($segment === 'en') ? 'en' : 'id';
+
+        // Update the session language if it does not match the detected locale
+        if (session()->get('lang') !== $locale) {
+            session()->set('lang', $locale);
+        }
+
+        // Set the locale for the current request
+        service('request')->setLocale($locale);
+
         $data = [
             'title' => $this->FAQModel->select(['seo_tag_title_id', 'seo_tag_title_en'])->first(),
             'description' => $this->FAQModel->select(['seo_description_id', 'seo_description_en'])->first(),
             'currentUrl' => $this->currentUrl,
-            'language' => $this->language,
+            'language' => $locale,
             'navbarDestinations' => $this->destinationModel->select(['title', 'slug'])->findAll(),
             'faqs' => $this->FAQModel->findAll(),
             'faqCategories' => $this->FAQCategoryModel->findAll(),

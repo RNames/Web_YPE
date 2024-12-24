@@ -988,6 +988,107 @@ $language = session()->get('lang');
 
 <body class="home page-template page-template-elementor_header_footer page page-id-234 wp-embed-responsive theme-astrip woocommerce-js elementor-default elementor-template-full-width elementor-kit-8 elementor-page elementor-page-234">
 
+    <?php
+    // Define current language
+    $lang = session()->get('lang') ?? 'id'; // Default to 'id' if no language is set
+
+    // Get the current URI and remove the existing language prefix
+    $currentUri = uri_string();
+    $currentUri = preg_replace('#^(id|en)/?#', '', $currentUri); // Remove the language prefix if present
+
+    // Construct URLs for English and Indonesian
+    $english_url = base_url("en" . ($currentUri ? "/{$currentUri}" : ''));
+    $indonesia_url = base_url("id" . ($currentUri ? "/{$currentUri}" : ''));
+    ?>
+
+    <?php
+    // Ambil bahasa yang disimpan di session
+    $lang = session()->get('lang') ?? 'id'; // Default ke 'id' jika tidak ada di session
+
+    $current_url = uri_string();
+
+    // Simpan segmen bahasa saat ini
+    $segments = explode('/', trim($current_url, '/'));
+    $lang_segment = $segments[0] . '/'; // Menyimpan 'id/' atau 'en/'
+
+
+    // Definisikan tautan untuk setiap halaman berdasarkan bahasa
+    $destinationsLink = ($lang_segment === 'en/') ? 'destination' : 'destinasi';
+    $souvenirsLink = ($lang_segment === 'en/') ? 'other-services' : 'layanan-lainnya';
+    $articleLink = ($lang_segment === 'en/') ? 'contact-us' : 'hubungi-kami';
+    $aboutLink = ($lang_segment === 'en/') ? 'about-us' : 'tentang-kami';
+    $languageLink = ($lang_segment === 'en/') ? 'layanan-kami' : 'our-service';
+
+    // Buat array untuk menggantikan segmen berdasarkan bahasa
+    $replace_map = [
+        'destinasi' => 'destination',
+        'layanan-kami' => 'our-services',
+        'layanan-lainnya' => 'other-services',
+        'hubungi-kami' => 'contact-us',
+        'tentang-kami' => 'about-us',
+    ];
+
+    // Ambil bagian dari URL tanpa segmen bahasa
+    $url_without_lang = substr($current_url, strlen($lang_segment));
+
+    // Pecah URL menjadi segmen-segmen
+    $url_segments = explode('/', $url_without_lang);
+
+    // Tentukan bahasa yang ingin digunakan
+    $new_lang_segment = ($lang_segment === 'en/') ? 'id/' : 'en/';
+
+    // Gantikan hanya segmen kedua dalam URL berdasarkan bahasa yang aktif
+    if (isset($url_segments[0])) {
+        foreach ($replace_map as $indonesian_segment => $english_segment) {
+            if ($lang_segment === 'en/') {
+                // Jika bahasa yang dipilih adalah 'en', maka ganti segmen ID ke EN
+                if ($url_segments[0] === $english_segment) {
+                    $url_segments[0] = $indonesian_segment;
+                }
+            } else {
+                // Jika bahasa yang dipilih adalah 'id', maka ganti segmen EN ke ID
+                if ($url_segments[0] === $indonesian_segment) {
+                    $url_segments[0] = $english_segment;
+                }
+            }
+        }
+    }
+
+    // Gabungkan kembali URL
+    $url_without_lang = implode('/', $url_segments);
+
+    // Tautan dengan bahasa yang baru
+    $clean_url = $new_lang_segment . ltrim($url_without_lang, '/');
+
+    // Cek apakah $clean_url sudah memiliki segmen bahasa yang tepat
+    if (!preg_match('/^(en|id)\//', $clean_url)) {
+        // Jika tidak, tambahkan segmen bahasa yang sesuai di depan
+        $clean_url = $new_lang_segment . ltrim($clean_url, '/');
+    }
+
+    // Tautan Bahasa Inggris
+    if (strpos($url_without_lang, 'en/') === false) {
+        // Jika tidak ada segmen bahasa Inggris, tambahkan
+        $english_url = base_url('en/' . ltrim($url_without_lang, '/'));
+    } else {
+        // Jika sudah ada segmen bahasa Inggris, gunakan yang ada
+        $english_url = base_url($url_without_lang);
+    }
+
+    // Tautan Bahasa Indonesia
+    if (strpos($url_without_lang, 'id/') === false) {
+        // Jika tidak ada segmen bahasa Indonesia, tambahkan
+        $indonesia_url = base_url('id/' . ltrim($url_without_lang, '/'));
+    } else {
+        // Jika sudah ada segmen bahasa Indonesia, gunakan yang ada
+        $indonesia_url = base_url($url_without_lang);
+    }
+
+    $is_indonesian = ($lang === 'id');
+    $is_english = ($lang === 'en');
+
+    ?>
+
 
     <header class="header-area style-2" style="padding:0px 36px !important">
         <div class=" d-flex gap-5 justify-content-between align-items-center" style="margin: auto;">
@@ -1055,7 +1156,7 @@ $language = session()->get('lang');
                                         <?= lang("text_homepage.blog") ?></a><i class="bi bi-chevron-down"></i>
                                 </li>
                                 <li id="menu-item-2370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2370">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'layanan-kami/tour-agent' : 'our-services/tour-agent' ?>">TOUR AGENT</a><i class="bi bi-chevron-down"></i>
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/<?= $language == 'id' ? 'tour-agent' : 'tour-agent' ?>">TOUR AGENT</a><i class="bi bi-chevron-down"></i>
                                 </li>
                             </ul>
                         </li>
@@ -1073,8 +1174,8 @@ $language = session()->get('lang');
                             <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="/<?= $language ?>/faq">FAQ</a>
                         </li>
                         <li id="menu-item-2013" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2013">
-                            <a href="/<?= $language ?>/faq">
-                                <?php if ($language == 'id') { ?>
+                            <a href="<?= site_url($lang == 'id' ? 'switchLanguage/en' : 'switchLanguage/id') ?>">
+                                <?php if ($lang == 'id') { ?>
                                     <img style="margin-bottom: 5px !important;" loading="lazy" src="<?= base_url('assets/images/language/id_ID.png') ?>" alt="indonesian" width="18" height="12">
                                 <?php } else { ?>
                                     <img style="margin-bottom: 5px !important;" loading="lazy" src="<?= base_url('assets/images/language/en_US.png') ?>" alt="english" width="18" height="12">
@@ -1083,14 +1184,14 @@ $language = session()->get('lang');
                             <i class="bi bi-chevron-down"></i>
                             <ul class="sub-menu">
                                 <li id="menu-item-1984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1984">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="<?= site_url('lang/id'); ?>">INDONESIAN</a><i class="bi bi-chevron-down"></i>
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="<?= $is_indonesian ? '#' : $indonesia_url ?>"  <?= $is_indonesian ? 'disabled' : '' ?>" <?= $is_indonesian ? 'onclick="return false;"' : '' ?>>INDONESIAN </a><i class="bi bi-chevron-down"></i>
                                 </li>
                                 <li id="menu-item-2017" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2017">
-                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="<?= site_url('lang/en'); ?>">ENGLISH</a><i class="bi bi-chevron-down"></i>
+                                    <a style="font-family: 'Open Sans';font-weight: 700;font-size: 16px;" href="<?= $is_english ? '#' : $english_url ?>" <?= $is_english ? 'disabled' : '' ?>" <?= $is_english ? 'onclick="return false;"' : '' ?>> ENGLISH </a><i class="bi bi-chevron-down"></i>
                                 </li>
-
                             </ul>
                         </li>
+
                     </ul>
                 </div>
                 <!-- mobile-search-area -->

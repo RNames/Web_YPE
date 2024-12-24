@@ -1,12 +1,10 @@
-<?php
+<?php   
 
 use CodeIgniter\Router\RouteCollection;
 
 /**
  * @var RouteCollection $routes
  */
-// Routes for language switching
-$routes->get('lang/(:segment)', 'Language::switch/$1');
 
 
 
@@ -16,6 +14,12 @@ $routes->get('/', function () {
 });
 $routes->get('/id', 'HomepageController::index');
 $routes->get('/en', 'HomepageController::index');
+
+// Routes for language switching
+$routes->get('lang/(:segment)', 'Language::switchLanguage/$1'); // Use switchLanguage
+
+// Multilingual route rule
+$routes->add('(:any)/(:any)', 'Pages::view/$1/$2');
 
 $routes->get('/id/destinasi', 'DestinationController::index');
 $routes->get('/id/destinasi/(:segment)', 'DestinationController::detail/$1');
@@ -53,8 +57,8 @@ $routes->get('/id/layanan-kami/destination-event', 'ServiceController::mice');
 $routes->get('/id/layanan-kami/private-tour', 'ServiceController::privatetour');
 $routes->get('/en/our-services/private-tour', 'ServiceController::privatetour');
 
-$routes->get('/id/layanan-kami/tour-agent', 'ServiceController::touragent');
-$routes->get('/en/our-services/tour-agent', 'ServiceController::touragent');
+$routes->get('/id/tour-agent', 'ServiceController::touragent');
+$routes->get('/en/tour-agent', 'ServiceController::touragent');
 
 $routes->get('/id/layanan-kami/vip-services', 'ServiceController::vip');
 $routes->get('/en/our-services/vip-services', 'ServiceController::vip');
@@ -213,6 +217,13 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('admin/destination/edit/(:num)', 'admin\DestinationController::edit/$1');
     $routes->post('admin/destination/update/(:num)', 'admin\DestinationController::update/$1');
     $routes->get('admin/destination/delete/(:num)', 'admin\DestinationController::delete/$1');
+
+    $routes->group('admin/homepage', ['namespace' => 'App\Controllers\Admin'], function ($routes) {
+        $routes->get('/', 'HomepageController::index');
+        $routes->get('edit/(:num)', 'HomepageController::edit/$1');
+        $routes->post('update/(:num)', 'HomepageController::update/$1');
+    });
+    
 });
 
 // Page not found handler

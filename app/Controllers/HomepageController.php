@@ -69,6 +69,7 @@ class HomepageController extends BaseController
         // Update the session language
         session()->set('lang', $locale);
         $this->language = $locale;
+        $lang = session()->get('lang') ?? 'id';
 
         // Set the locale for the current request
         service('request')->setLocale($locale);
@@ -100,6 +101,7 @@ class HomepageController extends BaseController
                 'MIN(image_destination.alt_image) as alt_image',
             ])->join('image_destination', 'image_destination.destination_id = destination.id', 'left')->groupBy('destination.id')->findAll(),
             'services' => $this->servicesModel->findAll(),
+            'lang' => $lang,
         ];
 
         echo view('pages/homepage', $data);
